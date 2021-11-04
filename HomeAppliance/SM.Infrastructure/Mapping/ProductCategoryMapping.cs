@@ -19,7 +19,7 @@ namespace SM.Infrastructure.Mapping
             builder.Property(x => x.Keyword).HasMaxLength(80).IsRequired();
             builder.Property(x => x.MetaDescription).HasMaxLength(150).IsRequired();
             builder.Property(x => x.Slug).HasMaxLength(1000).IsRequired();
-
+            builder.HasMany(x => x.Products).WithOne(x => x.Category).HasForeignKey(x => x.CategoryId);
         }
     }
 }

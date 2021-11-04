@@ -4,11 +4,92 @@
  *
  * To rebuild or modify this file with the latest versions of the included
  * software please visit:
- *   https://datatables.net/download/#dt/dt-1.11.3/b-2.0.1/r-2.2.9/sc-2.0.5/sp-1.4.0
+ *   https://datatables.net/download/#ju/jqc-1.12.4/dt-1.11.3/b-2.0.1
  *
  * Included libraries:
- *   DataTables 1.11.3, Buttons 2.0.1, Responsive 2.2.9, Scroller 2.0.5, SearchPanes 1.4.0
+ *   jQuery 1 1.12.4, DataTables 1.11.3, Buttons 2.0.1
  */
+
+td.dt-control {
+  background: url("https://www.datatables.net/examples/resources/details_open.png") no-repeat center center;
+  cursor: pointer;
+}
+
+tr.dt-hasChild td.dt-control {
+  background: url("https://www.datatables.net/examples/resources/details_close.png") no-repeat center center;
+}
+
+table.dataTable th.dt-left,
+table.dataTable td.dt-left {
+  text-align: left;
+}
+table.dataTable th.dt-center,
+table.dataTable td.dt-center,
+table.dataTable td.dataTables_empty {
+  text-align: center;
+}
+table.dataTable th.dt-right,
+table.dataTable td.dt-right {
+  text-align: right;
+}
+table.dataTable th.dt-justify,
+table.dataTable td.dt-justify {
+  text-align: justify;
+}
+table.dataTable th.dt-nowrap,
+table.dataTable td.dt-nowrap {
+  white-space: nowrap;
+}
+table.dataTable thead th.dt-head-left,
+table.dataTable thead td.dt-head-left,
+table.dataTable tfoot th.dt-head-left,
+table.dataTable tfoot td.dt-head-left {
+  text-align: left;
+}
+table.dataTable thead th.dt-head-center,
+table.dataTable thead td.dt-head-center,
+table.dataTable tfoot th.dt-head-center,
+table.dataTable tfoot td.dt-head-center {
+  text-align: center;
+}
+table.dataTable thead th.dt-head-right,
+table.dataTable thead td.dt-head-right,
+table.dataTable tfoot th.dt-head-right,
+table.dataTable tfoot td.dt-head-right {
+  text-align: right;
+}
+table.dataTable thead th.dt-head-justify,
+table.dataTable thead td.dt-head-justify,
+table.dataTable tfoot th.dt-head-justify,
+table.dataTable tfoot td.dt-head-justify {
+  text-align: justify;
+}
+table.dataTable thead th.dt-head-nowrap,
+table.dataTable thead td.dt-head-nowrap,
+table.dataTable tfoot th.dt-head-nowrap,
+table.dataTable tfoot td.dt-head-nowrap {
+  white-space: nowrap;
+}
+table.dataTable tbody th.dt-body-left,
+table.dataTable tbody td.dt-body-left {
+  text-align: left;
+}
+table.dataTable tbody th.dt-body-center,
+table.dataTable tbody td.dt-body-center {
+  text-align: center;
+}
+table.dataTable tbody th.dt-body-right,
+table.dataTable tbody td.dt-body-right {
+  text-align: right;
+}
+table.dataTable tbody th.dt-body-justify,
+table.dataTable tbody td.dt-body-justify {
+  text-align: justify;
+}
+table.dataTable tbody th.dt-body-nowrap,
+table.dataTable tbody td.dt-body-nowrap {
+  white-space: nowrap;
+}
 
 td.dt-control {
   background: url("https://www.datatables.net/examples/resources/details_open.png") no-repeat center center;
@@ -114,7 +195,6 @@ table.dataTable tfoot th {
 table.dataTable thead th,
 table.dataTable thead td {
   padding: 10px 18px;
-  border-bottom: 1px solid #111;
 }
 table.dataTable thead th:active,
 table.dataTable thead td:active {
@@ -123,32 +203,6 @@ table.dataTable thead td:active {
 table.dataTable tfoot th,
 table.dataTable tfoot td {
   padding: 10px 18px 6px 18px;
-  border-top: 1px solid #111;
-}
-table.dataTable thead .sorting,
-table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_desc,
-table.dataTable thead .sorting_asc_disabled,
-table.dataTable thead .sorting_desc_disabled {
-  cursor: pointer;
-  *cursor: hand;
-  background-repeat: no-repeat;
-  background-position: center right;
-}
-table.dataTable thead .sorting {
-  background-image: url("DataTables-1.11.3/images/sort_both.png");
-}
-table.dataTable thead .sorting_asc {
-  background-image: url("DataTables-1.11.3/images/sort_asc.png") !important;
-}
-table.dataTable thead .sorting_desc {
-  background-image: url("DataTables-1.11.3/images/sort_desc.png") !important;
-}
-table.dataTable thead .sorting_asc_disabled {
-  background-image: url("DataTables-1.11.3/images/sort_asc_disabled.png");
-}
-table.dataTable thead .sorting_desc_disabled {
-  background-image: url("DataTables-1.11.3/images/sort_desc_disabled.png");
 }
 table.dataTable tbody tr {
   background-color: #ffffff;
@@ -476,6 +530,66 @@ table.dataTable td {
     margin-top: 0.5em;
   }
 }
+table.dataTable thead th div.DataTables_sort_wrapper {
+  position: relative;
+}
+table.dataTable thead th div.DataTables_sort_wrapper span {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: -18px;
+}
+table.dataTable thead th.ui-state-default,
+table.dataTable tfoot th.ui-state-default {
+  border-left-width: 0;
+}
+table.dataTable thead th.ui-state-default:first-child,
+table.dataTable tfoot th.ui-state-default:first-child {
+  border-left-width: 1px;
+}
+
+/*
+ * Control feature layout
+ */
+.dataTables_wrapper .dataTables_paginate .fg-button {
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 0.5em;
+  margin-left: 2px;
+  text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  *cursor: hand;
+  border: 1px solid transparent;
+}
+.dataTables_wrapper .dataTables_paginate .fg-button:active {
+  outline: none;
+}
+.dataTables_wrapper .dataTables_paginate .fg-button:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.dataTables_wrapper .dataTables_paginate .fg-button:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.dataTables_wrapper .ui-widget-header {
+  font-weight: normal;
+}
+.dataTables_wrapper .ui-toolbar {
+  padding: 8px;
+}
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom: none;
+}
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+  color: inherit;
+}
 
 
 @keyframes dtb-spinner {
@@ -546,248 +660,59 @@ div.dt-button-collection-title:empty {
   display: none;
 }
 
-button.dt-button,
-div.dt-button,
-a.dt-button,
-input.dt-button {
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  margin-right: 0.333em;
-  margin-bottom: 0.333em;
-  padding: 0.5em 1em;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 2px;
-  cursor: pointer;
-  font-size: 0.88em;
-  line-height: 1.6em;
-  color: black;
-  white-space: nowrap;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.1);
-  /* Fallback */
-  background: -webkit-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background: -moz-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* FF3.6 */
-  background: -ms-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* IE10 */
-  background: -o-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* Opera 11.10+ */
-  background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="rgba(230, 230, 230, 0.1)", EndColorStr="rgba(0, 0, 0, 0.1)");
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-decoration: none;
-  outline: none;
-  text-overflow: ellipsis;
-}
-button.dt-button.disabled,
-div.dt-button.disabled,
-a.dt-button.disabled,
-input.dt-button.disabled {
-  cursor: default;
-  opacity: 0.4;
-}
-button.dt-button:active:not(.disabled), button.dt-button.active:not(.disabled),
-div.dt-button:active:not(.disabled),
-div.dt-button.active:not(.disabled),
-a.dt-button:active:not(.disabled),
-a.dt-button.active:not(.disabled),
-input.dt-button:active:not(.disabled),
-input.dt-button.active:not(.disabled) {
-  background-color: rgba(0, 0, 0, 0.1);
-  /* Fallback */
-  background: -webkit-linear-gradient(top, rgba(179, 179, 179, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background: -moz-linear-gradient(top, rgba(179, 179, 179, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* FF3.6 */
-  background: -ms-linear-gradient(top, rgba(179, 179, 179, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* IE10 */
-  background: -o-linear-gradient(top, rgba(179, 179, 179, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* Opera 11.10+ */
-  background: linear-gradient(to bottom, rgba(179, 179, 179, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="rgba(179, 179, 179, 0.1)", EndColorStr="rgba(0, 0, 0, 0.1)");
-  box-shadow: inset 1px 1px 3px #999999;
-}
-button.dt-button:active:not(.disabled):hover:not(.disabled), button.dt-button.active:not(.disabled):hover:not(.disabled),
-div.dt-button:active:not(.disabled):hover:not(.disabled),
-div.dt-button.active:not(.disabled):hover:not(.disabled),
-a.dt-button:active:not(.disabled):hover:not(.disabled),
-a.dt-button.active:not(.disabled):hover:not(.disabled),
-input.dt-button:active:not(.disabled):hover:not(.disabled),
-input.dt-button.active:not(.disabled):hover:not(.disabled) {
-  box-shadow: inset 1px 1px 3px #999999;
-  background-color: rgba(0, 0, 0, 0.1);
-  /* Fallback */
-  background: -webkit-linear-gradient(top, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background: -moz-linear-gradient(top, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* FF3.6 */
-  background: -ms-linear-gradient(top, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* IE10 */
-  background: -o-linear-gradient(top, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* Opera 11.10+ */
-  background: linear-gradient(to bottom, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="rgba(128, 128, 128, 0.1)", EndColorStr="rgba(0, 0, 0, 0.1)");
-}
-button.dt-button:hover,
-div.dt-button:hover,
-a.dt-button:hover,
-input.dt-button:hover {
-  text-decoration: none;
-}
-button.dt-button:hover:not(.disabled),
-div.dt-button:hover:not(.disabled),
-a.dt-button:hover:not(.disabled),
-input.dt-button:hover:not(.disabled) {
-  border: 1px solid #666;
-  background-color: rgba(0, 0, 0, 0.1);
-  /* Fallback */
-  background: -webkit-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background: -moz-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* FF3.6 */
-  background: -ms-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* IE10 */
-  background: -o-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  /* Opera 11.10+ */
-  background: linear-gradient(to bottom, rgba(153, 153, 153, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="rgba(153, 153, 153, 0.1)", EndColorStr="rgba(0, 0, 0, 0.1)");
-}
-button.dt-button:focus:not(.disabled),
-div.dt-button:focus:not(.disabled),
-a.dt-button:focus:not(.disabled),
-input.dt-button:focus:not(.disabled) {
-  border: 1px solid #426c9e;
-  text-shadow: 0 1px 0 #c4def1;
-  outline: none;
-  background-color: #79ace9;
-  /* Fallback */
-  background: -webkit-linear-gradient(top, #d1e2f7 0%, #79ace9 100%);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background: -moz-linear-gradient(top, #d1e2f7 0%, #79ace9 100%);
-  /* FF3.6 */
-  background: -ms-linear-gradient(top, #d1e2f7 0%, #79ace9 100%);
-  /* IE10 */
-  background: -o-linear-gradient(top, #d1e2f7 0%, #79ace9 100%);
-  /* Opera 11.10+ */
-  background: linear-gradient(to bottom, #d1e2f7 0%, #79ace9 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#d1e2f7", EndColorStr="#79ace9");
-}
-button.dt-button span.dt-down-arrow,
-div.dt-button span.dt-down-arrow,
-a.dt-button span.dt-down-arrow,
-input.dt-button span.dt-down-arrow {
-  position: relative;
-  top: -2px;
-  color: rgba(70, 70, 70, 0.75);
-  font-size: 8px;
-  padding-left: 10px;
-}
-
-.dt-button embed {
-  outline: none;
-}
-
 div.dt-buttons {
   position: relative;
   float: left;
 }
-div.dt-buttons.buttons-right {
-  float: right;
+div.dt-buttons .dt-button {
+  margin-right: 0;
 }
-
-div.dataTables_layout_cell div.dt-buttons {
-  float: none;
+div.dt-buttons .dt-button span.ui-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
 }
-div.dataTables_layout_cell div.dt-buttons.buttons-right {
-  float: none;
+div.dt-buttons .dt-button:active {
+  outline: none;
+}
+div.dt-buttons .dt-button:hover > span {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 div.dt-button-collection {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 150px;
   margin-top: 3px;
-  padding: 4px 4px 0 4px;
+  padding: 8px 8px 4px 8px;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.4);
-  background-color: white;
+  background-color: #f3f3f3;
   overflow: hidden;
   z-index: 2002;
   border-radius: 5px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  box-sizing: border-box;
+  z-index: 2002;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  -ms-column-gap: 0;
+  -o-column-gap: 0;
+  column-gap: 0;
 }
-div.dt-button-collection button.dt-button,
-div.dt-button-collection div.dt-button,
-div.dt-button-collection a.dt-button {
+div.dt-button-collection .dt-button {
   position: relative;
   left: 0;
   right: 0;
   width: 100%;
+  box-sizing: border-box;
   display: block;
   float: none;
-  margin-bottom: 4px;
   margin-right: 0;
+  margin-bottom: 4px;
 }
-div.dt-button-collection button.dt-button:active:not(.disabled), div.dt-button-collection button.dt-button.active:not(.disabled),
-div.dt-button-collection div.dt-button:active:not(.disabled),
-div.dt-button-collection div.dt-button.active:not(.disabled),
-div.dt-button-collection a.dt-button:active:not(.disabled),
-div.dt-button-collection a.dt-button.active:not(.disabled) {
-  background-color: #dadada;
-  /* Fallback */
-  background: -webkit-linear-gradient(top, #f0f0f0 0%, #dadada 100%);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background: -moz-linear-gradient(top, #f0f0f0 0%, #dadada 100%);
-  /* FF3.6 */
-  background: -ms-linear-gradient(top, #f0f0f0 0%, #dadada 100%);
-  /* IE10 */
-  background: -o-linear-gradient(top, #f0f0f0 0%, #dadada 100%);
-  /* Opera 11.10+ */
-  background: linear-gradient(to bottom, #f0f0f0 0%, #dadada 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#f0f0f0", EndColorStr="#dadada");
-  box-shadow: inset 1px 1px 3px #666;
-}
-div.dt-button-collection button.dt-button:first-child,
-div.dt-button-collection div.dt-button:first-child,
-div.dt-button-collection a.dt-button:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-div.dt-button-collection button.dt-button:last-child,
-div.dt-button-collection div.dt-button:last-child,
-div.dt-button-collection a.dt-button:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-div.dt-button-collection div.dt-btn-split-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-div.dt-button-collection div.dt-btn-split-wrapper button.dt-button {
-  margin-right: 0px;
-  display: inline-block;
-  width: 0;
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 50px;
-}
-div.dt-button-collection div.dt-btn-split-wrapper button.dt-btn-split-drop {
-  min-width: 20px;
-  margin-left: -1px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 0;
+div.dt-button-collection .dt-button:hover > span {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 div.dt-button-collection.fixed {
   position: fixed;
@@ -854,6 +779,25 @@ div.dt-button-collection .dt-button {
   border-radius: 0;
 }
 
+div.dt-btn-split-wrapper {
+  padding: 0px !important;
+  display: flex;
+  border: none;
+  margin: 0px;
+}
+div.dt-btn-split-wrapper:hover {
+  border: none;
+}
+div.dt-btn-split-wrapper button.dt-btn-split-drop {
+  width: 24px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 10px;
+  height: 29.5px;
+  border-radius: 0px;
+  margin-left: -1px;
+}
+
 div.dt-button-background {
   position: fixed;
   top: 0;
@@ -909,606 +853,6 @@ a.dt-button.processing:after {
   -ms-animation: dtb-spinner 1500ms infinite linear;
   -webkit-animation: dtb-spinner 1500ms infinite linear;
   -moz-animation: dtb-spinner 1500ms infinite linear;
-}
-
-button.dt-btn-split-drop {
-  margin-left: calc(-1px - 0.333em);
-  padding-left: 0.333em;
-  padding-right: 0.333em;
-  padding-bottom: calc(0.5em - 1px);
-  border-radius: 0px 1px 1px 0px;
-  color: rgba(70, 70, 70, 0.9);
-}
-button.dt-btn-split-drop span.dt-btn-split-drop-arrow {
-  font-size: 10px;
-}
-button.dt-btn-split-drop:hover {
-  z-index: 2;
-}
-
-div.dt-btn-split-wrapper {
-  display: inline-block;
-}
-
-button.buttons-split {
-  border-right: 1px solid rgba(70, 70, 70, 0);
-  border-radius: 1px 0px 0px 1px;
-}
-
-button.dt-btn-split-drop-button {
-  background-color: white;
-}
-button.dt-btn-split-drop-button:hover {
-  background-color: white;
-}
-
-
-table.dataTable.dtr-inline.collapsed > tbody > tr > td.child,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th.child,
-table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty {
-  cursor: default !important;
-}
-table.dataTable.dtr-inline.collapsed > tbody > tr > td.child:before,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th.child:before,
-table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty:before {
-  display: none !important;
-}
-table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-}
-table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
-  top: 50%;
-  left: 5px;
-  height: 1em;
-  width: 1em;
-  margin-top: -9px;
-  display: block;
-  position: absolute;
-  color: white;
-  border: 0.15em solid white;
-  border-radius: 1em;
-  box-shadow: 0 0 0.2em #444;
-  box-sizing: content-box;
-  text-align: center;
-  text-indent: 0 !important;
-  font-family: "Courier New", Courier, monospace;
-  line-height: 1em;
-  content: "+";
-  background-color: #31b131;
-}
-table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td.dtr-control:before,
-table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th.dtr-control:before {
-  content: "-";
-  background-color: #d33333;
-}
-table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td.dtr-control,
-table.dataTable.dtr-inline.collapsed.compact > tbody > tr > th.dtr-control {
-  padding-left: 27px;
-}
-table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td.dtr-control:before,
-table.dataTable.dtr-inline.collapsed.compact > tbody > tr > th.dtr-control:before {
-  left: 4px;
-  height: 14px;
-  width: 14px;
-  border-radius: 14px;
-  line-height: 14px;
-  text-indent: 3px;
-}
-table.dataTable.dtr-column > tbody > tr > td.dtr-control,
-table.dataTable.dtr-column > tbody > tr > th.dtr-control,
-table.dataTable.dtr-column > tbody > tr > td.control,
-table.dataTable.dtr-column > tbody > tr > th.control {
-  position: relative;
-  cursor: pointer;
-}
-table.dataTable.dtr-column > tbody > tr > td.dtr-control:before,
-table.dataTable.dtr-column > tbody > tr > th.dtr-control:before,
-table.dataTable.dtr-column > tbody > tr > td.control:before,
-table.dataTable.dtr-column > tbody > tr > th.control:before {
-  top: 50%;
-  left: 50%;
-  height: 0.8em;
-  width: 0.8em;
-  margin-top: -0.5em;
-  margin-left: -0.5em;
-  display: block;
-  position: absolute;
-  color: white;
-  border: 0.15em solid white;
-  border-radius: 1em;
-  box-shadow: 0 0 0.2em #444;
-  box-sizing: content-box;
-  text-align: center;
-  text-indent: 0 !important;
-  font-family: "Courier New", Courier, monospace;
-  line-height: 1em;
-  content: "+";
-  background-color: #31b131;
-}
-table.dataTable.dtr-column > tbody > tr.parent td.dtr-control:before,
-table.dataTable.dtr-column > tbody > tr.parent th.dtr-control:before,
-table.dataTable.dtr-column > tbody > tr.parent td.control:before,
-table.dataTable.dtr-column > tbody > tr.parent th.control:before {
-  content: "-";
-  background-color: #d33333;
-}
-table.dataTable > tbody > tr.child {
-  padding: 0.5em 1em;
-}
-table.dataTable > tbody > tr.child:hover {
-  background: transparent !important;
-}
-table.dataTable > tbody > tr.child ul.dtr-details {
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-table.dataTable > tbody > tr.child ul.dtr-details > li {
-  border-bottom: 1px solid #efefef;
-  padding: 0.5em 0;
-}
-table.dataTable > tbody > tr.child ul.dtr-details > li:first-child {
-  padding-top: 0;
-}
-table.dataTable > tbody > tr.child ul.dtr-details > li:last-child {
-  border-bottom: none;
-}
-table.dataTable > tbody > tr.child span.dtr-title {
-  display: inline-block;
-  min-width: 75px;
-  font-weight: bold;
-}
-div.dtr-modal {
-  position: fixed;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 100;
-  padding: 10em 1em;
-}
-div.dtr-modal div.dtr-modal-display {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 50%;
-  overflow: auto;
-  margin: auto;
-  z-index: 102;
-  overflow: auto;
-  background-color: #f5f5f7;
-  border: 1px solid black;
-  border-radius: 0.5em;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-}
-div.dtr-modal div.dtr-modal-content {
-  position: relative;
-  padding: 1em;
-}
-div.dtr-modal div.dtr-modal-close {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 22px;
-  height: 22px;
-  border: 1px solid #eaeaea;
-  background-color: #f9f9f9;
-  text-align: center;
-  border-radius: 3px;
-  cursor: pointer;
-  z-index: 12;
-}
-div.dtr-modal div.dtr-modal-close:hover {
-  background-color: #eaeaea;
-}
-div.dtr-modal div.dtr-modal-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 101;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-@media screen and (max-width: 767px) {
-  div.dtr-modal div.dtr-modal-display {
-    width: 95%;
-  }
-}
-
-
-div.dts {
-  display: block !important;
-}
-div.dts tbody th,
-div.dts tbody td {
-  white-space: nowrap;
-}
-div.dts div.dts_loading {
-  z-index: 1;
-}
-div.dts div.dts_label {
-  position: absolute;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-  text-align: right;
-  border-radius: 3px;
-  padding: 0.4em;
-  z-index: 2;
-  display: none;
-}
-div.dts div.dataTables_scrollBody {
-  background: repeating-linear-gradient(45deg, #edeeff, #edeeff 10px, white 10px, white 20px);
-}
-div.dts div.dataTables_scrollBody table {
-  z-index: 2;
-}
-div.dts div.dataTables_paginate,
-div.dts div.dataTables_length {
-  display: none;
-}
-
-
-div.dtsp-topRow {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  border: 2px solid rgba(0, 0, 0, 0);
-  border-radius: 3px;
-  justify-content: space-around;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-div.dtsp-topRow input.dtsp-search {
-  text-overflow: ellipsis;
-  min-width: 50px;
-  flex-basis: 90px;
-  max-width: none;
-}
-div.dtsp-topRow input.dtsp-search::placeholder {
-  color: black;
-}
-div.dtsp-topRow div.dtsp-subRow1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  flex: 1 1 auto;
-}
-div.dtsp-topRow div.dtsp-subRow1 div.dtsp-searchCont {
-  position: relative;
-  width: 100%;
-}
-div.dtsp-topRow div.dtsp-subRow1 input {
-  padding-right: 2em;
-  width: 100% !important;
-  box-sizing: border-box;
-  font-size: 1em;
-}
-div.dtsp-topRow div.dtsp-subRow1 button.dtsp-searchIcon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABbmlDQ1BpY2MAACiRdZE7SwNBFIU/EyWikRRaiFhsoWKhEBREO42FTZAQFYza7G5eQhKX3QQJtoKNhWAh2vgq/AfaCrYKgqAIIhb+Al+NhPVOEkiQZJbZ+3FmzmXmDHjCGTPrtAYhm8vb0bmQthxb0Xzv+PHRxRSabjrWTCQSpun4eaRF1YdR1av5voajM55wTGhpF54wLTsvPC0c3sxbineFe8y0Hhc+ER6x5YDCt0o3KvymOFXhL8X2YnQWPKqnlqpjo47NtJ0VHhYeyGYKZvU86ib+RG5pQWqfzH4coswRQsOgwDoZ8oxKzUlmjX3Bsm+eDfGY8rcoYosjRVq8I6IWpGtCalL0hHwZiir3/3k6yfGxSnd/CNpeXfdzEHz7UNpz3d9T1y2dgfcFrnM1/4bkNPkt+l5NGziGwDZc3tQ04wCudqD32dJtvSx5ZXqSSfi4gK4YdN9Dx2olq+o650+wuCVPdAeHRzAk+wNrfw8JaBFXEnV+AAAACXBIWXMAAA9hAAAPYQGoP6dpAAABMUlEQVQoU6XRr0vDQRjH8akoM4iIjqGoOIZ5oIjB5XWxajaYDGLSIhhNYjcPRDSJwbQNw+L+BNGgYYo/5pT5/shz8vDlBgMPXux7z3N3z+25VOofYyCyd4ZYCavI4gXPsRp9LqiDdrEMH+8wv8Vh8gBfWclFPOEUN3hAHjlMoRa7wTzBS5xgKLFglPkZLjDic6HyDsEMNvGR2Nxifoci3tEI+X770JU0XmPXIlax+LTPh83fFox1X6kxyzdjm9UcdXi9S+Vti6svfyNULhNR9TVsYNhW6Ff9KKCNR7/Zv6eeaQ+6+qcdpu9BqGlp1HFgud+FYdzzUcUExu0Q/cdzHGEFetIlXKPjK/sbqYoOftMiS+j9jzEJPd1Wt+5+kdR/9EM9ucIC5jCbyPc01Q32kfsBppYz3hYFcCwAAAAASUVORK5CYII=");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 12px;
-}
-div.dtsp-topRow div.dtsp-subRow2 {
-  white-space: nowrap;
-  flex: 0 0 auto;
-}
-div.dtsp-topRow button.dtsp-nameButton {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAABcGlDQ1BpY2MAACiRdZHNSwJBGMYftTDS8FCHkA57sOigIAXRMQzyYh3UIKvL7rirwe66zK6IdA26dBA6RF36OvQf1DXoWhAERRAR9B/0dQnZ3nEFJXSG2ffHs/O8zDwD+DM6M+yBJGCYDs+mU9JaYV0KviNMM4QoEjKzreXcUh59x88jfKI+JESv/vt6jlBRtRngGyKeYxZ3iBeIMzXHErxHPMbKcpH4hDjO6YDEt0JXPH4TXPL4SzDPZxcBv+gplbpY6WJW5gbxNHHM0KusfR5xk7BqruaoRmlNwEYWaaQgQUEVW9DhIEHVpMx6+5It3woq5GH0tVAHJ0cJZfLGSa1SV5WqRrpKU0dd5P4/T1ubnfG6h1PA4Kvrfk4CwX2g2XDd31PXbZ4BgRfg2uz4K5TT/DfpjY4WOwYiO8DlTUdTDoCrXWD82ZK53JICtPyaBnxcACMFYPQeGN7wsmr/x/kTkN+mJ7oDDo+AKdof2fwDCBRoDkL8UccAAAAJcEhZcwAAD2EAAA9hAag/p2kAAAK2SURBVFgJ7ZY9j41BFICvryCExrJBQ6HyEYVEIREaUZDQIRoR2ViJKCioxV+gkVXYTVZEQiEUhG2EQnxUCh0FKolY4ut5XnM2cyfva3Pt5m7EPcmzZ2bemTNnzjkzd1utnvQi0IvAfxiBy5z5FoxO89kPY+8mbMjtzs47RXs5/WVpbAG6bWExt5PuIibvhVkwmC+ck3eK9ln6/fAddFojYzBVuYSBpcnIEvRaqOw2RcaN18FPuJH0JvRUxbT3wWf4ltiKPgfVidWlbGZgPozDFfgAC+EA/K2EI4cwcAJ+gPaeQ+VQU2SOMMGcPgPl/m/V2p50rrbRsRgt9Iv5h6xtpP22Bz7Ce1C+gFFxfKzOmShcU+Qmyh2w3w8rIJfddHTck66EukL/xPhj+JM8rHNmFys0Pg4v0up3aFNlwR9NYyodd3OL/C64zpsymcTFcf6ElM4YzjAWKYrJkaq8kE/yUYNP4BoYvS1QRo+hNtF5xfkTUjoTheukSFFMjlTFm6PjceOca/SMpKfeCR1L6Uzk/y2WIkVhNFJlJAZhP+hYns7b9D3IPuhY5mYrIv8OrQJvR5NYyNaW4jsU8pSGNySiVx4o5tXq3JkoXE/mg5R/M8dGJCJpKhaDcjBRdbI/Rm8g69c122om33BHmj2CHoV5qa9jUXBraJ+G1fAVjIBO1klc87ro1K4JZ/K35SWW3TwcyDd6TecqnAEd8cGq2+w84xvBm1n3vS0izKkkwh5XNC/GmFPqqAtPF89AOScKuemaNzoTV1SD5dtSbmLf1/RV+tC0WTgcj6R7HEtrVGWaqu/lYDZ/2pvxQ/kIyw/gFByHC9AHw910hv1aUUumyd8yy0QfhmEkfiNod0Xusct68J1qc8Tdux0Z97Q+hsDb+AYGYEbF/4Guw2Q/qDPqZG/zXgT+3Qj8AtKnfWhFwmuAAAAAAElFTkSuQmCC");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 23px;
-  vertical-align: bottom;
-}
-div.dtsp-topRow button.dtsp-countButton {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABcGlDQ1BpY2MAACiRdZHNSwJBGMYftTDS8FCHkA57sOigIAXRMQzyYh3UIKvL7rirwe66zK6IdA26dBA6RF36OvQf1DXoWhAERRAR9B/0dQnZ3nEFJXSG2ffHs/O8zDwD+DM6M+yBJGCYDs+mU9JaYV0KviNMM4QoEjKzreXcUh59x88jfKI+JESv/vt6jlBRtRngGyKeYxZ3iBeIMzXHErxHPMbKcpH4hDjO6YDEt0JXPH4TXPL4SzDPZxcBv+gplbpY6WJW5gbxNHHM0KusfR5xk7BqruaoRmlNwEYWaaQgQUEVW9DhIEHVpMx6+5It3woq5GH0tVAHJ0cJZfLGSa1SV5WqRrpKU0dd5P4/T1ubnfG6h1PA4Kvrfk4CwX2g2XDd31PXbZ4BgRfg2uz4K5TT/DfpjY4WOwYiO8DlTUdTDoCrXWD82ZK53JICtPyaBnxcACMFYPQeGN7wsmr/x/kTkN+mJ7oDDo+AKdof2fwDCBRoDkL8UccAAAAJcEhZcwAAD2EAAA9hAag/p2kAAAG5SURBVEgN3VU9LwVBFF0fiYhofUSlEQkKhU7z/oBCQkIiGr9BgUbhVzy9BAnhFyjV/AYFiU5ICM7ZN+c5Zud5dm3lJmfmzrkz9+7cu3c3y/6jjOBSF8CxXS7FmTkbwqIJjDpJvTcmsJ4K3KPZUpyZsx0sxoB9J6mnAkyC7wGuuCFIipNtEcpcWExgXpOBc78vgj6N+QO4NVsjwdFM59tUIDxDrHMBOeIQ34C5ZDregXuAQm4YcI68nN9B3wr2PcwPAIPkN2EqtJH6b+QZm1ajjTx7BqwAr26Lb+C2Kvpbt0Mb2HAJ7NrGFGfmXO3DeA4UshDfQAVmH0gaUFg852TTTDvlxwBlCtxy9zXyBhQFaq0wMmIdRebrfgosA3zb2hKnqG0oqchp4QbuR8X0TjzABhbdOT8jnQ/atcgqpnfwOA7yqZyTU587ZkIGdesLTt2EkynOnbreMUUKMI/dA4B/QVOcO13CQh+5wWCgDwo/75u59odB/wjmfhbgvACcAOyZPHihMWAoIwxyCLgf1oxfgjzVbgBXSTzIN+f0pg6s5DkcesLMRpsBrgE2XO3CN64JFP7JtUeKHX4CKtRRXFZ+7dEAAAAASUVORK5CYII=");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 18px;
-  vertical-align: bottom;
-}
-div.dtsp-topRow button.dtsp-collapseButton span.dtsp-caret {
-  position: relative;
-  top: 2px;
-  display: inline-block;
-}
-div.dtsp-topRow button.dtsp-collapseButton.dtsp-rotated {
-  transform: rotate(180deg);
-}
-
-div.dtsp-topRow.dtsp-bordered {
-  border: 2px solid #f0f0f0;
-  border-radius: 3px;
-}
-
-div.dtsp-topRow.dtsp-bordered:hover {
-  background-color: #f0f0f0;
-  opacity: 0.6;
-  border: 2px solid #cfcfcf;
-  border-radius: 3px;
-  cursor: pointer !important;
-}
-
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane table thead th,
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane table thead td {
-  width: 100% !important;
-}
-
-div.dt-button-collection {
-  z-index: 2002;
-}
-
-div.dtsp-columns-1 {
-  max-width: 100%;
-  margin: 0px !important;
-}
-
-div.dtsp-columns-2 {
-  max-width: 49%;
-  margin: 0px !important;
-}
-
-div.dtsp-columns-3 {
-  max-width: 32%;
-  margin: 0px !important;
-}
-
-div.dtsp-columns-4 {
-  max-width: 24%;
-  margin: 0px !important;
-}
-
-div.dtsp-columns-5 {
-  max-width: 19%;
-  margin: 0px !important;
-}
-
-div.dtsp-columns-6 {
-  max-width: 16%;
-  margin: 0px !important;
-}
-
-div.dtsp-columns-7 {
-  max-width: 14%;
-  margin: 0px !important;
-}
-
-div.dtsp-columns-8 {
-  min-width: 12%;
-  margin: 0px !important;
-}
-
-div.dtsp-columns-9 {
-  max-width: 10.5%;
-  margin: 0px !important;
-}
-
-div.dt-button-collection {
-  float: none;
-}
-
-div.dtsp-panesContainer {
-  margin-bottom: 1em;
-}
-div.dtsp-panesContainer div.dataTables_wrapper {
-  width: 100%;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_layout_cell {
-  padding: 0;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollHead {
-  display: none !important;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody {
-  background: white !important;
-  border-bottom: none;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody thead {
-  display: none;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody table {
-  table-layout: fixed;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody table tr > th,
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody table tr > td {
-  padding: 5px 10px;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody td.dtsp-nameColumn {
-  width: 100% !important;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-name,
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-pill {
-  cursor: default;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-name {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: middle;
-  white-space: nowrap;
-  flex-grow: 1;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-pill {
-  display: inline-block;
-  background-color: #cfcfcf;
-  text-align: center;
-  border: 1px solid #cfcfcf;
-  border-radius: 10px;
-  width: auto;
-  min-width: 30px;
-  color: black;
-  font-size: 0.9em;
-  padding: 0 4px;
-}
-div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-pill:empty {
-  display: none;
-}
-
-div.dtsp-panesContainer {
-  clear: both;
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: flex-start;
-  align-items: stretch;
-  clear: both;
-  text-align: left;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane {
-  flex-grow: 1;
-  flex-shrink: 0;
-  font-size: 0.9em;
-  margin-top: 15px !important;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dataTables_wrapper {
-  flex: 1;
-  box-sizing: border-box;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dataTables_wrapper div.dataTables_filter {
-  display: none;
-}
-div.dtsp-panesContainer div.dtsp-title {
-  float: left;
-  padding: 10px 0;
-}
-div.dtsp-panesContainer button.dtsp-clearAll,
-div.dtsp-panesContainer button.dtsp-collapseAll,
-div.dtsp-panesContainer button.dtsp-showAll {
-  float: right;
-  padding: 10px;
-  font-size: 1em;
-}
-
-div.dtsp-hidden {
-  display: none !important;
-}
-
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dataTables_wrapper {
-  border: 2px solid #f0f0f0;
-  border-radius: 4px;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dataTables_wrapper:hover {
-  border: 2px solid #cfcfcf;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dtsp-selected {
-  border: 2px solid #3276b1;
-  border-radius: 4px;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dtsp-selected:hover {
-  border: 2px solid #286092;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dtsp-topRow div.dtsp-searchCont input.dtsp-search {
-  border: none;
-  padding-left: 3px;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane input.dtsp-paneInputButton,
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton {
-  height: 35px;
-  width: 35px;
-  min-width: 0;
-  display: inline-block;
-  margin: 2px;
-  border: 0px solid transparent;
-  background-color: transparent;
-  margin-bottom: 0px;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane input.dtsp-paneInputButton:hover,
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton:hover {
-  background-color: #f0f0f0;
-  border-radius: 2px;
-  cursor: pointer;
-}
-div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane button.dtsp-paneButton {
-  opacity: 0.6;
-}
-div.dtsp-panesContainer button.dtsp-clearAll,
-div.dtsp-panesContainer button.dtsp-collapseAll,
-div.dtsp-panesContainer button.dtsp-showAll {
-  border: 1px solid transparent;
-  background-color: transparent;
-}
-div.dtsp-panesContainer button.dtsp-clearAll:hover,
-div.dtsp-panesContainer button.dtsp-collapseAll:hover,
-div.dtsp-panesContainer button.dtsp-showAll:hover {
-  background-color: #f0f0f0;
-  border-radius: 2px;
-  cursor: pointer;
-}
-div.dtsp-panesContainer button.dtsp-disabledButton {
-  cursor: default !important;
-  color: #7c7c7c;
-}
-div.dtsp-panesContainer button.dtsp-disabledButton:hover {
-  background-color: transparent;
-}
-div.dtsp-panesContainer button.dtsp-disabledButton:focus {
-  outline: none;
-}
-
-div.dtsp-topRow.dtsp-bordered:hover button.dtsp-disabledButton {
-  cursor: pointer !important;
-  pointer-events: none;
-}
-div.dtsp-topRow.dtsp-bordered:hover input.dtsp-paneInputButton {
-  pointer-events: none;
-}
-
-div.dtsp-narrow {
-  flex-direction: column !important;
-}
-div.dtsp-narrow div.dtsp-subRows {
-  width: 100%;
-  text-align: right;
-}
-
-@media screen and (max-width: 767px) {
-  div.dtsp-columns-4,
-div.dtsp-columns-5,
-div.dtsp-columns-6 {
-    max-width: 31% !important;
-    min-width: 31% !important;
-  }
-}
-@media screen and (max-width: 640px) {
-  div.dtsp-searchPanes {
-    flex-direction: column !important;
-  }
-
-  div.dtsp-searchPane {
-    max-width: 98% !important;
-    min-width: 98% !important;
-  }
 }
 
 

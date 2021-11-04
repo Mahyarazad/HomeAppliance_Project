@@ -3,7 +3,7 @@
 }
 
 <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal"> x </button>
+    <button type="button" class="close" data-dismiss="modal"> <i class="fa fa-times-circle"></i> </button>
     <h4> Create a new category </h4>
 </div>
 
@@ -15,12 +15,12 @@
                     <label asp-for="Name"> Name </label>
                     <input asp-for="Name" type="text" class="form-control"
                            onchange="makeSlug('Name', 'Slug')"/>
-                    <span class="error"></span>
+                    <span asp-validation-for="Name"  class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
                     <label asp-for="Slug"> Slug </label>
                     <input asp-for="Slug" type="text" class="form-control"/>
-                    <span class="error"></span>
+                     <span asp-validation-for="Slug" class="text-danger"></span>
                 </div>
             </div>
         </div>
@@ -60,18 +60,21 @@
             <div class="form-group col-md-12">
                 <label asp-for="Keyword"> Keyword </label>
                 <input asp-for="Keyword" type="text" class="form-control" />
-                <span class="error"></span>
+                <span asp-validation-for="Keyword" class="text-danger"></span>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-12">
                 <label asp-for="MetaDescription"> Meta Description </label>
                 <textarea asp-for="MetaDescription" type="text" class="form-control" rows="3"></textarea>
-                <span class="error"></span>
+                 <span asp-validation-for="MetaDescription" class="text-danger"></span>
             </div>
         </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal"> Close </button>
-        <button id="submitModal" type="submit" class="btn btn-info waves-effect waves-light"> Create </button>
+        <button id="submitModal" type="submit" class="btn btn-inverse waves-effect waves-light">
+            <i class="fa fa-save"></i>
+            Create
+        </button>
     </div>
 </form>

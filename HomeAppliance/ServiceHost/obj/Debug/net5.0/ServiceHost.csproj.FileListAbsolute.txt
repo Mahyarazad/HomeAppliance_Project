@@ -90,3 +90,6 @@ C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\S
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\ServiceHost.pdb
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\ServiceHost.genruntimeconfig.cache
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Shop\ProductCategories\Edit.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Shop\Product\Create.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Shop\Product\Edit.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Shop\Product\Index.cshtml.g.cs

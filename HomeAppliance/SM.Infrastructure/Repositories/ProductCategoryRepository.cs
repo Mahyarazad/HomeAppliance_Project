@@ -34,6 +34,15 @@ namespace SM.Infrastructure.Repositories
                 }).FirstOrDefault(x => x.Id == id);
         }
 
+        public List<ProductCategoryViewModel> GetList()
+        {
+            return _mbContext.ProductCategories.Select(x => new ProductCategoryViewModel
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToList();
+        }
+
         public ProductCategory Edit(int Id)
         {
             return _mbContext.ProductCategories.FirstOrDefault(x => x.Id == Id);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using _0_Framework.Application;
 using ShopManagement.Domain;
 using SM.Application.Contracts;
@@ -34,7 +35,7 @@ namespace SM.Application
         public OperationResult Edit(EditProductCategory command)
         {
             var operation = new OperationResult();
-            var productCategory = _productCategoryRepository.Edit(command.Id);
+            var productCategory = _productCategoryRepository.Get(command.Id);
             if (productCategory == null)
                 return operation.Failed("Sorry, no such record exists in database, please try again.");
             if (_productCategoryRepository.Exist(x => x.Name == command.Name && x.Id != command.Id))
@@ -52,6 +53,11 @@ namespace SM.Application
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {
             return _productCategoryRepository.Search(searchModel);
+        }
+
+        public List<ProductCategoryViewModel> GetList()
+        {
+            return _productCategoryRepository.GetList();
         }
 
         public EditProductCategory GetDetails(int Id)

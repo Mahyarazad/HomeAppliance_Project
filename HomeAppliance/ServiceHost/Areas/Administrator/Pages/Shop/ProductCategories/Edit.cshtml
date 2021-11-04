@@ -3,7 +3,7 @@
 }
 
 <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal"> x </button>
+    <button type="button" class="close" data-dismiss="modal"> <i class="fa fa-times-circle"></i> </button>
     <h4> Edit @Model.Name </h4>
 </div>
 
@@ -73,6 +73,9 @@
     <input type="hidden" asp-for="Id" value="@Model.Id"/>
     <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal"> Close </button>
-        <button id="submitModal" type="submit" class="btn btn-info waves-effect waves-light"> Save Changes </button>
+        <button id="submitModal" type="submit" class="btn btn-inverse waves-effect waves-light">
+            <i class="fa fa-save"></i>
+            Save Changes
+        </button>
     </div>
 </form>

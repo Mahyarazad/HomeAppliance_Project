@@ -8,6 +8,8 @@ namespace SM.Application.Contracts
         OperationResult Create(CreateProductCategory command);
         OperationResult Edit(EditProductCategory command);
         List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel);
+        List<ProductCategoryViewModel> GetList();
         EditProductCategory GetDetails(int Id);
+
     }
 }

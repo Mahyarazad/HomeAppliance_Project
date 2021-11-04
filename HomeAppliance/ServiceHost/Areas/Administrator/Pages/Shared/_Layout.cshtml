@@ -227,7 +227,7 @@ href="~/AdminTheme/assets~/AdminTheme/assets
                                     <a asp-area="Administrator" asp-page="/Shop/ProductCategories/Index">Product Category</a>
                                 </li>
                                 <li>
-                                    <a href="~/AdminTheme/assetsemail-compose.html">Products</a>
+                                    <a asp-area="Administrator" asp-page="/Shop/Product/Index">Product</a>
                                 </li>
                             </ul>
                         </li>
@@ -381,9 +381,12 @@ href="~/AdminTheme/assets~/AdminTheme/assets
     <!-- <script> -->
     <!-- var resizefunc = []; -->
     <!-- </script> -->
-
     <!-- jQuery  -->
-    <script src="~/AdminTheme/assets/js/jquery.min.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/AdminTheme/assets/datatables/jquery.dataTables.js"></script>
+    <script src="~/AdminTheme/assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/AdminTheme/assets/datatables/datatables.js"></script>
     <script src="~/AdminTheme/assets/js/bootstrap.min.js"></script>
     <script src="~/AdminTheme/assets/js/waves.js"></script>
     <script src="~/AdminTheme/assets/js/wow.min.js"></script>
@@ -423,10 +426,12 @@ href="~/AdminTheme/assets~/AdminTheme/assets
     <!-- Todo -->
     <script src="~/AdminTheme/assets/js/jquery.todo.js"></script>
 
-<!--Data Table-->
-    <script src="~/AdminTheme/assets/datatables/dataTables.bootstrap.js"></script>
-    <script src="~/AdminTheme/assets/datatables/jquery.dataTables.min.js"></script>
+    <!--Data Table-->
     <script src="~/js/sweetalert2.all.min.js"></script>
+
+    <!--Validation-->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <!-- <script type="text/javascript"> -->
     <!-- /* ============================================== -->
     <!-- Counter Up -->

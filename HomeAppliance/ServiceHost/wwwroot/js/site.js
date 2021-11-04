@@ -3,6 +3,10 @@ function getHtml(val) {
     $.get(val,
         function (htmlPage) {
             $("#ModalConetnt").html(htmlPage);
+            // We need to parse the ajax form
+            const form = $("form");
+            const newform = form[form.length - 1];
+            $.validator.unobtrusive.parse(newform);
         });
 }
 
@@ -14,7 +18,15 @@ function showModal() {
         });
 }
 
+function hideModal() {
+    $("#MainModal").modal("hide");
+    $("#MainModal").on("hidden.bs.modal",
+        function () {
+            window.location.hash = "##";
+        });
+}
 
+//We listen to any hashChange to open the modal
 $(window).on('hashchange', function () {
     var url = window.location.hash;
     if (url === "##") {
@@ -26,9 +38,51 @@ $(window).on('hashchange', function () {
     }
 });
 
+function handleAjaxGet(formData, url, action, data) {
+    $.get(url,
+        data,
+        function (data) {
+            CallBackHandler(data, action, formData);
+        });
+}
 
+function handleAjaxPost(formData, url, action) {
+    $.ajax({
+        url: url,
+        type: "post",
+        data: formData,
+        enctype: "multipart/form-data",
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            // Notify the user about the proccess detail
+            hideModal();
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            setInterval(function () {
+                CallBackHandler(data, action, formData);;
+            }, 1500);
+        },
+        error: function (data) {
+            // Notify the user about the proccess detail
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong Please call the admin!',
+                footer: '<a href="">Why do I have this issue?</a>'
+            })
+        }
+    });
+}
 
 $(document).on("submit",
+    //We listen to submit on any form that has data-ajax attribute to handel it
     'form[data-ajax="true"]',
     function (e) {
         e.preventDefault();
@@ -39,57 +93,24 @@ $(document).on("submit",
 
         if (method === "get") {
             const data = form.serializeArray();
-            $.get(url,
-                data,
-                function (data) {
-                    CallBackHandler(data, action, form);
-                });
+            handleAjaxGet(formData, url, action, data)
         } else {
             var formData = new FormData(this);
-            $.ajax({
-                url: url,
-                type: "post",
-                data: formData,
-                enctype: "multipart/form-data",
-                dataType: "json",
-                processData: false,
-                contentType: false,
-                success: function (data) {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Your work has been saved',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    setInterval(function () {
-                        CallBackHandler(data, action, form);;
-                    }, 1500);
-
-                },
-                error: function (data) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
-                        footer: '<a href="">Why do I have this issue?</a>'
-                    })
-                    //                    alert("خطایی رخ داده است. لطفا با مدیر سیستم تماس بگیرید.");
-                }
-            });
+            handleAjaxPost(formData, url, action);
         }
         return false;
     });
 
 
 function CallBackHandler(data, action, form) {
+    // The message comes directly from Operation Result class
+    // in our Helper 0_Framework class library
     switch (action) {
         case "Message":
             alert(data.Message);
             break;
         case "Refresh":
             if (data.isSucceeded) {
-
                 window.location.reload();
             } else {
                 alert(data.message);
@@ -141,7 +162,7 @@ function checkSlugDuplication(url, dist) {
         url: url + '/' + id,
         success: function (data) {
             if (data) {
-                sendNotification('error', 'top right', "خطا", "اسلاگ نمی تواند تکراری باشد");
+                sendNotification('error', 'top right', "خطا", "Slug cannot be duplicated!");
             }
         }
     });
@@ -166,7 +187,7 @@ $(document).on("click",
             url = url + "/" + fieldValue;
         }
         if (button.data("request-confirm") == true) {
-            if (confirm("آیا از انجام این عملیات اطمینان دارید؟")) {
+            if (confirm("Are you sure?")) {
                 handleAjaxCall(method, url, data);
             }
         } else {
@@ -189,7 +210,6 @@ function handleAjaxCall(method, url, data) {
                     text: 'Something went wrong!',
                     footer: '<a href="">Why do I have this issue?</a>'
                 })
-                alert("خطایی رخ داده است. لطفا با مدیر سیستم تماس بگیرید.");
             });
     }
 }

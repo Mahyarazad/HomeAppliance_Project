@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Domain;
+using SM.Domain.ProductAgg;
 using SM.Infrastructure.Mapping;
 using static Microsoft.EntityFrameworkCore.DbContext;
 
@@ -9,6 +10,7 @@ namespace SM.Infrastructure
     public class SMContext : DbContext
     {
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Product> Products { get; set; }
         public SMContext(DbContextOptions options) : base(options)
         {
         }

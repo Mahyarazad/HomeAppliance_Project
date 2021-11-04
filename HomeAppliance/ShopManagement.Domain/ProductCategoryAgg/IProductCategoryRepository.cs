@@ -8,8 +8,9 @@ namespace ShopManagement.Domain
 {
     public interface IProductCategoryRepository : IRepositoty<int, ProductCategory>
     {
-        ProductCategory Edit(int Id);
         List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel);
         EditProductCategory GetDetail(int id);
+        List<ProductCategoryViewModel> GetList();
+
     }
 }
