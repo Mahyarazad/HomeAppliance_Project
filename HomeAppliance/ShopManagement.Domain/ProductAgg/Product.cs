@@ -1,10 +1,13 @@
-﻿using _0_Framework;
+﻿using System.Collections.Generic;
+using _0_Framework;
 using ShopManagement.Domain;
+using SM.Domain.ProductPictureAgg;
 
 namespace SM.Domain.ProductAgg
 {
     public class Product : BaseEntity
     {
+
         public Product(string name, string code, double unitPrice,
             string shortDescription, string description, string picture, string pictureAlt,
             string pictureTitle, int categoryId, string slug, string metaDescription, string keyword)
@@ -59,6 +62,7 @@ namespace SM.Domain.ProductAgg
         public string MetaDescription { get; private set; }
         public string Keyword { get; private set; }
         public ProductCategory Category { get; private set; }
+        public List<ProductPicture> Pictures { get; private set; }
 
         public void ReplenishStock()
         {

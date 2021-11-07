@@ -11,6 +11,7 @@ namespace SM.Application.Contracts.Product
         EditProduct GetDetails(int Id);
         OperationResult ReplenishStock(int Id);
         OperationResult EmptyStock(int Id);
+        List<ProductViewModel> GetList();
 
     }
 }

@@ -72,9 +72,9 @@ function handleAjaxPost(formData, url, action) {
         error: function (data) {
             // Notify the user about the proccess detail
             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong Please call the admin!',
+                icon: `error`,
+                title: `${data.statusText} ${data.status}`,
+                text: `${data.responseText}`,
                 footer: '<a href="">Why do I have this issue?</a>'
             })
         }

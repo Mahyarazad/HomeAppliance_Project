@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _0_Framework.Application;
 using _0_Framework;
 using SM.Application.Contracts.Product;
@@ -75,6 +76,16 @@ namespace SM.Application
             product.EmptyStock();
             _productRepository.SaveChanges();
             return operation.Succeeded();
+        }
+
+        public List<ProductViewModel> GetList()
+        {
+            var query = _productRepository.GetList().Select(x => new ProductViewModel
+            {
+                Name = x.Name,
+                Id = x.Id,
+            });
+            return query.ToList();
         }
     }
 }

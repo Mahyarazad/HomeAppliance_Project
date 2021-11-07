@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0_Framework", "0_Framework\0_Framework.csproj", "{634C368B-5A50-404B-881D-ADFDDCFA3E00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0_Framework", "0_Framework\0_Framework.csproj", "{634C368B-5A50-404B-881D-ADFDDCFA3E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Domain", "ShopManagement.Domain\SM.Domain.csproj", "{309C05B9-FD35-42F2-8B00-58965519D579}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Domain", "ShopManagement.Domain\SM.Domain.csproj", "{309C05B9-FD35-42F2-8B00-58965519D579}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shop.Management", "Shop.Management", "{4247E0A4-E0FF-4499-82CD-95DD9167FEE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Application.Contracts", "SM.Application.Contracts\SM.Application.Contracts.csproj", "{82EA281E-D2B3-490C-A169-A97B7FBD8CBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Application.Contracts", "SM.Application.Contracts\SM.Application.Contracts.csproj", "{82EA281E-D2B3-490C-A169-A97B7FBD8CBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Application", "SM.Application\SM.Application.csproj", "{6F3C6172-F7BA-461D-A656-48E6B47DD3ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Application", "SM.Application\SM.Application.csproj", "{6F3C6172-F7BA-461D-A656-48E6B47DD3ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Infrastructure", "SM.Infrastructure\SM.Infrastructure.csproj", "{4A8768E9-3214-4AB5-9E3D-E6272F1CC284}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Infrastructure", "SM.Infrastructure\SM.Infrastructure.csproj", "{4A8768E9-3214-4AB5-9E3D-E6272F1CC284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Infrastructure.Core", "SM.Infrastructure.Core\SM.Infrastructure.Core.csproj", "{5293A695-FB51-4A51-A2F4-3AC16900A717}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Infrastructure.Core", "SM.Infrastructure.Core\SM.Infrastructure.Core.csproj", "{5293A695-FB51-4A51-A2F4-3AC16900A717}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{80705386-F5F8-49B3-B2F3-31D08BD017FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{80705386-F5F8-49B3-B2F3-31D08BD017FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
