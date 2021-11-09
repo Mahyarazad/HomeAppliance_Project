@@ -19,7 +19,7 @@ namespace SM.Application
         {
             var operation = new OperationResult();
             var slider = new Slider(command.Picture, command.PictureAlt, command.PictureTitle,
-                command.Title, command.Heading, command.Text, command.BtnText);
+                command.Title, command.Heading, command.Text, command.BtnText, command.Link);
             _sliderRepository.Create(slider);
             _sliderRepository.SaveChanges();
             return operation.Succeeded();
@@ -34,7 +34,7 @@ namespace SM.Application
             if (slider == null)
                 return operation.Failed(ApplicationMessage.RecordNotFound);
             slider.Edit(command.Picture, command.PictureAlt, command.PictureTitle,
-                command.Title, command.Heading, command.Text, command.BtnText);
+                command.Title, command.Heading, command.Text, command.BtnText, command.Link);
             _sliderRepository.SaveChanges();
             return operation.Succeeded();
         }

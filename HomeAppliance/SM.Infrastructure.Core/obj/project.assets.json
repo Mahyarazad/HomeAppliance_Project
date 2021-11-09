@@ -1495,6 +1495,19 @@
           "bin/placeholder/0_Framework.dll": {}
         }
       },
+      "Query/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "SM.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Query.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Query.dll": {}
+        }
+      },
       "SM.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5768,6 +5781,11 @@
       "path": "../0_Framework/0_Framework.csproj",
       "msbuildProject": "../0_Framework/0_Framework.csproj"
     },
+    "Query/1.0.0": {
+      "type": "project",
+      "path": "../Query/Query.csproj",
+      "msbuildProject": "../Query/Query.csproj"
+    },
     "SM.Application/1.0.0": {
       "type": "project",
       "path": "../SM.Application/SM.Application.csproj",
@@ -5792,6 +5810,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.Extensions.DependencyInjection >= 5.0.2",
+      "Query >= 1.0.0",
       "SM.Application >= 1.0.0",
       "SM.Infrastructure >= 1.0.0"
     ]
@@ -5825,6 +5844,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Query\\Query.csproj": {
+              "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Query\\Query.csproj"
+            },
             "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\SM.Application\\SM.Application.csproj": {
               "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\SM.Application\\SM.Application.csproj"
             },

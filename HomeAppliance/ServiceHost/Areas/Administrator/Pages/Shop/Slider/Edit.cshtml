@@ -21,6 +21,15 @@
     </div>
     <div class="row">
         <div clas="form-group col-md-12">
+            <div class="col-md-12 from-group">
+                <label asp-for="Link">  </label>
+                <input asp-for="Link" type="text" class="form-control" />
+                <span asp-validation-for="Link" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div clas="form-group col-md-12">
             <div class="col-md-6 from-group">
                 <label asp-for="PictureTitle"> </label>
                 <input asp-for="PictureTitle" type="text" class="form-control" />

@@ -25,6 +25,7 @@ namespace SM.Infrastructure.Repositories
                 Picture = x.Picture,
                 Id = x.Id,
                 BtnText = x.BtnText,
+                Link = x.Link,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 Text = x.Text

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Query\Query.csproj" />
     <ProjectReference Include="..\SM.Application.Contracts\SM.Application.Contracts.csproj" />
     <ProjectReference Include="..\SM.Infrastructure.Core\SM.Infrastructure.Core.csproj" />
   </ItemGroup>

@@ -9,6 +9,7 @@
       "SM.Infrastructure.Core/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "5.0.2",
+          "Query": "1.0.0",
           "SM.Application": "1.0.0",
           "SM.Infrastructure": "1.0.0"
         },
@@ -1049,6 +1050,14 @@
           "0_Framework.dll": {}
         }
       },
+      "Query/1.0.0": {
+        "dependencies": {
+          "SM.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "Query.dll": {}
+        }
+      },
       "SM.Application/1.0.0": {
         "dependencies": {
           "SM.Application.Contracts": "1.0.0",
@@ -1752,6 +1761,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "0_Framework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Query/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

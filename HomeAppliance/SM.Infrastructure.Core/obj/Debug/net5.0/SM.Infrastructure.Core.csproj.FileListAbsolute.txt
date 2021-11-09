@@ -21,3 +21,5 @@ C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\S
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\SM.Infrastructure.Core\obj\Debug\net5.0\SM.Infrastructure.Core.dll
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\SM.Infrastructure.Core\obj\Debug\net5.0\ref\SM.Infrastructure.Core.dll
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\SM.Infrastructure.Core\obj\Debug\net5.0\SM.Infrastructure.Core.pdb
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\SM.Infrastructure.Core\bin\Debug\net5.0\Query.dll
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\SM.Infrastructure.Core\bin\Debug\net5.0\Query.pdb

@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Query.Contracts;
+using Query.Query;
 using ShopManagement.Domain;
 using SM.Application;
 using SM.Application.Contracts;
@@ -28,6 +30,8 @@ namespace SM.Infrastructure.Core
 
             services.AddTransient<ISliderRepository, SliderRepository>();
             services.AddTransient<ISliderApplication, SliderApplication>();
+
+            services.AddTransient<ISliderQuery, SliderQuery>();
 
             services.AddDbContext<SMContext>(x => x.UseSqlServer(connectionString));
         }

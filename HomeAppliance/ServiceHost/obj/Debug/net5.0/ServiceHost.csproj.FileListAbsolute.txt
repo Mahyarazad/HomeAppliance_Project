@@ -100,3 +100,6 @@ C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\S
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Shop\Slider\Edit.cshtml.g.cs
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Shop\Slider\Index.cshtml.g.cs
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Shared\_Menu.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\bin\Debug\net5.0\Query.dll
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\bin\Debug\net5.0\Query.pdb
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Slider\Default.cshtml.g.cs
