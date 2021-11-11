@@ -5,13 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bootstrap.v3.Datetimepicker" Version="4.17.49" />
+    <PackageReference Include="Bootstrap.v3.Datetimepicker.CSS" Version="4.17.49" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Moment.js" Version="2.29.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DM.Infrastructure.Core\DM.Infrastructure.Core.csproj" />
     <ProjectReference Include="..\Query\Query.csproj" />
     <ProjectReference Include="..\SM.Application.Contracts\SM.Application.Contracts.csproj" />
     <ProjectReference Include="..\SM.Infrastructure.Core\SM.Infrastructure.Core.csproj" />

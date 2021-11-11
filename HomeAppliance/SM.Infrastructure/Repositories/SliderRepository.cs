@@ -33,7 +33,7 @@ namespace SM.Infrastructure.Repositories
             return query;
         }
 
-        public List<SliderViewModel> GetList()
+        public List<SliderViewModel> GetViewList()
         {
             return _smContext.Slider.Select(x => new SliderViewModel
             {

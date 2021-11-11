@@ -66,14 +66,15 @@ namespace SM.Application
             return _sliderRepository.GetDetails(Id);
         }
 
-        public List<SliderViewModel> CustomGetList()
-        {
-            return _sliderRepository.GetList();
-        }
-
         public List<SliderViewModel> GetList()
         {
-            return _sliderRepository.GetList();
+            return _sliderRepository.GetViewList();
+        }
+
+
+        public List<SliderViewModel> GetViewList()
+        {
+            return _sliderRepository.GetViewList();
         }
     }
 }

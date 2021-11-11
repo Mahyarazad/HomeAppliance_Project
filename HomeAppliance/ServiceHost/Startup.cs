@@ -1,3 +1,4 @@
+using DM.Infrastructure.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,7 @@ namespace ServiceHost
         {
             var connectionString = Configuration.GetConnectionString("SMContext");
             ShopManagementConfiguration.Config(services, connectionString);
+            DiscountManagementConfiguration.Config(services, connectionString);
             services.AddRazorPages();
         }
 

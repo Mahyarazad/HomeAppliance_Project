@@ -57,7 +57,7 @@ namespace SM.Application
 
         public List<ProductCategoryViewModel> GetList()
         {
-            return _productCategoryRepository.GetList();
+            return _productCategoryRepository.GetCustomList();
         }
 
         public EditProductCategory GetDetails(int Id)

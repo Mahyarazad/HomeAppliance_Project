@@ -7,6 +7,6 @@ namespace SM.Domain.SliderAgg
     public interface ISliderRepository : IRepositoty<int, Slider>
     {
         EditSlider GetDetails(int Id);
-        List<SliderViewModel> GetList();
+        List<SliderViewModel> GetViewList();
     }
 }

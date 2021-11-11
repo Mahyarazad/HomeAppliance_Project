@@ -4,18 +4,56 @@ function getHtml(val) {
         function (htmlPage) {
             $("#ModalConetnt").html(htmlPage);
             // We need to parse the ajax form
+
             const form = $("form");
             const newform = form[form.length - 1];
             $.validator.unobtrusive.parse(newform);
         });
 }
 
+function getModelFromPage(val) {
+    var dateList, startDate, endDate;
+    $.get(val,
+        function (htmlPage) {
+            var page = htmlPage;
+            dateList = page.match(/[*0-9]{2}\W[*0-9]{2}\W[*0-9]{4}/g);
+            startDate = new Date(dateList[1]);
+            endDate = new Date(dateList[2]);
+        });
+}
+
 function showModal() {
+
     $("#MainModal").modal("show");
     $("#MainModal").on("shown.bs.modal",
         function () {
             window.location.hash = "##";
+            $('#DatePicker_StartTime').fdatepicker({
+                format: 'mm-dd-yyyy',
+                disableDblClickSelection: true,
+                closeIcon: '✖',
+                closeButton: true
+            });
+            $('#DatePicker_EndTime').fdatepicker({
+                format: 'mm-dd-yyyy',
+                disableDblClickSelection: true,
+                closeIcon: '✖',
+                closeButton: true
+            });
+            $('#DatePicker__Edit_StartTime').fdatepicker({
+                format: 'mm-dd-yyyy',
+                disableDblClickSelection: true,
+                closeIcon: '✖',
+                closeButton: true
+            });
+            $('#DatePicker__Edit_EndTime').fdatepicker({
+                format: 'mm-dd-yyyy',
+                disableDblClickSelection: true,
+                closeIcon: '✖',
+                closeButton: true
+            });
         });
+
 }
 
 function hideModal() {
@@ -27,16 +65,17 @@ function hideModal() {
 }
 
 //We listen to any hashChange to open the modal
-$(window).on('hashchange', function () {
-    var url = window.location.hash;
-    if (url === "##") {
-        return
-    } else {
-        url = url.split("showmodal=")[1];
-        getHtml(url);
-        showModal();
-    }
-});
+$(window).on('hashchange',
+    function () {
+        var url = window.location.hash;
+        if (url === "##") {
+            return
+        } else {
+            url = url.split("showmodal=")[1];
+            getHtml(url);
+            showModal();
+        }
+    });
 
 function handleAjaxGet(formData, url, action, data) {
     $.get(url,
@@ -67,7 +106,8 @@ function handleAjaxPost(formData, url, action) {
             })
             setInterval(function () {
                 CallBackHandler(data, action, formData);;
-            }, 1500);
+            },
+                1500);
         },
         error: function (data) {
             // Notify the user about the proccess detail
@@ -101,6 +141,9 @@ $(document).on("submit",
         return false;
     });
 
+$("div").click(function () {
+    $('[data-toggle="datepicker"]').hide();
+});
 
 function CallBackHandler(data, action, form) {
     // The message comes directly from Operation Result class

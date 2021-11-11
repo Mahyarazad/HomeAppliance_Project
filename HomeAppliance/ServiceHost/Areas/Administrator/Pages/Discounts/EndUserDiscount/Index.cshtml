@@ -1,0 +1,138 @@
+﻿@page
+@using _0_Framework.Application
+@model ServiceHost.Areas.Administrator.Pages.Discounts.EndUser.IndexModel
+@{
+
+}
+
+
+<div class='row'>
+    <div class="col-sm-12">
+        <h1 class="page-title text-dark"> @ViewData["title"] </h1>
+        <p class="pull-right">
+            <a id="showModal" href="#showmodal=@Url.Page("./Index", "Create")"
+               class="btn btn-success wave-effect wave-light">
+                <i class="fa fa-plus-circle"></i>
+                Define a new End-user discount
+            </a>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3> Search </h3>
+            </div>
+            <div class="panel-body">
+                <form method="get" role="form" class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.ProductId"></label>
+                        <select class="form-control" asp-for="SearchModel.ProductId" asp-items="@Model.ProductList">
+                            <option value="0" disabled selected>
+                                Select a product
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.StartTime"></label>
+                        <input class="from-control" placeholder="Product Code"
+                               asp-for="SearchModel.EndTime" />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary waves-effect waves-light">Search</button>
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-purple waves-effect waves-light" asp-page="./Index"> Watch All </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-heading">
+    <h3 class="panel-title">Products</h3>
+</div>
+<div class="panel-body">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table id="myTable" class="display table-condensed table-bordered table-dark table-striped text-center col-md-12">
+                <thead style="white-space: nowrap;">
+                    <tr>
+                        <th>#</th>
+                        <th>Occasion</th>
+                        <th>Register Product</th>
+                        <th>Creation Time</th>
+                        <th>Discount Rate</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Modify</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Discounts)
+                    {
+                    <tr>
+                        <td> @item.Id</td>
+                        <td> @item.Occasion</td>
+                        <td> @item.ProductName</td>
+                        <td> @item.CreationTime</td>
+                        <td> @item.DiscountRate</td>
+                        <td> @item.StartTimeString</td>
+                        <td> @item.EndTimeString</td>
+                        <td class="col-sm-1">
+                            <a id="showModal" href="#showmodal=@Url.Page("./Index", "Edit", new {Id = item.Id})"
+                               class="btn btn-warning waves-effect waves-light col-lg-12">
+                                <i class="fa fa-edit"></i> Modify
+                            </a>
+                        </td>
+                    </tr>
+                     }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts
+{
+
+    @if (TempData["Message"] != null)
+    {
+        if (TempData["Message"].ToString() == "Operation has been successfully proceeded.")
+        {
+            <script>
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+            </script>
+        }
+        else
+        {
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: @TempData["Message"],
+                    footer: '<a href="">Why do I have this issue?</a>'
+                })
+            </script>
+        }
+
+    }
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                language: { search: 'Search:', searchPlaceholder: "Search ..." }
+            });
+            $('input[type="search"]').css('border-width', '1px');
+        })
+    </script>
+}

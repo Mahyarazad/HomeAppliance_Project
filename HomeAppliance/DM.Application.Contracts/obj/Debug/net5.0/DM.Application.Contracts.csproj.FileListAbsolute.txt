@@ -1,0 +1,17 @@
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\bin\Debug\net5.0\DM.Application.Contracts.deps.json
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\bin\Debug\net5.0\DM.Application.Contracts.dll
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\bin\Debug\net5.0\ref\DM.Application.Contracts.dll
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\bin\Debug\net5.0\DM.Application.Contracts.pdb
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\bin\Debug\net5.0\0_Framework.dll
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\bin\Debug\net5.0\0_Framework.pdb
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\DM.Application.Contracts.csprojAssemblyReference.cache
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\DM.Application.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\DM.Application.Contracts.AssemblyInfoInputs.cache
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\DM.Application.Contracts.AssemblyInfo.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\DM.Application.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\DM.Application.Contracts.csproj.CopyComplete
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\DM.Application.Contracts.dll
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\ref\DM.Application.Contracts.dll
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\obj\Debug\net5.0\DM.Application.Contracts.pdb
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\bin\Debug\net5.0\SM.Application.Contracts.dll
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\DM.Application.Contracts\bin\Debug\net5.0\SM.Application.Contracts.pdb

@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "bootstrap/3.4.1": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[1.9.1, 4.0.0)"
+        }
+      },
+      "bootstrap.less/3.4.1": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[1.9.1, 4.0.0)"
+        }
+      },
+      "Bootstrap.v3.Datetimepicker/4.17.49": {
+        "type": "package",
+        "dependencies": {
+          "Moment.js": "2.9.0",
+          "bootstrap.Less": "3.4.1"
+        }
+      },
+      "Bootstrap.v3.Datetimepicker.CSS/4.17.49": {
+        "type": "package",
+        "dependencies": {
+          "Moment.js": "2.9.0",
+          "bootstrap": "3.4.1"
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -10,6 +36,9 @@
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {}
         }
+      },
+      "jQuery/1.9.1": {
+        "type": "package"
       },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
@@ -88,11 +117,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/5.0.11": {
+      "Microsoft.EntityFrameworkCore/5.0.12": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.11",
-          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.11",
+          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.12",
+          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.12",
           "Microsoft.Extensions.Caching.Memory": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.2",
           "Microsoft.Extensions.Logging": "5.0.0",
@@ -107,7 +136,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/5.0.11": {
+      "Microsoft.EntityFrameworkCore.Abstractions/5.0.12": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -116,7 +145,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/5.0.11": {
+      "Microsoft.EntityFrameworkCore.Analyzers/5.0.12": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -142,10 +171,10 @@
           "build/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/5.0.11": {
+      "Microsoft.EntityFrameworkCore.Relational/5.0.12": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.11",
+          "Microsoft.EntityFrameworkCore": "5.0.12",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
         },
         "compile": {
@@ -155,11 +184,11 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/5.0.11": {
+      "Microsoft.EntityFrameworkCore.SqlServer/5.0.12": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.11"
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.12"
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
@@ -416,6 +445,9 @@
             "rid": "win"
           }
         }
+      },
+      "Moment.js/2.29.1": {
+        "type": "package"
       },
       "Newtonsoft.Json/10.0.1": {
         "type": "package",
@@ -1521,6 +1553,80 @@
           "bin/placeholder/0_Framework.dll": {}
         }
       },
+      "DM.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DM.Application.Contracts": "1.0.0",
+          "DM.Domian": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Application.dll": {}
+        }
+      },
+      "DM.Application.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "SM.Application.Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Application.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Application.Contracts.dll": {}
+        }
+      },
+      "DM.Domian/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "DM.Application.Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Domian.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Domian.dll": {}
+        }
+      },
+      "DM.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DM.Domian": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.12",
+          "SM.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Infrastructure.dll": {}
+        }
+      },
+      "DM.Infrastructure.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DM.Application": "1.0.0",
+          "DM.Domian": "1.0.0",
+          "DM.Infrastructure": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DM.Infrastructure.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DM.Infrastructure.Core.dll": {}
+        }
+      },
       "Query/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1609,6 +1715,246 @@
     }
   },
   "libraries": {
+    "bootstrap/3.4.1": {
+      "sha512": "rnqnZV4sFAgB240hnLRwqoUaV2DfzrYsc6PbsYzRTObrrucLZyvb+8F1yTVT1sDbXMi/NXlyRmiL6wF+d4ZJMA==",
+      "type": "package",
+      "path": "bootstrap/3.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "bootstrap.3.4.1.nupkg.sha512",
+        "bootstrap.nuspec",
+        "content/Content/bootstrap-theme.css",
+        "content/Content/bootstrap-theme.css.map",
+        "content/Content/bootstrap-theme.min.css",
+        "content/Content/bootstrap-theme.min.css.map",
+        "content/Content/bootstrap.css",
+        "content/Content/bootstrap.css.map",
+        "content/Content/bootstrap.min.css",
+        "content/Content/bootstrap.min.css.map",
+        "content/Scripts/bootstrap.js",
+        "content/Scripts/bootstrap.min.js",
+        "content/fonts/glyphicons-halflings-regular.eot",
+        "content/fonts/glyphicons-halflings-regular.svg",
+        "content/fonts/glyphicons-halflings-regular.ttf",
+        "content/fonts/glyphicons-halflings-regular.woff",
+        "content/fonts/glyphicons-halflings-regular.woff2",
+        "contentFiles/Content/bootstrap-theme.css",
+        "contentFiles/Content/bootstrap-theme.css.map",
+        "contentFiles/Content/bootstrap-theme.min.css",
+        "contentFiles/Content/bootstrap-theme.min.css.map",
+        "contentFiles/Content/bootstrap.css",
+        "contentFiles/Content/bootstrap.css.map",
+        "contentFiles/Content/bootstrap.min.css",
+        "contentFiles/Content/bootstrap.min.css.map",
+        "contentFiles/Scripts/bootstrap.js",
+        "contentFiles/Scripts/bootstrap.min.js",
+        "contentFiles/fonts/glyphicons-halflings-regular.eot",
+        "contentFiles/fonts/glyphicons-halflings-regular.svg",
+        "contentFiles/fonts/glyphicons-halflings-regular.ttf",
+        "contentFiles/fonts/glyphicons-halflings-regular.woff",
+        "contentFiles/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    },
+    "bootstrap.less/3.4.1": {
+      "sha512": "G/laxBbHVHq4G7LCbfRLISrJf8wjaMsx7qpEDzAorUr+jbl66xP5Pd7IPmqAIi5u8six7/ETv9M4nU7amvbN7g==",
+      "type": "package",
+      "path": "bootstrap.less/3.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "bootstrap.less.3.4.1.nupkg.sha512",
+        "bootstrap.less.nuspec",
+        "content/Content/bootstrap/alerts.less",
+        "content/Content/bootstrap/badges.less",
+        "content/Content/bootstrap/bootstrap.less",
+        "content/Content/bootstrap/breadcrumbs.less",
+        "content/Content/bootstrap/button-groups.less",
+        "content/Content/bootstrap/buttons.less",
+        "content/Content/bootstrap/carousel.less",
+        "content/Content/bootstrap/close.less",
+        "content/Content/bootstrap/code.less",
+        "content/Content/bootstrap/component-animations.less",
+        "content/Content/bootstrap/dropdowns.less",
+        "content/Content/bootstrap/forms.less",
+        "content/Content/bootstrap/glyphicons.less",
+        "content/Content/bootstrap/grid.less",
+        "content/Content/bootstrap/input-groups.less",
+        "content/Content/bootstrap/jumbotron.less",
+        "content/Content/bootstrap/labels.less",
+        "content/Content/bootstrap/list-group.less",
+        "content/Content/bootstrap/media.less",
+        "content/Content/bootstrap/mixins.less",
+        "content/Content/bootstrap/mixins/alerts.less",
+        "content/Content/bootstrap/mixins/background-variant.less",
+        "content/Content/bootstrap/mixins/border-radius.less",
+        "content/Content/bootstrap/mixins/buttons.less",
+        "content/Content/bootstrap/mixins/center-block.less",
+        "content/Content/bootstrap/mixins/clearfix.less",
+        "content/Content/bootstrap/mixins/forms.less",
+        "content/Content/bootstrap/mixins/gradients.less",
+        "content/Content/bootstrap/mixins/grid-framework.less",
+        "content/Content/bootstrap/mixins/grid.less",
+        "content/Content/bootstrap/mixins/hide-text.less",
+        "content/Content/bootstrap/mixins/image.less",
+        "content/Content/bootstrap/mixins/labels.less",
+        "content/Content/bootstrap/mixins/list-group.less",
+        "content/Content/bootstrap/mixins/nav-divider.less",
+        "content/Content/bootstrap/mixins/nav-vertical-align.less",
+        "content/Content/bootstrap/mixins/opacity.less",
+        "content/Content/bootstrap/mixins/pagination.less",
+        "content/Content/bootstrap/mixins/panels.less",
+        "content/Content/bootstrap/mixins/progress-bar.less",
+        "content/Content/bootstrap/mixins/reset-filter.less",
+        "content/Content/bootstrap/mixins/reset-text.less",
+        "content/Content/bootstrap/mixins/resize.less",
+        "content/Content/bootstrap/mixins/responsive-visibility.less",
+        "content/Content/bootstrap/mixins/size.less",
+        "content/Content/bootstrap/mixins/tab-focus.less",
+        "content/Content/bootstrap/mixins/table-row.less",
+        "content/Content/bootstrap/mixins/text-emphasis.less",
+        "content/Content/bootstrap/mixins/text-overflow.less",
+        "content/Content/bootstrap/mixins/vendor-prefixes.less",
+        "content/Content/bootstrap/modals.less",
+        "content/Content/bootstrap/navbar.less",
+        "content/Content/bootstrap/navs.less",
+        "content/Content/bootstrap/normalize.less",
+        "content/Content/bootstrap/pager.less",
+        "content/Content/bootstrap/pagination.less",
+        "content/Content/bootstrap/panels.less",
+        "content/Content/bootstrap/popovers.less",
+        "content/Content/bootstrap/print.less",
+        "content/Content/bootstrap/progress-bars.less",
+        "content/Content/bootstrap/responsive-embed.less",
+        "content/Content/bootstrap/responsive-utilities.less",
+        "content/Content/bootstrap/scaffolding.less",
+        "content/Content/bootstrap/tables.less",
+        "content/Content/bootstrap/theme.less",
+        "content/Content/bootstrap/thumbnails.less",
+        "content/Content/bootstrap/tooltip.less",
+        "content/Content/bootstrap/type.less",
+        "content/Content/bootstrap/utilities.less",
+        "content/Content/bootstrap/variables.less",
+        "content/Content/bootstrap/wells.less",
+        "content/Content/fonts/glyphicons-halflings-regular.eot",
+        "content/Content/fonts/glyphicons-halflings-regular.svg",
+        "content/Content/fonts/glyphicons-halflings-regular.ttf",
+        "content/Content/fonts/glyphicons-halflings-regular.woff",
+        "content/Content/fonts/glyphicons-halflings-regular.woff2",
+        "content/Scripts/bootstrap.js",
+        "content/Scripts/bootstrap.min.js",
+        "contentFiles/Content/bootstrap/alerts.less",
+        "contentFiles/Content/bootstrap/badges.less",
+        "contentFiles/Content/bootstrap/bootstrap.less",
+        "contentFiles/Content/bootstrap/breadcrumbs.less",
+        "contentFiles/Content/bootstrap/button-groups.less",
+        "contentFiles/Content/bootstrap/buttons.less",
+        "contentFiles/Content/bootstrap/carousel.less",
+        "contentFiles/Content/bootstrap/close.less",
+        "contentFiles/Content/bootstrap/code.less",
+        "contentFiles/Content/bootstrap/component-animations.less",
+        "contentFiles/Content/bootstrap/dropdowns.less",
+        "contentFiles/Content/bootstrap/forms.less",
+        "contentFiles/Content/bootstrap/glyphicons.less",
+        "contentFiles/Content/bootstrap/grid.less",
+        "contentFiles/Content/bootstrap/input-groups.less",
+        "contentFiles/Content/bootstrap/jumbotron.less",
+        "contentFiles/Content/bootstrap/labels.less",
+        "contentFiles/Content/bootstrap/list-group.less",
+        "contentFiles/Content/bootstrap/media.less",
+        "contentFiles/Content/bootstrap/mixins.less",
+        "contentFiles/Content/bootstrap/mixins/alerts.less",
+        "contentFiles/Content/bootstrap/mixins/background-variant.less",
+        "contentFiles/Content/bootstrap/mixins/border-radius.less",
+        "contentFiles/Content/bootstrap/mixins/buttons.less",
+        "contentFiles/Content/bootstrap/mixins/center-block.less",
+        "contentFiles/Content/bootstrap/mixins/clearfix.less",
+        "contentFiles/Content/bootstrap/mixins/forms.less",
+        "contentFiles/Content/bootstrap/mixins/gradients.less",
+        "contentFiles/Content/bootstrap/mixins/grid-framework.less",
+        "contentFiles/Content/bootstrap/mixins/grid.less",
+        "contentFiles/Content/bootstrap/mixins/hide-text.less",
+        "contentFiles/Content/bootstrap/mixins/image.less",
+        "contentFiles/Content/bootstrap/mixins/labels.less",
+        "contentFiles/Content/bootstrap/mixins/list-group.less",
+        "contentFiles/Content/bootstrap/mixins/nav-divider.less",
+        "contentFiles/Content/bootstrap/mixins/nav-vertical-align.less",
+        "contentFiles/Content/bootstrap/mixins/opacity.less",
+        "contentFiles/Content/bootstrap/mixins/pagination.less",
+        "contentFiles/Content/bootstrap/mixins/panels.less",
+        "contentFiles/Content/bootstrap/mixins/progress-bar.less",
+        "contentFiles/Content/bootstrap/mixins/reset-filter.less",
+        "contentFiles/Content/bootstrap/mixins/reset-text.less",
+        "contentFiles/Content/bootstrap/mixins/resize.less",
+        "contentFiles/Content/bootstrap/mixins/responsive-visibility.less",
+        "contentFiles/Content/bootstrap/mixins/size.less",
+        "contentFiles/Content/bootstrap/mixins/tab-focus.less",
+        "contentFiles/Content/bootstrap/mixins/table-row.less",
+        "contentFiles/Content/bootstrap/mixins/text-emphasis.less",
+        "contentFiles/Content/bootstrap/mixins/text-overflow.less",
+        "contentFiles/Content/bootstrap/mixins/vendor-prefixes.less",
+        "contentFiles/Content/bootstrap/modals.less",
+        "contentFiles/Content/bootstrap/navbar.less",
+        "contentFiles/Content/bootstrap/navs.less",
+        "contentFiles/Content/bootstrap/normalize.less",
+        "contentFiles/Content/bootstrap/pager.less",
+        "contentFiles/Content/bootstrap/pagination.less",
+        "contentFiles/Content/bootstrap/panels.less",
+        "contentFiles/Content/bootstrap/popovers.less",
+        "contentFiles/Content/bootstrap/print.less",
+        "contentFiles/Content/bootstrap/progress-bars.less",
+        "contentFiles/Content/bootstrap/responsive-embed.less",
+        "contentFiles/Content/bootstrap/responsive-utilities.less",
+        "contentFiles/Content/bootstrap/scaffolding.less",
+        "contentFiles/Content/bootstrap/tables.less",
+        "contentFiles/Content/bootstrap/theme.less",
+        "contentFiles/Content/bootstrap/thumbnails.less",
+        "contentFiles/Content/bootstrap/tooltip.less",
+        "contentFiles/Content/bootstrap/type.less",
+        "contentFiles/Content/bootstrap/utilities.less",
+        "contentFiles/Content/bootstrap/variables.less",
+        "contentFiles/Content/bootstrap/wells.less",
+        "contentFiles/Content/fonts/glyphicons-halflings-regular.eot",
+        "contentFiles/Content/fonts/glyphicons-halflings-regular.svg",
+        "contentFiles/Content/fonts/glyphicons-halflings-regular.ttf",
+        "contentFiles/Content/fonts/glyphicons-halflings-regular.woff",
+        "contentFiles/Content/fonts/glyphicons-halflings-regular.woff2",
+        "contentFiles/Scripts/bootstrap.js",
+        "contentFiles/Scripts/bootstrap.min.js"
+      ]
+    },
+    "Bootstrap.v3.Datetimepicker/4.17.49": {
+      "sha512": "dBA3TmQCXJ7xZuxQo0IekWJog0dpuS5fgCo8Mjho4To06+pFzEOFn/qPxZ8IlxvVuwG3c3rBIXJ7dRgflsEtqg==",
+      "type": "package",
+      "path": "bootstrap.v3.datetimepicker/4.17.49",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bootstrap.v3.datetimepicker.4.17.49.nupkg.sha512",
+        "bootstrap.v3.datetimepicker.nuspec",
+        "content/Content/_bootstrap-datetimepicker.less",
+        "content/Content/bootstrap-datetimepicker-build.less",
+        "content/Scripts/bootstrap-datetimepicker.js",
+        "content/Scripts/bootstrap-datetimepicker.min.js"
+      ]
+    },
+    "Bootstrap.v3.Datetimepicker.CSS/4.17.49": {
+      "sha512": "L9cJ+BibhmOw/O40CnuOGlWpgculIszHMR6Kov1GNV8IYijI04LRWl2moSW4ByzN6+toqj3LI+3FF8ff+0YXeQ==",
+      "type": "package",
+      "path": "bootstrap.v3.datetimepicker.css/4.17.49",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bootstrap.v3.datetimepicker.css.4.17.49.nupkg.sha512",
+        "bootstrap.v3.datetimepicker.css.nuspec",
+        "content/Content/bootstrap-datetimepicker.css",
+        "content/Content/bootstrap-datetimepicker.min.css",
+        "content/Scripts/bootstrap-datetimepicker.js",
+        "content/Scripts/bootstrap-datetimepicker.min.js"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -1623,6 +1969,26 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "jQuery/1.9.1": {
+      "sha512": "HiX9icLyiJGgiL5EOIn0d1MBPHVV2M9mzWT4mANdniDNR51RvAFTyKEXEd2+5yQJ4PJ5xePOR61Vjj/omQzYcw==",
+      "type": "package",
+      "path": "jquery/1.9.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.9.1-vsdoc.js",
+        "Content/Scripts/jquery-1.9.1.js",
+        "Content/Scripts/jquery-1.9.1.min.js",
+        "Content/Scripts/jquery-1.9.1.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.9.1.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.9.1.nupkg.sha512",
+        "jquery.nuspec"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -1775,45 +2141,45 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb"
       ]
     },
-    "Microsoft.EntityFrameworkCore/5.0.11": {
-      "sha512": "2DQJvH6NRPRKPOR6ZaJe2pDn0bSpQZSzHk+7QatFo06KfvP3Tixy5DAOviXkP6963FEQMuVDSvZef1amORBnaw==",
+    "Microsoft.EntityFrameworkCore/5.0.12": {
+      "sha512": "NsGCTrPfGUXS4QFCLM5SlnfyED8JUswpcnguA3MSTBq6Zjnmkxjzrm6eDg4MBuiebZX2nfGONMavOKRWaZDjMw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/5.0.11",
+      "path": "microsoft.entityframeworkcore/5.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.5.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.5.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/5.0.11": {
-      "sha512": "Ut1BeIwAavUncIChZ0jM7qdqVsnLI1i2eCn/7rdqpVW/JldPFMQzlCMBtiq7dGuVMSniDNUnc93olYtttyD/Fg==",
+    "Microsoft.EntityFrameworkCore.Abstractions/5.0.12": {
+      "sha512": "AWRxHGp55hAAT4P8E/9soD5TpSaD1uBByvEMnhdRopILgbZSh90War+wVBAou3h+6kxV2MSp1WErE1w+BVZtjA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/5.0.11",
+      "path": "microsoft.entityframeworkcore.abstractions/5.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.5.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.5.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/5.0.11": {
-      "sha512": "6vCGQY0H667qkV5fGuhHzWPveF0dpEwEs9xQyDgamwxkIN7LrPHQGp2eOXj6xVF+i8noTLtTR4sNMizKSnI2JA==",
+    "Microsoft.EntityFrameworkCore.Analyzers/5.0.12": {
+      "sha512": "MTxvfKtEeQN5E5fBJO/jNfBdcKqw///Pro4uI2o0q8ukMaLsff4TgC8cfPBtzkz6wh55z0b4kldUv2r34Ix3sg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/5.0.11",
+      "path": "microsoft.entityframeworkcore.analyzers/5.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.5.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.5.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -1832,31 +2198,31 @@
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/5.0.11": {
-      "sha512": "6JLLJbi5Rh2LicrGi7nnhbmkQGCKi72uhjlAY/ozJr6cJdHOaMCUeWfglgrXUwvA5C+oE814eOxjeTdEF9oTyQ==",
+    "Microsoft.EntityFrameworkCore.Relational/5.0.12": {
+      "sha512": "Bt+PYQWb19ajOxkyXp2HHwyyAi7JJnaAZK3DTvh4254cGLJTLCIsa7zzgFEo1yXRh9a0a4voAeD7CaThbgH17Q==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/5.0.11",
+      "path": "microsoft.entityframeworkcore.relational/5.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.5.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.5.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/5.0.11": {
-      "sha512": "RQVMP2DmrHz/7rxBN/3fAfun1QOWAcqJMZLBfXr+K+rSgqXn/fIeTQ0k7Bms9LQO9v90PGPyYhcS7t5QhUw1jQ==",
+    "Microsoft.EntityFrameworkCore.SqlServer/5.0.12": {
+      "sha512": "leJohwUxtdDQcpnkzvx0Kkq92AZ8akgaxR8TChts3fD07iqWktPMqs+u5CLcGQwGFd8GuCXUZXBJxvUM1/UNJg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/5.0.11",
+      "path": "microsoft.entityframeworkcore.sqlserver/5.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.5.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.5.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -2301,6 +2667,23 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Moment.js/2.29.1": {
+      "sha512": "CSpZfBYACe5QBFtPRv7k6IS5TZmdcisKFIRdQee1ZINjKl05AlSCTaXn/bo25XUnD82L0vvdEJXH+uv3nKeaiA==",
+      "type": "package",
+      "path": "moment.js/2.29.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/moment-with-locales.js",
+        "Content/Scripts/moment-with-locales.min.js",
+        "Content/Scripts/moment-with-locales.min.js.map",
+        "Content/Scripts/moment.js",
+        "Content/Scripts/moment.min.js",
+        "Content/Scripts/moment.min.js.map",
+        "moment.js.2.29.1.nupkg.sha512",
+        "moment.js.nuspec"
       ]
     },
     "Newtonsoft.Json/10.0.1": {
@@ -5855,6 +6238,31 @@
       "path": "../0_Framework/0_Framework.csproj",
       "msbuildProject": "../0_Framework/0_Framework.csproj"
     },
+    "DM.Application/1.0.0": {
+      "type": "project",
+      "path": "../DM.Application/DM.Application.csproj",
+      "msbuildProject": "../DM.Application/DM.Application.csproj"
+    },
+    "DM.Application.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../DM.Application.Contracts/DM.Application.Contracts.csproj",
+      "msbuildProject": "../DM.Application.Contracts/DM.Application.Contracts.csproj"
+    },
+    "DM.Domian/1.0.0": {
+      "type": "project",
+      "path": "../DM.Domian/DM.Domian.csproj",
+      "msbuildProject": "../DM.Domian/DM.Domian.csproj"
+    },
+    "DM.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../DM.Infrastructure/DM.Infrastructure.csproj",
+      "msbuildProject": "../DM.Infrastructure/DM.Infrastructure.csproj"
+    },
+    "DM.Infrastructure.Core/1.0.0": {
+      "type": "project",
+      "path": "../DM.Infrastructure.Core/DM.Infrastructure.Core.csproj",
+      "msbuildProject": "../DM.Infrastructure.Core/DM.Infrastructure.Core.csproj"
+    },
     "Query/1.0.0": {
       "type": "project",
       "path": "../Query/Query.csproj",
@@ -5888,7 +6296,11 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Bootstrap.v3.Datetimepicker >= 4.17.49",
+      "Bootstrap.v3.Datetimepicker.CSS >= 4.17.49",
+      "DM.Infrastructure.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.11",
+      "Moment.js >= 2.29.1",
       "Query >= 1.0.0",
       "SM.Application.Contracts >= 1.0.0",
       "SM.Infrastructure.Core >= 1.0.0"
@@ -5923,6 +6335,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\DM.Infrastructure.Core\\DM.Infrastructure.Core.csproj": {
+              "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\DM.Infrastructure.Core\\DM.Infrastructure.Core.csproj"
+            },
             "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Query\\Query.csproj": {
               "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Query\\Query.csproj"
             },
@@ -5945,11 +6360,23 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Bootstrap.v3.Datetimepicker": {
+            "target": "Package",
+            "version": "[4.17.49, )"
+          },
+          "Bootstrap.v3.Datetimepicker.CSS": {
+            "target": "Package",
+            "version": "[4.17.49, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.11, )"
+          },
+          "Moment.js": {
+            "target": "Package",
+            "version": "[2.29.1, )"
           }
         },
         "imports": [

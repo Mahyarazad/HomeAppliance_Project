@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _0_Framework.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using ShopManagement.Domain;
 using SM.Application.Contracts;
 
@@ -34,13 +35,14 @@ namespace SM.Infrastructure.Repositories
                 }).FirstOrDefault(x => x.Id == id);
         }
 
-        public List<ProductCategoryViewModel> GetList()
+        public List<ProductCategoryViewModel> GetCustomList()
         {
-            return _mbContext.ProductCategories.Select(x => new ProductCategoryViewModel
-            {
-                Id = x.Id,
-                Name = x.Name
-            }).ToList();
+            return _mbContext.ProductCategories
+                .Select(x => new ProductCategoryViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                }).ToList();
         }
 
         public ProductCategory Edit(int Id)
@@ -56,7 +58,8 @@ namespace SM.Infrastructure.Repositories
                     Id = x.Id,
                     Name = x.Name,
                     Picture = x.Picture,
-                    CreationDate = x.CreationTime.ToString()
+                    CreationDate = x.CreationTime.ToString(),
+                    ProductCount = x.Products.Count
 
                 });
             if (!string.IsNullOrEmpty(searchModel.Name))

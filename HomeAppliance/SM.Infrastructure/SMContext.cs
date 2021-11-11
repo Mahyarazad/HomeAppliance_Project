@@ -15,7 +15,7 @@ namespace SM.Infrastructure
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductPicture> ProductPicture { get; set; }
         public DbSet<Slider> Slider { get; set; }
-        public SMContext(DbContextOptions options) : base(options)
+        public SMContext(DbContextOptions<SMContext> options) : base(options)
         {
         }
 
