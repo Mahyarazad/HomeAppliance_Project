@@ -25,21 +25,27 @@
                 <h3> Search </h3>
             </div>
             <div class="panel-body">
-                <form method="get" role="form" class="form-inline">
+                <form method="get" role="form" class="form-inline" autocomplete="off">
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.ProductId"></label>
                         <select class="form-control" asp-for="SearchModel.ProductId" asp-items="@Model.ProductList">
-                            <option value="0" disabled selected>
+                            <option value="0">
                                 Select a product
                             </option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.StartTime"></label>
-                        <input class="from-control" placeholder="Product Code"
+                        <input class="from-control" placeholder="Start Time" type="text"
+                               id="search-startTime"
+                               asp-for="SearchModel.StartTime" />
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.EndTime"></label>
+                        <input class="from-control" placeholder="End Time" type="text"
+                               id="search-endTime"
                                asp-for="SearchModel.EndTime" />
                     </div>
-
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary waves-effect waves-light">Search</button>
                     </div>
@@ -73,22 +79,22 @@
                 <tbody>
                     @foreach (var item in Model.Discounts)
                     {
-                    <tr>
-                        <td> @item.Id</td>
-                        <td> @item.Occasion</td>
-                        <td> @item.ProductName</td>
-                        <td> @item.CreationTime</td>
-                        <td> @item.DiscountRate</td>
-                        <td> @item.StartTimeString</td>
-                        <td> @item.EndTimeString</td>
-                        <td class="col-sm-1">
-                            <a id="showModal" href="#showmodal=@Url.Page("./Index", "Edit", new {Id = item.Id})"
-                               class="btn btn-warning waves-effect waves-light col-lg-12">
-                                <i class="fa fa-edit"></i> Modify
-                            </a>
-                        </td>
-                    </tr>
-                     }
+                        <tr>
+                            <td> @item.Id</td>
+                            <td> @item.Occasion</td>
+                            <td> @item.ProductName</td>
+                            <td> @item.CreationTime</td>
+                            <td> @item.DiscountRate</td>
+                            <td> @item.StartTimeString</td>
+                            <td> @item.EndTimeString</td>
+                            <td class="col-sm-1">
+                                <a id="showModal" href="#showmodal=@Url.Page("./Index", "Edit", new {Id = item.Id})"
+                                   class="btn btn-warning waves-effect waves-light col-lg-12">
+                                    <i class="fa fa-edit"></i> Modify
+                                </a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
@@ -128,7 +134,30 @@
 
     }
     <script>
+        var start = $("#search-startTime").val();
+        var end = $("#search-endTime").val();
+        if (start > end) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "End date cannot be earlier than start date.",
+            })
+            $("#search-endTime").val("");
+        }
         $(document).ready(function () {
+            $('td.day   .active').css("background-color", 'red');
+            $('#search-startTime').fdatepicker({
+                format: 'mm-dd-yyyy',
+                disableDblClickSelection: true,
+                closeIcon: '✖',
+                closeButton: true
+            });
+            $('#search-endTime').fdatepicker({
+                format: 'mm-dd-yyyy',
+                disableDblClickSelection: true,
+                closeIcon: '✖',
+                closeButton: true
+            });
             $('#myTable').DataTable({
                 language: { search: 'Search:', searchPlaceholder: "Search ..." }
             });

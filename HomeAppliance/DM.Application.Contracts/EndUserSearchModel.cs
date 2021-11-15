@@ -1,4 +1,6 @@
-﻿namespace DM.Application.Contracts
+﻿using System;
+
+namespace DM.Application.Contracts
 {
     public class EndUserSearchModel
     {

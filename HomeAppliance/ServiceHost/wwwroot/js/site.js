@@ -28,25 +28,29 @@ function showModal() {
     $("#MainModal").on("shown.bs.modal",
         function () {
             window.location.hash = "##";
-            $('#DatePicker_StartTime').fdatepicker({
+            $('#datePicker-start').fdatepicker({
+                todayBtn: "linked",
                 format: 'mm-dd-yyyy',
                 disableDblClickSelection: true,
                 closeIcon: '✖',
                 closeButton: true
             });
-            $('#DatePicker_EndTime').fdatepicker({
+            $('#datePicker-end').fdatepicker({
+                todayBtn: "linked",
                 format: 'mm-dd-yyyy',
                 disableDblClickSelection: true,
                 closeIcon: '✖',
                 closeButton: true
             });
-            $('#DatePicker__Edit_StartTime').fdatepicker({
+            $('#datePicker-end-edit').fdatepicker({
+                todayBtn: "linked",
                 format: 'mm-dd-yyyy',
                 disableDblClickSelection: true,
                 closeIcon: '✖',
                 closeButton: true
             });
-            $('#DatePicker__Edit_EndTime').fdatepicker({
+            $('#datePicker-start-edit').fdatepicker({
+                todayBtn: "linked",
                 format: 'mm-dd-yyyy',
                 disableDblClickSelection: true,
                 closeIcon: '✖',

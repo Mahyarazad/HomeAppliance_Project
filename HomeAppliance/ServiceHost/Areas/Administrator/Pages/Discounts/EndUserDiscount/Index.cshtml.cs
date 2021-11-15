@@ -29,7 +29,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Discounts.EndUser
         public void OnGet(EndUserSearchModel searchModel)
         {
             ProductList = new SelectList(_productApplication.GetList(), "Id", "Name");
-            @ViewData["title"] = "Manage Product";
+            @ViewData["title"] = "Manage Enduser discounts";
             Discounts = _endUserDiscountApplication.Search(searchModel);
         }
 

@@ -2946,8 +2946,10 @@ body.fixed-left .side-menu.left {
 /* Datapiker */
 .datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover {
     box-shadow: none;
-    background-color: #1a2942 !important;
+    background-color: rgba(255, 59, 10, 0.7) !important;
     background-image: none;
+    color: #000000;
+    font-weight: bold;
 }
 
 

@@ -57,13 +57,21 @@ namespace DM.Infrastructure.Repository
 
             });
 
+
+
             if (search.ProductId > 0)
                 query = query.Where(x => x.ProductId == search.ProductId);
+
             if (!string.IsNullOrWhiteSpace(search.StartTime) &&
                 !string.IsNullOrWhiteSpace(search.EndTime))
             {
-                query = query.Where(x => x.EndTime < DateTime.Now);
-                query = query.Where(x => x.StartTime > DateTime.Now);
+                var start = DateTime.Parse(search.StartTime);
+                var end = DateTime.Parse(search.EndTime);
+                if (start < end)
+                {
+                    query = query.Where(x => x.EndTime <= end);
+                    query = query.Where(x => x.StartTime >= start);
+                }
             }
             var DmList = query.ToList();
 
@@ -75,6 +83,7 @@ namespace DM.Infrastructure.Repository
                 item.EndTimeString = item.EndTime.ToString("MM-dd-yyyy");
                 item.StartTimeString = item.StartTime.ToString("MM-dd-yyyy");
             });
+
             return DmList.OrderByDescending(x => x.Id).ToList();
         }
     }

@@ -16,7 +16,7 @@
             <div class="col-md-6 from-group">
                 <label asp-for="ProductId"> Select Product </label>
                 <select class="form-control" asp-for="ProductId" asp-items='new SelectList(Model.Products, "Id", "Name")'>
-                    <option value="0"></option>
+                    <option value=""></option>
                 </select>
                 <span asp-validation-for="ProductId" class="text-danger"></span>
             </div>
@@ -32,7 +32,6 @@
             <div class="col-md-12 from-group">
                 <label asp-for="Occasion"> </label>
                 <input asp-for="Occasion" type="text" class="form-control" placeholder="What is the occasion" />
-                <span asp-validation-for="Occasion" class="text-danger"></span>
             </div>
         </div>
     </div>
@@ -40,11 +39,14 @@
         <div clas="form-group col-md-12">
             <div class='form-group col-md-6' id='datetimepicker1'>
                 <label asp-for="StartTime"> Start Time </label>
-                <input type='text' class="form-control" id="DatePicker_StartTime" asp-for="StartTime" value="MM-DD-YYYY"/>
+                <input type='text' class="form-control" id="datePicker-start" asp-for="StartTime" value="" placeholder="Start Date" autocomplete="off"/>
+                <span asp-validation-for="StartTime" class="text-danger"></span>
             </div>
             <div class='form-group col-md-6' id='datetimepicker1'>
                 <label asp-for="EndTime"> End Time </label>
-                <input type='text' class="form-control" id="DatePicker_EndTime" asp-for="EndTime" value="MM-DD-YYYY"/>
+                <input type='text' class="form-control" id="datePicker-end" asp-for="EndTime" value="" placeholder="End Date" autocomplete="off"/>
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+
             </div>
         </div>
     </div>
