@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kP0iqKdMQ0Qh8UWiP9bwXCFvLiI/QfYNXUXb8O3YMcya3vNA/h06KvgqM6KvpZ/1gzWpPmTsshzpmTFcN7q68g==",
+  "dgSpecHash": "NcTCRB16A7O7qXnmOicO6ZFct9OgNeorawo44/PXEaw0tGH6u0SpkkuzCju3olIrr8ST6pDPoKcD5ScxJeQ46A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj",
+  "projectFilePath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\InventoryManagement.Domain\\IM.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.11\\microsoft.entityframeworkcore.5.0.11.nupkg.sha512",
     "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.11\\microsoft.entityframeworkcore.abstractions.5.0.11.nupkg.sha512",

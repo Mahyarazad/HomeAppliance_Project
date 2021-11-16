@@ -1,8 +1,8 @@
-﻿namespace Inventory.Management.Application.Contracts
+﻿namespace IM.Application.Contracts
 {
     public class InventorySearchModel
     {
-        public long ProductId { get; set; }
+        public int ProductId { get; set; }
         public bool IsInStock { get; set; }
     }
 }

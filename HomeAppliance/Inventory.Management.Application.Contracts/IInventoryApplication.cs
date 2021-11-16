@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Application;
 
-namespace Inventory.Management.Application.Contracts
+namespace IM.Application.Contracts
 {
     public interface IInventoryApplication
     {

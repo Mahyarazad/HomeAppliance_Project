@@ -66,12 +66,12 @@
         }
       }
     },
-    "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\Inventory.Management.Application.Contracts.csproj": {
+    "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\IM.Application.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\Inventory.Management.Application.Contracts.csproj",
-        "projectName": "Inventory.Management.Application.Contracts",
-        "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\Inventory.Management.Application.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\IM.Application.Contracts.csproj",
+        "projectName": "IM.Application.Contracts",
+        "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\IM.Application.Contracts.csproj",
         "packagesPath": "C:\\Users\\mhyri\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\obj\\",
         "projectStyle": "PackageReference",
@@ -155,8 +155,8 @@
               "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\0_Framework\\0_Framework.csproj": {
                 "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\0_Framework\\0_Framework.csproj"
               },
-              "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\Inventory.Management.Application.Contracts.csproj": {
-                "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\Inventory.Management.Application.Contracts.csproj"
+              "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\IM.Application.Contracts.csproj": {
+                "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Inventory.Management.Application.Contracts\\IM.Application.Contracts.csproj"
               }
             }
           }

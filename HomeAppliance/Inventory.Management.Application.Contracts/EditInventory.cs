@@ -1,7 +1,7 @@
-﻿namespace Inventory.Management.Application.Contracts
+﻿namespace IM.Application.Contracts
 {
     public class EditInventory : CreateInventory
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
     }
 }

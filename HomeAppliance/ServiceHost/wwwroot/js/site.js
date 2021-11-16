@@ -100,14 +100,25 @@ function handleAjaxPost(formData, url, action) {
         contentType: false,
         success: function (data) {
             // Notify the user about the proccess detail
-            hideModal();
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Your work has been saved',
-                showConfirmButton: false,
-                timer: 1500
-            })
+            if (!data.isSucceeded) {
+                Swal.fire({
+                    icon: `error`,
+                    title: 'Invalid Input',
+                    html: `<p style="font-size: 15px">${data.message}</p>`,
+                }).then(result => {
+
+                })
+            } else {
+                hideModal();
+
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
             setInterval(function () {
                 CallBackHandler(data, action, formData);;
             },
@@ -160,7 +171,8 @@ function CallBackHandler(data, action, form) {
             if (data.isSucceeded) {
                 window.location.reload();
             } else {
-                alert(data.message);
+                //                alert(data.message);
+
             }
             break;
         case "RefereshList":

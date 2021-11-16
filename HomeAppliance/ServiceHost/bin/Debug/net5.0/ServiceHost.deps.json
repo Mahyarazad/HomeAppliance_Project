@@ -36,6 +36,7 @@
           "Bootstrap.v3.Datetimepicker": "4.17.49",
           "Bootstrap.v3.Datetimepicker.CSS": "4.17.49",
           "DM.Infrastructure.Core": "1.0.0",
+          "IM.Infrustructure.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.11",
           "Moment.js": "2.29.1",
           "Query": "1.0.0",
@@ -1418,6 +1419,67 @@
         },
         "compile": {
           "DM.Infrastructure.Core.dll": {}
+        }
+      },
+      "IM.Application/1.0.0": {
+        "dependencies": {
+          "IM.Application.Contracts": "1.0.0",
+          "IM.Domain": "1.0.0"
+        },
+        "runtime": {
+          "IM.Application.dll": {}
+        },
+        "compile": {
+          "IM.Application.dll": {}
+        }
+      },
+      "IM.Application.Contracts/1.0.0": {
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "SM.Application.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "IM.Application.Contracts.dll": {}
+        },
+        "compile": {
+          "IM.Application.Contracts.dll": {}
+        }
+      },
+      "IM.Domain/1.0.0": {
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "IM.Application.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "IM.Domain.dll": {}
+        },
+        "compile": {
+          "IM.Domain.dll": {}
+        }
+      },
+      "IM.Infrastructure/1.0.0": {
+        "dependencies": {
+          "IM.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.12",
+          "SM.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "IM.Infrastructure.dll": {}
+        },
+        "compile": {
+          "IM.Infrastructure.dll": {}
+        }
+      },
+      "IM.Infrustructure.Core/1.0.0": {
+        "dependencies": {
+          "IM.Application": "1.0.0",
+          "IM.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "IM.Infrustructure.Core.dll": {}
+        },
+        "compile": {
+          "IM.Infrustructure.Core.dll": {}
         }
       },
       "Query/1.0.0": {
@@ -3927,6 +3989,31 @@
       "sha512": ""
     },
     "DM.Infrastructure.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IM.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IM.Application.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IM.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IM.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IM.Infrustructure.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

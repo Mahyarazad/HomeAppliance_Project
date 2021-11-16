@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using _0_Framework;
-using Inventory.Management.Application.Contracts;
+using IM.Application.Contracts;
 
-namespace InventoryManagement.Domain
+namespace IM.Domain
 {
     public interface IInventoryRepository : IRepositoty<int, Inventory>
     {
         EditInventory GetDetails(int Id);
-        Inventory GetBy(long ProductId);
+        Inventory GetBy(int ProductId);
+        List<InventoryOperation> GetLog(int Id);
         List<InventoryViewModel> Search(InventorySearchModel search);
     }
 }

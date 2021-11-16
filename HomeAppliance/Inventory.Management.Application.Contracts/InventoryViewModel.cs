@@ -1,4 +1,4 @@
-﻿namespace Inventory.Management.Application.Contracts
+﻿namespace IM.Application.Contracts
 {
     public class InventoryViewModel
     {

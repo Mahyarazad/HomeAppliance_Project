@@ -1627,6 +1627,77 @@
           "bin/placeholder/DM.Infrastructure.Core.dll": {}
         }
       },
+      "IM.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "IM.Application.Contracts": "1.0.0",
+          "IM.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IM.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IM.Application.dll": {}
+        }
+      },
+      "IM.Application.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "SM.Application.Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IM.Application.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IM.Application.Contracts.dll": {}
+        }
+      },
+      "IM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "IM.Application.Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IM.Domain.dll": {}
+        }
+      },
+      "IM.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "IM.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.11",
+          "SM.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IM.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IM.Infrastructure.dll": {}
+        }
+      },
+      "IM.Infrustructure.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "IM.Application": "1.0.0",
+          "IM.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IM.Infrustructure.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IM.Infrustructure.Core.dll": {}
+        }
+      },
       "Query/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6263,6 +6334,31 @@
       "path": "../DM.Infrastructure.Core/DM.Infrastructure.Core.csproj",
       "msbuildProject": "../DM.Infrastructure.Core/DM.Infrastructure.Core.csproj"
     },
+    "IM.Application/1.0.0": {
+      "type": "project",
+      "path": "../IM.Application/IM.Application.csproj",
+      "msbuildProject": "../IM.Application/IM.Application.csproj"
+    },
+    "IM.Application.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Inventory.Management.Application.Contracts/IM.Application.Contracts.csproj",
+      "msbuildProject": "../Inventory.Management.Application.Contracts/IM.Application.Contracts.csproj"
+    },
+    "IM.Domain/1.0.0": {
+      "type": "project",
+      "path": "../InventoryManagement.Domain/IM.Domain.csproj",
+      "msbuildProject": "../InventoryManagement.Domain/IM.Domain.csproj"
+    },
+    "IM.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../IM.Infrastructure/IM.Infrastructure.csproj",
+      "msbuildProject": "../IM.Infrastructure/IM.Infrastructure.csproj"
+    },
+    "IM.Infrustructure.Core/1.0.0": {
+      "type": "project",
+      "path": "../IM.Infrustructure.Core/IM.Infrustructure.Core.csproj",
+      "msbuildProject": "../IM.Infrustructure.Core/IM.Infrustructure.Core.csproj"
+    },
     "Query/1.0.0": {
       "type": "project",
       "path": "../Query/Query.csproj",
@@ -6299,6 +6395,7 @@
       "Bootstrap.v3.Datetimepicker >= 4.17.49",
       "Bootstrap.v3.Datetimepicker.CSS >= 4.17.49",
       "DM.Infrastructure.Core >= 1.0.0",
+      "IM.Infrustructure.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.11",
       "Moment.js >= 2.29.1",
       "Query >= 1.0.0",
@@ -6337,6 +6434,9 @@
           "projectReferences": {
             "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\DM.Infrastructure.Core\\DM.Infrastructure.Core.csproj": {
               "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\DM.Infrastructure.Core\\DM.Infrastructure.Core.csproj"
+            },
+            "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\IM.Infrustructure.Core\\IM.Infrustructure.Core.csproj": {
+              "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\IM.Infrustructure.Core\\IM.Infrustructure.Core.csproj"
             },
             "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Query\\Query.csproj": {
               "projectPath": "C:\\Users\\mhyri\\desktopasdcasdcasdcasdcasdc\\HomeAppliance_Project\\HomeAppliance\\Query\\Query.csproj"

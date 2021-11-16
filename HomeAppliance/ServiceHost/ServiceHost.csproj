@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DM.Infrastructure.Core\DM.Infrastructure.Core.csproj" />
+    <ProjectReference Include="..\IM.Infrustructure.Core\IM.Infrustructure.Core.csproj" />
     <ProjectReference Include="..\Query\Query.csproj" />
     <ProjectReference Include="..\SM.Application.Contracts\SM.Application.Contracts.csproj" />
     <ProjectReference Include="..\SM.Infrastructure.Core\SM.Infrastructure.Core.csproj" />
