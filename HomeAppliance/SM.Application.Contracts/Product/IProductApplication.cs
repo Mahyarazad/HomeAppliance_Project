@@ -7,10 +7,9 @@ namespace SM.Application.Contracts.Product
     {
         OperationResult Create(CreateProduct command);
         OperationResult Edit(EditProduct command);
+
         List<ProductViewModel> Search(ProductSearchModel searchModel);
         EditProduct GetDetails(int Id);
-        OperationResult ReplenishStock(int Id);
-        OperationResult EmptyStock(int Id);
         List<ProductViewModel> GetList();
 
     }

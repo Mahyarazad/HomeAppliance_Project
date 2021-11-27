@@ -70,8 +70,8 @@
                         <th class="text-center">Code</th>
                         <th class="text-center">Creation Time</th>
                         <th class="text-center">Stock Availibality</th>
-                        <th class="text-center">Unit Price</th>
                         <th class="text-center">Picture</th>
+                        <th class="text-center">Product Category</th>
                         <th class="text-center">No. Register Products</th>
                         <th class="text-center">Modify</th>
 
@@ -85,41 +85,26 @@
                             <td> @item.Name</td>
                             <td> @item.Code</td>
                             <td> @item.CreationTime</td>
-                            <td> @if (item.IsInStock)
-                                 {
-                                    <i class="fa fa-check fa-2x text-success"></i>
-                                 }
-                                 else
-                                 {
-                                     <i class="fa fa-close fa-2x text-danger"></i>
-                                 }
-                            </td>
-                            <td> @item.UnitPrice</td>
+                             <td> @if (item.IsInStock)
+                                  {
+                                     <i class="fa fa-check fa-2x text-success"></i>
+                                  }
+                                  else
+                                  {
+                                      <i class="fa fa-close fa-2x text-danger"></i>
+                                  }
+                             </td>
                             <td>
                                 <img src="@item.Picture" style="height: 100px; width: 100px;" />
                             </td>
                             <td> @item.Category</td>
+                            <td> 3</td>
                             <td class="col-sm-1">
                                 <a id="showModal"
                                    href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})"
                                    class="btn btn-warning waves-effect waves-light col-lg-12">
                                     <i class="fa fa-edit"></i> Modify
                                 </a>
-                                @if (@item.IsInStock)
-                                {
-                                    <a class="btn btn-default waves-effect wave-light text-danger col-lg-12"
-                                       asp-page="./Index" asp-page-handler="EmptyStock" asp-route-id="@item.Id">
-                                        <i class="fa fa-stop"></i> Mark it as "Not Available"
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a class="btn btn-default waves-effect wave-light col-lg-12"
-                                       asp-page="./Index" asp-page-handler="ReplenishStock" asp-route-id="@item.Id">
-                                        <i class="fa fa-truck"></i> Mark it as "Available"
-                                    </a>
-                                }
-
                             </td>
                         </tr>
                     }

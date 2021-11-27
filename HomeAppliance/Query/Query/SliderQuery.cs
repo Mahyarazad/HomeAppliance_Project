@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Query.Contracts;
 using SM.Infrastructure;
 
@@ -28,7 +29,7 @@ namespace Query.Query
                     Title = x.Title,
                     PictureTitle = x.PictureTitle,
                     Text = x.Text,
-                })
+                }).AsNoTracking()
                 .ToList();
         }
     }

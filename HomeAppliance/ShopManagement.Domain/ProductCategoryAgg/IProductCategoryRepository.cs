@@ -11,6 +11,9 @@ namespace ShopManagement.Domain
         List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel);
         EditProductCategory GetDetail(int id);
         List<ProductCategoryViewModel> GetCustomList();
+        void Deactive(int Id);
+        void Reactive(int Id);
+
 
     }
 }

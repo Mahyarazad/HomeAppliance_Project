@@ -26,11 +26,10 @@ namespace SM.Infrastructure.Repositories
                     Id = x.Id,
                     Code = x.Code,
                     Name = x.Name,
-                    IsInStock = x.IsInStock,
                     Category = x.Category.Name,
                     CategoryId = x.Category.Id,
-                    UnitPrice = x.UnitPrice,
-                    CreationTime = x.CreationTime.ToString()
+                    CreationTime = x.CreationTime.ToString(),
+                    IsInStock = false
 
                 });
             if (!string.IsNullOrEmpty(searchModel.Name))
@@ -59,7 +58,6 @@ namespace SM.Infrastructure.Repositories
                 Slug = x.Slug,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
-                UnitPrice = x.UnitPrice,
                 ShortDescription = x.ShortDescription,
                 MetaDescription = x.MetaDescription
             }).FirstOrDefault(x => x.Id == id);

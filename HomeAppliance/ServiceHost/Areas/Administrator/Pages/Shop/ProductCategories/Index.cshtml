@@ -1,5 +1,6 @@
 ﻿@page
 @using _0_Framework.Application
+@using System.Linq
 @model ServiceHost.Areas.Administrator.Pages.Shop.ProductCategories.IndexModel
 @{
 
@@ -49,7 +50,7 @@
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <table id="myTable" class="display table-condensed table-bordered table-dark table-striped text-center col-md-12">
-                <thead class="wrapper">
+                <thead class="wrapper" id="thead">
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Name</th>
@@ -71,12 +72,33 @@
                                 <img src="@item.Picture" style="height: 100px; width: 100px;" />
                             </td>
                             <td> @item.ProductCount</td>
-                            <td>
+                            <td class="col-md-2">
                                 <a id="showModal"
                                    href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})"
-                                   class="btn btn-warning waves-effect waves-light">
+                                   class="btn btn-warning waves-effect waves-light col-md-6">
                                     <i class="fa fa-edit"></i> Modify
                                 </a>
+                                @if (@item.IsActive)
+                                {
+                                    <form asp-page-handler="Deactive" asp-page="./Index" data-callback=""
+                                          method="post" data-action="Refresh" data-ajax="true">
+                                        <input type="hidden" id="Id" name="Id" value="@item.Id"/>
+                                        <button id="submitModal" type="submit" class="btn btn-default waves-effect wave-light col-md-6">
+                                            <i class="fa fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+
+                                }
+                                else
+                                {
+                                    <form asp-page-handler="Reactive" asp-page="./Index" data-callback=""
+                                          method="post" data-action="Refresh" data-ajax="true">
+                                        <input type="hidden" id="Id" name="Id" value="@item.Id"/>
+                                        <button id="submitModal" type="submit" class="btn btn-default waves-effect wave-light col-md-6">
+                                            <i class="fa fa-toggle-off"></i>
+                                        </button>
+                                    </form>
+                                }
                             </td>
                         </tr>
                     }
@@ -91,13 +113,17 @@
 @section Scripts
 {
 
-<script>
-    $(document).ready(function () {
-        $('#myTable').DataTable({
-            language: { search: 'Search:', searchPlaceholder: "Search ..."}
-        });
-        $('input[type="search"]').css('border-width', '1px');
-    })
+    <script>
+    var thead = document.getElementById('thead');
+    thead.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        $(document).ready(function () {
 
-</script>
+
+            $('#myTable').DataTable({
+                language: { search: 'Search:', searchPlaceholder: "Search ..."}
+            });
+            $('input[type="search"]').css('border-width', '1px');
+        })
+
+    </script>
 }

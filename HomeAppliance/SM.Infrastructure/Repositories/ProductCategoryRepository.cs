@@ -45,6 +45,20 @@ namespace SM.Infrastructure.Repositories
                 }).ToList();
         }
 
+        public void Deactive(int Id)
+        {
+            var target = _mbContext.ProductCategories.FirstOrDefault(x => x.Id == Id);
+            target.Deactivate();
+            _mbContext.SaveChanges();
+        }
+
+        public void Reactive(int Id)
+        {
+            var target = _mbContext.ProductCategories.FirstOrDefault(x => x.Id == Id);
+            target.Reactivate();
+            _mbContext.SaveChanges();
+        }
+
         public ProductCategory Edit(int Id)
         {
             return _mbContext.ProductCategories.FirstOrDefault(x => x.Id == Id);
@@ -59,7 +73,8 @@ namespace SM.Infrastructure.Repositories
                     Name = x.Name,
                     Picture = x.Picture,
                     CreationDate = x.CreationTime.ToString(),
-                    ProductCount = x.Products.Count
+                    ProductCount = x.Products.Count,
+                    IsActive = x.IsActive
 
                 });
             if (!string.IsNullOrEmpty(searchModel.Name))

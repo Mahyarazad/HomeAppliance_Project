@@ -1,6 +1,8 @@
 ﻿body {
     direction: rtl;
     text-align: right;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .hero-slider-content {
@@ -193,11 +195,4 @@
 
 .product-details-small-image-slider-wrapper .slick-prev {
     left: 0;
-}
-
-.hero-slider-item-wrapper img {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
 }

@@ -16,6 +16,7 @@ namespace SM.Infrastructure.Mapping
             builder.Property(x => x.Picture).HasMaxLength(1000);
             builder.Property(x => x.PictureAlt).HasMaxLength(255);
             builder.Property(x => x.PictureTitle).HasMaxLength(500);
+            builder.Property(x => x.IsActive);
             builder.Property(x => x.Keyword).HasMaxLength(80).IsRequired();
             builder.Property(x => x.MetaDescription).HasMaxLength(150).IsRequired();
             builder.Property(x => x.Slug).HasMaxLength(1000).IsRequired();

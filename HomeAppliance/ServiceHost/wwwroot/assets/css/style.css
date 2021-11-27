@@ -775,6 +775,7 @@ select {
     .header-cart-icon .mini-cart {
         position: absolute;
         top: 100%;
+        left: 0;
         margin-top: 34px;
     }
 
@@ -791,7 +792,6 @@ select {
 
     .mini-cart.active {
         display: block;
-        left: 0 !important;
     }
 
     .mini-cart .cart-items-wrapper {
@@ -999,6 +999,7 @@ select {
     position: absolute;
     z-index: 9999;
     top: 100%;
+    left: 0;
     display: none;
     width: 300px;
     margin-top: 34px;
@@ -1008,7 +1009,6 @@ select {
 
     .settings-menu-wrapper.active {
         display: block;
-        left: 0;
     }
 
     .settings-menu-wrapper .single-settings-block {
@@ -8355,4 +8355,9 @@ h3.comment-counter {
     50% {
         opacity: 1;
     }
+}
+
+.hero-slider-item-wrapper img {
+    position: absolute;
+    width: 100%;
 }

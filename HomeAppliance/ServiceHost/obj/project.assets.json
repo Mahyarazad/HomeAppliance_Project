@@ -1702,6 +1702,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "DM.Infrastructure": "1.0.0",
+          "IM.Infrastructure": "1.0.0",
           "SM.Infrastructure": "1.0.0"
         },
         "compile": {

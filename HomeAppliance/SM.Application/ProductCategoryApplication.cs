@@ -50,6 +50,26 @@ namespace SM.Application
             return operation.Succeeded();
         }
 
+        public OperationResult Deactivate(int Id)
+        {
+            var result = new OperationResult();
+            var productCategory = _productCategoryRepository.Get(Id);
+            if (productCategory == null)
+                return result.Failed("Sorry, no such record exists in database, please try again.");
+            _productCategoryRepository.Deactive(Id);
+            return result.Succeeded();
+        }
+
+        public OperationResult Reactivate(int Id)
+        {
+            var result = new OperationResult();
+            var productCategory = _productCategoryRepository.Get(Id);
+            if (productCategory == null)
+                return result.Failed("Sorry, no such record exists in database, please try again.");
+            _productCategoryRepository.Reactive(Id);
+            return result.Succeeded();
+        }
+
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {
             return _productCategoryRepository.Search(searchModel);

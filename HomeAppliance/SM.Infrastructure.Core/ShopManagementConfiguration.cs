@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Query.Contracts;
+using Query.Contracts.Product;
 using Query.Contracts.ProductCategory;
 using Query.Query;
 using ShopManagement.Domain;
@@ -34,6 +35,7 @@ namespace SM.Infrastructure.Core
 
             services.AddTransient<ISliderQuery, SliderQuery>();
             services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
+            services.AddTransient<IProductQuery, ProductQuery>();
 
             services.AddDbContext<SMContext>(x => x.UseSqlServer(connectionString));
         }

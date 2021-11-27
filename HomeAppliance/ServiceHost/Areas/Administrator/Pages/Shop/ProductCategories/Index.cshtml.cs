@@ -7,6 +7,8 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.ProductCategories
 {
     public class IndexModel : PageModel
     {
+        [TempData]
+        public string Message { get; set; }
         public ProductCategorySearchModel SearchModel { get; set; }
         public List<ProductCategoryViewModel> ProductCategories { get; set; }
         private readonly IProductCategoryApplication _productCategoryApplication;
@@ -45,6 +47,16 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.ProductCategories
         public JsonResult OnPostEdit(EditProductCategory command)
         {
             var result = _productCategoryApplication.Edit(command);
+            return new JsonResult(result);
+        }
+        public JsonResult OnPostDeactive(int Id)
+        {
+            var result = _productCategoryApplication.Deactivate(Id);
+            return new JsonResult(result);
+        }
+        public IActionResult OnPostReactive(int Id)
+        {
+            var result = _productCategoryApplication.Reactivate(Id);
             return new JsonResult(result);
         }
     }

@@ -8,14 +8,12 @@ namespace SM.Domain.ProductAgg
     public class Product : BaseEntity
     {
 
-        public Product(string name, string code, double unitPrice,
+        public Product(string name, string code,
             string shortDescription, string description, string picture, string pictureAlt,
             string pictureTitle, int categoryId, string slug, string metaDescription, string keyword)
         {
             Name = name;
             Code = code;
-            UnitPrice = unitPrice;
-            IsInStock = true;
             ShortDescription = shortDescription;
             Description = description;
             Picture = picture;
@@ -26,14 +24,12 @@ namespace SM.Domain.ProductAgg
             MetaDescription = metaDescription;
             Keyword = keyword;
         }
-        public void Edit(string name, string code, double unitPrice,
+        public void Edit(string name, string code,
             string shortDescription, string description, string picture, string pictureAlt,
             string pictureTitle, int categoryId, string slug, string metaDescription, string keyword)
         {
             Name = name;
             Code = code;
-            UnitPrice = unitPrice;
-            IsInStock = true;
             ShortDescription = shortDescription;
             Description = description;
             Picture = picture;
@@ -50,8 +46,6 @@ namespace SM.Domain.ProductAgg
         }
         public string Name { get; private set; }
         public string Code { get; private set; }
-        public double UnitPrice { get; private set; }
-        public bool IsInStock { get; private set; }
         public string ShortDescription { get; private set; }
         public string Description { get; private set; }
         public string Picture { get; private set; }
@@ -64,13 +58,5 @@ namespace SM.Domain.ProductAgg
         public ProductCategory Category { get; private set; }
         public List<ProductPicture> Pictures { get; private set; }
 
-        public void ReplenishStock()
-        {
-            this.IsInStock = true;
-        }
-        public void EmptyStock()
-        {
-            this.IsInStock = false;
-        }
     }
 }

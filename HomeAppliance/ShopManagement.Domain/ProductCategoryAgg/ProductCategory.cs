@@ -12,6 +12,7 @@ namespace ShopManagement.Domain
 
         }
 
+        public bool IsActive { get; private set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public string Picture { get; private set; }
@@ -34,6 +35,7 @@ namespace ShopManagement.Domain
             MetaDescription = metaDescription;
             Slug = slug;
             Products = new List<Product>();
+            IsActive = true;
         }
         public void Edit(string name, string description, string picture, string pictureAlt
             , string pictureTitle, string keyword, string metaDescription, string slug)
@@ -46,6 +48,17 @@ namespace ShopManagement.Domain
             Keyword = keyword;
             MetaDescription = metaDescription;
             Slug = slug;
+
+        }
+
+        public void Deactivate()
+        {
+            IsActive = false;
+        }
+
+        public void Reactivate()
+        {
+            IsActive = true;
         }
     }
 }

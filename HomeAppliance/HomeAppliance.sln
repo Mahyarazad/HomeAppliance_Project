@@ -35,15 +35,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Infrastructure.Core", "D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventory.Management", "Inventory.Management", "{D79A56A9-0DA0-43F5-98B6-92418C1B9389}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IM.Domain", "InventoryManagement.Domain\IM.Domain.csproj", "{06037F03-0402-4BEC-A879-A748F2FF57E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IM.Domain", "InventoryManagement.Domain\IM.Domain.csproj", "{06037F03-0402-4BEC-A879-A748F2FF57E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IM.Application.Contracts", "Inventory.Management.Application.Contracts\IM.Application.Contracts.csproj", "{F0231E05-1E20-424D-A022-5BF18FDD0755}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IM.Application.Contracts", "Inventory.Management.Application.Contracts\IM.Application.Contracts.csproj", "{F0231E05-1E20-424D-A022-5BF18FDD0755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IM.Infrastructure", "IM.Infrastructure\IM.Infrastructure.csproj", "{7578C295-71A1-451D-8A7C-4D9AFA6F0DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IM.Infrastructure", "IM.Infrastructure\IM.Infrastructure.csproj", "{7578C295-71A1-451D-8A7C-4D9AFA6F0DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IM.Infrustructure.Core", "IM.Infrustructure.Core\IM.Infrustructure.Core.csproj", "{E4355A8B-2133-436D-A4D2-FE2C6B583B78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IM.Infrustructure.Core", "IM.Infrustructure.Core\IM.Infrustructure.Core.csproj", "{E4355A8B-2133-436D-A4D2-FE2C6B583B78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IM.Application", "IM.Application\IM.Application.csproj", "{2D82C5F8-C540-4F7C-A102-0F58B78C4A3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IM.Application", "IM.Application\IM.Application.csproj", "{2D82C5F8-C540-4F7C-A102-0F58B78C4A3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

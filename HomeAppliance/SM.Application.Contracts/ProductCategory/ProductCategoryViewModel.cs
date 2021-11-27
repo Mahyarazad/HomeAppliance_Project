@@ -7,5 +7,6 @@
         public string Picture { get; set; }
         public string CreationDate { get; set; }
         public long ProductCount { get; set; }
+        public bool IsActive { get; set; }
     }
 }

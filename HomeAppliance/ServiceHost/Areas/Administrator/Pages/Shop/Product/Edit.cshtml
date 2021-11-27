@@ -15,7 +15,7 @@
         <div clas="form-group col-md-12">
             <div class="col-md-4 from-group">
                 <label asp-for="Name"> Name </label>
-                <input asp-for="Name" type="text" class="form-control" />
+                <input asp-for="Name" type="text" class="form-control" onchange="makeSlug('Name', 'Slug')"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="col-md-4 from-group">

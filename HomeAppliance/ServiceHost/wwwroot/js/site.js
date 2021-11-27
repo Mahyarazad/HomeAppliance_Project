@@ -202,6 +202,19 @@ function get(url, refereshDiv) {
         });
 }
 
+function checkCart(availableStock) {
+    const value = parseInt($('#sale-value').val());
+    if (value > availableStock) {
+        $('.cart-btn').attr('disabled', 'disabled');
+        $('.cart-btn').css('text-decoration', 'line-through');
+        $('.cart-btn').css('cursor', 'not-allowed');
+    } else {
+        $('.cart-btn').prop("disabled", false);
+        $('.cart-btn').css('text-decoration', '');
+        $('.cart-btn').css('cursor', 'pointer');
+    }
+}
+
 function makeSlug(source, dist) {
     const value = $('#' + source).val();
     $('#' + dist).val(convertToSlug(value));

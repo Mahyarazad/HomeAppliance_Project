@@ -133,3 +133,8 @@ C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\S
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Inventory\Increment.cshtml.g.cs
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Inventory\Decrement.cshtml.g.cs
 C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\Inventory\Log.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Product\Default.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Pages\ProductCategory.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Mobile\Default.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Pages\SingleProduct.cshtml.g.cs
+C:\Users\mhyri\desktopasdcasdcasdcasdcasdc\HomeAppliance_Project\HomeAppliance\ServiceHost\obj\Debug\net5.0\Razor\Pages\Search.cshtml.g.cs

@@ -99,6 +99,17 @@ namespace IM.Application
             return _inventoryRepository.Search(search);
         }
 
+        public List<InventoryViewModel> GetList()
+        {
+            return _inventoryRepository.GetList().Select(x => new InventoryViewModel
+            {
+                CurrentCount = x.Count,
+                ProductId = x.ProductId,
+                UnitPrice = x.UnitPrice,
+                IsInStock = x.IsInStock,
+            }).ToList();
+        }
+
         public List<InventoryOperationLog> GetOperationLogs(int Id)
         {
             var inventory = _inventoryRepository.GetLog(Id);

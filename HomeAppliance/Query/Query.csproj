@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DM.Infrastructure\DM.Infrastructure.csproj" />
+    <ProjectReference Include="..\IM.Infrastructure\IM.Infrastructure.csproj" />
     <ProjectReference Include="..\SM.Infrastructure\SM.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helper\" />
   </ItemGroup>
 
 </Project>

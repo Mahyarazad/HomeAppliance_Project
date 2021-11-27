@@ -7,6 +7,8 @@ namespace SM.Application.Contracts
     {
         OperationResult Create(CreateProductCategory command);
         OperationResult Edit(EditProductCategory command);
+        OperationResult Deactivate(int Id);
+        OperationResult Reactivate(int Id);
         List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel);
         List<ProductCategoryViewModel> GetList();
         EditProductCategory GetDetails(int Id);

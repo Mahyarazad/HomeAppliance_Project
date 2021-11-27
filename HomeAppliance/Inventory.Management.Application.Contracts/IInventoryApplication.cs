@@ -12,6 +12,7 @@ namespace IM.Application.Contracts
         OperationResult Decrement(DecrementInventory command);
         EditInventory GetDetail(int Id);
         List<InventoryViewModel> Search(InventorySearchModel search);
+        List<InventoryViewModel> GetList();
         List<InventoryOperationLog> GetOperationLogs(int Id);
     }
 }
