@@ -1,0 +1,48 @@
+﻿@model List<IM.Application.Contracts.InventoryOperationLog>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">
+        <i class="fa fa-times-circle"></i>
+    </button>
+    <h4> Inventory History </h4>
+</div>
+
+<div>
+    <table class="table table-bordered table-condensed text-center">
+        <thead>
+        <tr>
+            <th class="text-center"> Id</th>
+            <th class="text-center"> Operation Time</th>
+            <th class="text-center"> Current Stock</th>
+            <th class="text-center"> Operator Id</th>
+            <th class="text-center"> Order Id</th>
+            <th class="text-center"> Description </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="text-white"
+                style="@(item.OperationType ? "background-color:rgba(133,226,133,0.8); color: black"
+                           : "background-color: rgba(212,50,50,0.8)" )">
+                <td>@item.Id</td>
+                <td>@item.OperationTime</td>
+                <td>@item.CurrentStock</td>
+                <td>@item.OperatorId</td>
+                <td>@item.OrderId</td>
+                <td>@item.Description</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function() {
+//        $("table").css("border", "solid black 1px");
+//        $("table").css("border-radius", "5px");
+//        $("td").css("border", "solid black 1px");
+//        $("td").css("color", "black");
+//        $("th").css("border", "solid black 1px");
+    })
+</script>
