@@ -12,6 +12,7 @@
     <link href="~/assets/css/style.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="~/assets/css/Custom.css" rel="stylesheet">
+    <link href="~/css/Stars.css" rel="stylesheet">
 </head>
 
 <body>
@@ -261,7 +262,6 @@
         </div>
     </div>
     <!--====================  End of header area  ====================-->
-
     <!--====================  End of hero slider area  ====================-->
     @RenderBody()
     <!--====================  footer area ====================-->
@@ -325,24 +325,24 @@
     <!--====================  End of footer area  ====================-->
 
 
-<div class="search-overlay" id="search-overlay">
-    <a href="javascript:void(0)" class="close-search-overlay" id="close-search-overlay">
-        <i class="ion-ios-close-empty"></i>
-    </a>
+    <div class="search-overlay" id="search-overlay">
+        <a href="javascript:void(0)" class="close-search-overlay" id="close-search-overlay">
+            <i class="ion-ios-close-empty"></i>
+        </a>
 
-    <!--=======  search form  =======-->
+        <!--=======  search form  =======-->
 
-    <div class="search-form">
-        <form method="get" asp-page="./Search">
-            <input type="search" placeholder="Search entire store here ..." name="search">
-            <button type="submit">
-                <i class="ion-android-search"></i>
-            </button>
-        </form>
+        <div class="search-form">
+            <form method="get" asp-page="./Search">
+                <input type="search" placeholder="Search entire store here ..." name="search">
+                <button type="submit">
+                    <i class="ion-android-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <!--=======  End of search form  =======-->
     </div>
-
-    <!--=======  End of search form  =======-->
-</div>
 
 
 
@@ -357,7 +357,8 @@
     <!-- Active JS -->
     <script src="~/assets/js/active.js"></script>
     <script src="~/AdminTheme/assets/js/bootstrap.min.js"></script>
-    <script src="~/js/site.js"/></script>
+    <script src="~/AdminTheme/assets/js/jquery.min.js"></script>
+    <script src="~/js/site.js" /></script>
     @RenderSection("Scripts", required: false)
 </body>
 

@@ -1,4 +1,5 @@
 using _0_Framework.Application;
+using AMConfiguration;
 using DM.Infrastructure.Core;
 using IM.Infrustructure.Core;
 using Microsoft.AspNetCore.Builder;
@@ -25,7 +26,10 @@ namespace ServiceHost
             ShopManagementConfiguration.Config(services, connectionString);
             DiscountManagementConfiguration.Config(services, connectionString);
             InventoryManagementConfiguration.Config(services, connectionString);
+            AccountManagementConfiguration.Config(services, connectionString);
             services.AddTransient<IFileUploader, FileUploader>();
+            services.AddSingleton<IPasswordHasher, PasswordHasher>();
+
             services.AddRazorPages();
         }
 

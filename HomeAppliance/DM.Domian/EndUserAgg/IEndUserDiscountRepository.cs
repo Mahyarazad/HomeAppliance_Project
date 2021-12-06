@@ -4,7 +4,7 @@ using DM.Application.Contracts;
 
 namespace DM.Domian
 {
-    public interface IEndUserDiscountRepository : IRepositoty<int, EndUserDiscount>
+    public interface IEndUserDiscountRepository : IRepository<int, EndUserDiscount>
     {
         EditEndUserDiscount GetDetails(int Id);
         List<EndUserViewModel> Search(EndUserSearchModel search);

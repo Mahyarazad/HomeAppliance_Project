@@ -2,7 +2,7 @@
 
 namespace SM.Domain.SliderAgg
 {
-    public class Slider : BaseEntity
+    public class Slider : BaseEntity<int>
     {
         public string Picture { get; private set; }
         public string PictureAlt { get; private set; }

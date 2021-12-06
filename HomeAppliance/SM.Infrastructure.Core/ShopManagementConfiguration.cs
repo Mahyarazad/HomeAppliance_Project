@@ -7,9 +7,11 @@ using Query.Query;
 using ShopManagement.Domain;
 using SM.Application;
 using SM.Application.Contracts;
+using SM.Application.Contracts.Comment;
 using SM.Application.Contracts.Product;
 using SM.Application.Contracts.ProductPicture;
 using SM.Application.Contracts.Slider;
+using SM.Domain.CommentAgg;
 using SM.Domain.ProductAgg;
 using SM.Domain.ProductPictureAgg;
 using SM.Domain.SliderAgg;
@@ -33,9 +35,13 @@ namespace SM.Infrastructure.Core
             services.AddTransient<ISliderRepository, SliderRepository>();
             services.AddTransient<ISliderApplication, SliderApplication>();
 
+            services.AddTransient<ICommentRepository, CommentRepository>();
+            services.AddTransient<ICommentApplication, CommentApplication>();
+
             services.AddTransient<ISliderQuery, SliderQuery>();
             services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
             services.AddTransient<IProductQuery, ProductQuery>();
+
 
             services.AddDbContext<SMContext>(x => x.UseSqlServer(connectionString));
         }

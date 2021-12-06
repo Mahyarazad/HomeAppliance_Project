@@ -4,7 +4,7 @@ using SM.Application.Contracts.Slider;
 
 namespace SM.Domain.SliderAgg
 {
-    public interface ISliderRepository : IRepositoty<int, Slider>
+    public interface ISliderRepository : IRepository<int, Slider>
     {
         EditSlider GetDetails(int Id);
         List<SliderViewModel> GetViewList();

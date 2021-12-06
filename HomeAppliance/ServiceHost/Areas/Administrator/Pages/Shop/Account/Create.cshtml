@@ -1,0 +1,85 @@
+﻿@model AM.Application.Contracts.CreateAccount
+@{
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">
+        <i class="fa fa-times-circle"></i>
+    </button>
+    <h4> Create a Account </h4>
+</div>
+
+<form asp-page-handler="Create" asp-page="./Index"
+      data-callback=""
+      method="post"
+      data-action="Refresh"
+      data-ajax="true"
+      enctype="multipart/form-data">
+    <div class="row">
+        <div clas="form-group col-md-12">
+            <div class="col-md-6">
+                <label asp-for="Email"> Email </label>
+                <input asp-for="Email" type="text" class="form-control"
+                       />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="FullName"> FullName </label>
+                <input asp-for="FullName" type="text" class="form-control"/>
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div clas="form-group col-md-12">
+            <div class="col-md-6">
+                <label asp-for="UserId"> User Id </label>
+                <input asp-for="UserId" type="text" class="form-control"
+                />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="PhoneNumber"> PhoneNumber </label>
+                <input asp-for="PhoneNumber" type="number" class="form-control"/>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div clas="form-group col-md-12">
+            <div class="col-md-2 from-group">
+                <label asp-for="RoleId"> Role </label>
+                @* <select class="form-control" asp-for="RoleId" asp-items='new SelectList(Model.Categories,"Id", "Name")'> *@
+                @*     <option value="0"></option> *@
+                @* </select> *@
+                <span asp-validation-for="RoleId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label asp-for="ProfilePicture"> Picture </label>
+            <input asp-for="ProfilePicture" type="file" class="form-control" accept="image/*"/>
+            <span class="error"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div clas="form-group col-md-12">
+            <div class="col-md-12 from-group">
+                <label asp-for="Password"> Password </label>
+                <input asp-for="Password" type="text" class="form-control"/>
+                <span class="error"></span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal"> Close </button>
+        <button id="submitModal" type="submit" class="btn btn-inverse waves-effect waves-light">
+            <i class="fa fa-save"></i>
+            Create
+        </button>
+    </div>
+</form>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using SM.Application.Contracts.Comment;
 using SM.Domain.ProductPictureAgg;
 
 namespace Query.Contracts.Product
@@ -26,5 +27,6 @@ namespace Query.Contracts.Product
         public bool IsInStock { get; set; }
         public long AvailableStock { get; set; }
         public List<ProductPicture> ProductPuctures { get; set; }
+        public List<CommentViewModel> Comments { get; set; }
     }
 }

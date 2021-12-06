@@ -1,0 +1,156 @@
+﻿
+.stars-container {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+}
+
+    .stars-container:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '★★★★★';
+        color: lightgray;
+    }
+
+    .stars-container:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '★★★★★';
+        color: gold;
+        overflow: hidden;
+    }
+
+.stars-0:after {
+    width: 0%;
+}
+
+.stars-10:after {
+    width: 10%;
+}
+
+.stars-20:after {
+    width: 20%;
+}
+
+.stars-30:after {
+    width: 30%;
+}
+
+.stars-40:after {
+    width: 40%;
+}
+
+.stars-50:after {
+    width: 50%;
+}
+
+.stars-60:after {
+    width: 60%;
+}
+
+.stars-70:after {
+    width: 70%;
+}
+
+.stars-80:after {
+    width: 80%;
+}
+
+.stars-90:after {
+    width: 90%;
+}
+
+.stars-100:after {
+    width: 100%;
+}
+
+/* The bar container */
+.bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+}
+
+/* Individual bars */
+.bar-90 {
+    width: 90%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-80 {
+    width: 80%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-70 {
+    width: 70%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-60 {
+    width: 60%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-50 {
+    width: 50%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-40 {
+    width: 40%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-30 {
+    width: 30%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-20 {
+    width: 20%;
+    height: 100%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    background-color: #EE3333;
+}
+
+.bar-20 {
+    width: 20%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-10 {
+    width: 10%;
+    height: 100%;
+    background-color: #EE3333;
+}
+
+.bar-container {
+    height: 12px !important;
+}
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 500px) {
+    .bar-container {
+        height: 11px !important;
+    }
+
+    .mobile-wrapper {
+        height: 13px !important;
+    }
+    /* Hide the right column on small screens */
+    .right {
+        display: none;
+    }
+}

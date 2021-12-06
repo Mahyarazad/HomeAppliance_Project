@@ -3,7 +3,7 @@ using _0_Framework;
 
 namespace DM.Domian
 {
-    public class EndUserDiscount : BaseEntity
+    public class EndUserDiscount : BaseEntity<int>
     {
         public EndUserDiscount(int productId, double discountRate
             , DateTime startTime, DateTime endTime, string occasion)

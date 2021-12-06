@@ -4,7 +4,7 @@ using IM.Application.Contracts;
 
 namespace IM.Domain
 {
-    public interface IInventoryRepository : IRepositoty<int, Inventory>
+    public interface IInventoryRepository : IRepository<int, Inventory>
     {
         EditInventory GetDetails(int Id);
         Inventory GetBy(int ProductId);

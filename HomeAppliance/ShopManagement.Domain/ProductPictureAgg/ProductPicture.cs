@@ -4,7 +4,7 @@ using SM.Domain.ProductAgg;
 
 namespace SM.Domain.ProductPictureAgg
 {
-    public class ProductPicture : BaseEntity
+    public class ProductPicture : BaseEntity<int>
     {
         public ProductPicture(int productId, string picture, string pictureAlt
             , string pictureTitle)

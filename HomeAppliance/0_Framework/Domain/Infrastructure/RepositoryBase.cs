@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _0_Framework.Infrastructure
 {
-    public class RepositoryBase<TKey, T> : IRepositoty<TKey, T> where T : class
+    public class RepositoryBase<TKey, T> : IRepository<TKey, T> where T : class
     {
         private readonly DbContext _dbContext;
 
@@ -11,6 +11,7 @@ namespace _0_Framework.Infrastructure
         {
             _dbContext = dbContext;
         }
+
 
         public void Create(T entity)
         {

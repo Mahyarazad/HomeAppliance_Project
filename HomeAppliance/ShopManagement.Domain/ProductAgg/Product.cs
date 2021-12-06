@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using _0_Framework;
 using ShopManagement.Domain;
+using SM.Domain.CommentAgg;
 using SM.Domain.ProductPictureAgg;
 
 namespace SM.Domain.ProductAgg
 {
-    public class Product : BaseEntity
+    public class Product : BaseEntity<int>
     {
 
         public Product(string name, string code,
@@ -58,6 +59,7 @@ namespace SM.Domain.ProductAgg
         public string Keyword { get; private set; }
         public ProductCategory Category { get; private set; }
         public List<ProductPicture> Pictures { get; private set; }
+        public List<Comment> Comments { get; private set; }
 
     }
 }

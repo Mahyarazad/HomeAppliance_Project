@@ -4,7 +4,7 @@ using _0_Framework;
 
 namespace IM.Domain
 {
-    public class Inventory : BaseEntity
+    public class Inventory : BaseEntity<int>
     {
         protected Inventory()
         {

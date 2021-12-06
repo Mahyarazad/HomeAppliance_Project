@@ -4,7 +4,7 @@ using SM.Application.Contracts.Product;
 
 namespace SM.Domain.ProductAgg
 {
-    public interface IProductRepository : IRepositoty<int, Product>
+    public interface IProductRepository : IRepository<int, Product>
     {
         List<ProductViewModel> Search(ProductSearchModel searchModel);
         EditProduct GetDetail(int id);

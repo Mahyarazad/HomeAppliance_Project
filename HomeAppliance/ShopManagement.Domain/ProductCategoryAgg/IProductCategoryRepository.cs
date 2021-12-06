@@ -6,7 +6,7 @@ using SM.Application.Contracts;
 
 namespace ShopManagement.Domain
 {
-    public interface IProductCategoryRepository : IRepositoty<int, ProductCategory>
+    public interface IProductCategoryRepository : IRepository<int, ProductCategory>
     {
         List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel);
         EditProductCategory GetDetail(int id);

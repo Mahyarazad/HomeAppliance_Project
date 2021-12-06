@@ -4,6 +4,7 @@ using DM.Infrastructure;
 using IM.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Query.Contracts.Product;
+using SM.Application.Contracts.Comment;
 using SM.Infrastructure;
 
 namespace Query.Query
@@ -23,7 +24,8 @@ namespace Query.Query
 
         public List<ProductQueryModel> GetList()
         {
-            var productQueryList = _smContext.Products.Include(x => x.Category)
+            var productQueryList = _smContext.Products
+                .Include(x => x.Category)
                 .Select(x => new ProductQueryModel
                 {
                     Id = x.Id,
@@ -157,6 +159,7 @@ namespace Query.Query
         {
             var product
                 = _smContext.Products
+                    .Include(x => x.Comments)
                     .Include(x => x.Pictures)
                     .Select(x => new ProductQueryModel
                     {
@@ -172,6 +175,18 @@ namespace Query.Query
                         Description = x.Description,
                         ProductPuctures = x.Pictures,
                     }).FirstOrDefault(x => x.Slug == slug);
+
+            if (_smContext.Comment.Any(x => x.ProductId == product.Id))
+            {
+                product.Comments = _smContext.Comment.Select(x => new CommentViewModel
+                {
+                    ProductId = x.ProductId,
+                    Body = x.Body,
+                    Email = x.Email,
+                    PersonName = x.PersonName,
+                    Accepted = x.Accepted
+                }).Where(x => x.ProductId == product.Id).ToList();
+            }
 
             if (_imContext.Inventory
                 .FirstOrDefault(x => x.ProductId == product.Id && x.IsInStock)

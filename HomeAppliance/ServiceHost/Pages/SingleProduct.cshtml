@@ -7,50 +7,50 @@
 @await Component.InvokeAsync("Mobile")
 <div>
 
-    <!--====================  breadcrumb area ====================-->
-    <div class="breadcrumb-area section-space--half">
-        <div class="container wide">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!--=======  breadcrumb wrpapper  =======-->
-                    <div class="breadcrumb-wrapper breadcrumb-bg">
-                        <!--=======  breadcrumb content  =======-->
-                        <div class="breadcrumb-content">
-                            <h2 class="breadcrumb-content__title">@Model.Product.ProductName</h2>
-                            <ul class="breadcrumb-content__page-map">
-                                <li>
-                                    <a asp-page="./Index">Home</a>
-                                </li>
-                                <li class="active">@Model.Product.ProductName</li>
-                            </ul>
-                        </div>
-                        <!--=======  End of breadcrumb content  =======-->
+<!--====================  breadcrumb area ====================-->
+<div class="breadcrumb-area section-space--half">
+    <div class="container wide">
+        <div class="row">
+            <div class="col-lg-12">
+                <!--=======  breadcrumb wrpapper  =======-->
+                <div class="breadcrumb-wrapper breadcrumb-bg">
+                    <!--=======  breadcrumb content  =======-->
+                    <div class="breadcrumb-content">
+                        <h2 class="breadcrumb-content__title">@Model.Product.ProductName</h2>
+                        <ul class="breadcrumb-content__page-map">
+                            <li>
+                                <a asp-page="./Index">Home</a>
+                            </li>
+                            <li class="active">@Model.Product.ProductName</li>
+                        </ul>
                     </div>
-                    <!--=======  End of breadcrumb wrpapper  =======-->
+                    <!--=======  End of breadcrumb content  =======-->
                 </div>
+                <!--=======  End of breadcrumb wrpapper  =======-->
             </div>
         </div>
     </div>
-    <!--====================  End of breadcrumb area  ====================-->
-    <!--====================  page content area ====================-->
-    <div class="page-content-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!--=======  page wrapper  =======-->
-                    <div class="page-wrapper">
-                        <div class="page-content-wrapper">
-                            <!--=======  single product main content area  =======-->
-                            <div class="single-product-main-content-area section-space" style="direction: ltr;">
-                                <div class="row" style="display: flex; flex-direction: row-reverse">
-                                    <div class="col-lg-6">
+</div>
+<!--====================  End of breadcrumb area  ====================-->
+<!--====================  page content area ====================-->
+<div class="page-content-area">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<!--=======  page wrapper  =======-->
+<div class="page-wrapper">
+<div class="page-content-wrapper">
+<!--=======  single product main content area  =======-->
+<div class="single-product-main-content-area section-space" style="direction: ltr;">
+    <div class="row" style="display: flex; flex-direction: row-reverse">
+        <div class="col-lg-6">
 
-                                        <!--=======  product details slider area  =======-->
+            <!--=======  product details slider area  =======-->
 
-                                        <div class="product-details-slider-area">
-                                            <div class="big-image-wrapper">
-                                                <div class="product-details-big-image-slider-wrapper product-details-big-image-slider-wrapper--bottom-space ht-slick-slider"
-                                                     data-slick-setting='{
+            <div class="product-details-slider-area">
+                <div class="big-image-wrapper">
+                    <div class="product-details-big-image-slider-wrapper product-details-big-image-slider-wrapper--bottom-space ht-slick-slider"
+                         data-slick-setting='{
             "slidesToShow": 1,
             "slidesToScroll": 1,
             "arrows": false,
@@ -68,19 +68,19 @@
             {"breakpoint":575, "settings": {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1} },
             {"breakpoint":479, "settings": {"slidesToShow": 1, "arrows": false, "slidesToScroll": 1} }
 ]'>
-                                                    @foreach (var image in Model.Product.ProductPuctures)
-                                                    {
-                                                        <div class="single-image">
-                                                            <img src="~/Images/Site-Picture/@Model.Product.ProductName/@image.Picture" class="img-fluid"
-                                                                 alt="@image.PictureAlt" title="@image.PictureTitle">
-                                                        </div>
-                                                    }
-                                                </div>
-                                            </div>
+                        @foreach (var image in Model.Product.ProductPuctures)
+                        {
+                            <div class="single-image">
+                                <img src="~/Images/Site-Picture/@Model.Product.ProductName/@image.Picture" class="img-fluid"
+                                     alt="@image.PictureAlt" title="@image.PictureTitle">
+                            </div>
+                        }
+                    </div>
+                </div>
 
 
-                                            <div class="product-details-small-image-slider-wrapper product-details-small-image-slider-wrapper--horizontal-space ht-slick-slider"
-                                                 data-slick-setting='{
+                <div class="product-details-small-image-slider-wrapper product-details-small-image-slider-wrapper--horizontal-space ht-slick-slider"
+                     data-slick-setting='{
         "slidesToShow": 4,
         "slidesToScroll": 1,
         "arrows": true,
@@ -100,378 +100,470 @@
         {"breakpoint":575, "settings": {"slidesToShow": 3, "arrows": false, "slidesToScroll": 1} },
         {"breakpoint":479, "settings": {"slidesToShow": 2, "arrows": false, "slidesToScroll": 1} }
     ]'>
-                                                @foreach (var image in Model.Product.ProductPuctures)
-                                                {
-                                                    <div class="single-image">
-                                                        <img src="~/Images/Site-Picture/@Model.Product.ProductName/@image.Picture" class="img-fluid"
-                                                             alt="@image.PictureAlt" title="@image.PictureTitle">
-                                                    </div>
-                                                }
-                                            </div>
-                                        </div>
-
-                                        <!--=======  End of product details slider area  =======-->
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <!--=======  single product content description  =======-->
-                                        <div class="single-product-content-description">
-                                            <p class="single-info">
-                                                Brands <a href="shop-left-sidebar.html">Dolor</a>
-                                            </p>
-                                            <h4 class="product-title">@Model.Product.ProductName</h4>
-                                            <div class="product-rating">
-                                                <span class="rating">
-                                                    <i class="ion-android-star active"></i>
-                                                    <i class="ion-android-star active"></i>
-                                                    <i class="ion-android-star active"></i>
-                                                    <i class="ion-android-star active"></i>
-                                                    <i class="ion-android-star-outline"></i>
-                                                </span>
-
-                                                <span class="review-count">
-                                                    <a href="#">(2 reviews)</a> | <a href="#">Write A Review</a>
-                                                </span>
-                                            </div>
-
-                                            <p class="single-grid-product__price">
-                                                <span class="discounted-price">@Model.Product.PriceAfterDiscount</span> <span class="main-price discounted">@Model.Product.UnitPrice</span>
-                                            </p>
-
-                                            <p class="single-info">Product Code: <span class="value">@Model.Product.ProductCode</span> </p>
-                                            <p class="single-info">Reward Points: <span class="value">200</span> </p>
-                                            @if (Model.Product.IsInStock)
-                                            {
-                                                <p class="single-info">
-                                                    Availability: <span class="value">In Stock</span>
-                                                </p>
-                                                <p class="single-info">
-                                                    Available Stock: <span class="value">@Model.Product.AvailableStock</span>
-                                                </p>
-                                            }
-                                            else
-                                            {
-                                                <p class="single-info">
-                                                    Availability: <span class="value text-danger">Not available in Stock</span>
-                                                </p>
-                                            }
-
-
-                                            <p class="product-description">
-                                                @Model.Product.Description
-                                            </p>
-                                            @if (Model.Product.EndDate > DateTime.Now)
-                                            {
-                                                <div class="product-countdown" data-countdown=" @Model.Product.EndDate"></div>
-                                            }
-
-                                            <div class="product-actions">
-                                                <div class="quantity-selection">
-                                                    <label>Qty</label>
-                                                    <input type="number" value="1" min="1" id="sale-value" onchange="checkCart(@Model.Product.AvailableStock)">
-                                                </div>
-
-                                                <div class="product-buttons">
-                                                    <a class="cart-btn" href="#">
-                                                        <i class="ion-bag"></i>
-                                                        ADD TO CART
-                                                    </a>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="social-share-buttons mt-20">
-                                                <h5>share this product</h5>
-                                                <ul>
-                                                    <li>
-                                                        <a class="twitter" href="#">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="facebook" href="#">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="google-plus" href="#">
-                                                            <i class="fa fa-google-plus"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="pinterest" href="#">
-                                                            <i class="fa fa-pinterest"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <p class="single-info mb-0">
-                                                Tags: <a href="shop-left-sidebar.html">Dolor</a>
-                                                , <a href="shop-left-sidebar.html">Ipsum</a>, <a href="shop-left-sidebar.html">Lorem</a>
-                                            </p>
-
-
-                                        </div>
-                                        <!--=======  End of single product content description  =======-->
-                                    </div>
-                                </div>
-                            </div>
-                            <!--=======  End of single product main content area  =======-->
-                            <!--=======  product description review   =======-->
-
-                            <div class="product-description-review-area">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <!--=======  product description review container  =======-->
-
-                                        <div class="tab-slider-wrapper product-description-review-container  section-space--inner">
-                                            <nav>
-                                                <div class="nav nav-tabs justify-content-center" id="nav-tab"
-                                                     role="tablist">
-                                                    <a class="nav-item nav-link active" id="description-tab"
-                                                       data-toggle="tab" href="#product-description" role="tab"
-                                                       aria-selected="true">Description</a>
-                                                    <a class="nav-item nav-link" id="review-tab" data-toggle="tab"
-                                                       href="#review" role="tab" aria-selected="false">Reviews (1)</a>
-                                                </div>
-                                            </nav>
-                                            <div class="tab-content" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="product-description"
-                                                     role="tabpanel" aria-labelledby="description-tab">
-                                                    <!--=======  product description  =======-->
-
-                                                    <div class="product-description">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-                                                            fringilla augue nec est tristique auctor. Donec non est at
-                                                            libero vulputate rutrum. Morbi ornare lectus quis justo
-                                                            gravida semper. Nulla tellus mi, vulputate adipiscing cursus
-                                                            eu, suscipit id nulla.
-                                                        </p>
-
-                                                        <p>
-                                                            Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus
-                                                            feugiat sem, quis fermentum turpis eros eget velit. Donec ac
-                                                            tempus ante. Fusce ultricies massa massa. Fusce aliquam,
-                                                            purus eget sagittis vulputate, sapien libero hendrerit est,
-                                                            sed commodo augue nisi non neque. Lorem ipsum dolor sit
-                                                            amet, consectetur adipiscing elit. Sed tempor, lorem et
-                                                            placerat vestibulum, metus nisi posuere nisl, in accumsan
-                                                            elit odio quis mi. Cras neque metus, consequat et blandit
-                                                            et, luctus a nunc. Etiam gravida vehicula tellus, in
-                                                            imperdiet ligula euismod eget.
-                                                        </p>
-                                                    </div>
-
-                                                    <!--=======  End of product description  =======-->
-                                                </div>
-                                                <div class="tab-pane fade" id="review" role="tabpanel"
-                                                     aria-labelledby="review-tab">
-                                                    <!--=======  review content  =======-->
-
-                                                    <div class="product-rating-wrap">
-                                                        <div class="pro-avg-rating">
-                                                            <h4>4.5 <span>(Overall)</span></h4>
-                                                            <span>Based on 9 Comments</span>
-                                                        </div>
-                                                        <div class="rating-list">
-                                                            <div class="sin-list float-right">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <span>(5)</span>
-                                                            </div>
-                                                            <div class="sin-list float-right">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <span>(3)</span>
-                                                            </div>
-                                                            <div class="sin-list float-right">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <span>(1)</span>
-                                                            </div>
-                                                            <div class="sin-list float-right">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <span>(0)</span>
-                                                            </div>
-                                                            <div class="sin-list float-right">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <span>(0)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings-wrapper">
-
-                                                            <div class="sin-ratings">
-                                                                <div class="rating-author">
-                                                                    <h3>Cristopher Lee</h3>
-                                                                    <div class="rating-star">
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <span>(5)</span>
-                                                                    </div>
-                                                                </div>
-                                                                <p>
-                                                                    enim ipsam voluptatem quia voluptas sit
-                                                                    aspernatur aut odit aut fugit, sed quia res eos
-                                                                    qui ratione voluptatem sequi Neque porro
-                                                                    quisquam est, qui dolorem ipsum quia dolor sit
-                                                                    amet, consectetur, adipisci veli
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="sin-ratings">
-                                                                <div class="rating-author">
-                                                                    <h3>Rashed Mahmud</h3>
-                                                                    <div class="rating-star">
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <span>(5)</span>
-                                                                    </div>
-                                                                </div>
-                                                                <p>
-                                                                    enim ipsam voluptatem quia voluptas sit
-                                                                    aspernatur aut odit aut fugit, sed quia res eos
-                                                                    qui ratione voluptatem sequi Neque porro
-                                                                    quisquam est, qui dolorem ipsum quia dolor sit
-                                                                    amet, consectetur, adipisci veli
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="sin-ratings">
-                                                                <div class="rating-author">
-                                                                    <h3>Hasan Mubarak</h3>
-                                                                    <div class="rating-star">
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <span>(5)</span>
-                                                                    </div>
-                                                                </div>
-                                                                <p>
-                                                                    enim ipsam voluptatem quia voluptas sit
-                                                                    aspernatur aut odit aut fugit, sed quia res eos
-                                                                    qui ratione voluptatem sequi Neque porro
-                                                                    quisquam est, qui dolorem ipsum quia dolor sit
-                                                                    amet, consectetur, adipisci veli
-                                                                </p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="rating-form-wrapper fix">
-                                                            <h3>Add your Comments</h3>
-                                                            <form action="#">
-                                                                <div class="rating-form row">
-                                                                    <div class="col-12 mb-15">
-                                                                        <h5>Rating:</h5>
-                                                                        <div class="rating-star fix">
-                                                                            <i class="fa fa-star-o"></i>
-                                                                            <i class="fa fa-star-o"></i>
-                                                                            <i class="fa fa-star-o"></i>
-                                                                            <i class="fa fa-star-o"></i>
-                                                                            <i class="fa fa-star-o"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6 col-12 form-group">
-                                                                        <label for="name">Name:</label>
-                                                                        <input id="name" placeholder="Name" type="text">
-                                                                    </div>
-                                                                    <div class="col-md-6 col-12 form-group">
-                                                                        <label for="email">Email:</label>
-                                                                        <input id="email" placeholder="Email"
-                                                                               type="text">
-                                                                    </div>
-                                                                    <div class="col-12 form-group">
-                                                                        <label for="your-review">Your Review:</label>
-                                                                        <textarea name="review" id="your-review"
-                                                                                  placeholder="Write a review"></textarea>
-                                                                    </div>
-                                                                    <div class="col-12">
-                                                                        <input value="add review" type="submit">
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-
-                                                    <!--=======  End of review content  =======-->
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!--=======  End of product description review container  =======-->
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--=======  End of product description review   =======-->
-
+                    @foreach (var image in Model.Product.ProductPuctures)
+                    {
+                        <div class="single-image">
+                            <img src="~/Images/Site-Picture/@Model.Product.ProductName/@image.Picture" class="img-fluid"
+                                 alt="@image.PictureAlt" title="@image.PictureTitle">
                         </div>
-                    </div>
-                    <!--=======  End of page wrapper  =======-->
+                    }
                 </div>
             </div>
+
+            <!--=======  End of product details slider area  =======-->
+        </div>
+        <div class="col-lg-6">
+            <!--=======  single product content description  =======-->
+            <div class="single-product-content-description">
+                <p class="single-info">
+                    Brands <a href="shop-left-sidebar.html">Dolor</a>
+                </p>
+                <h4 class="product-title">@Model.Product.ProductName</h4>
+                <div class="product-rating" id="product-rating">
+
+
+                    <span class="review-count">
+                        <a href="#" id="go-to-view"
+                        >(@Model.CommentCount reviews)</a> | <a href="#"
+                                                                id="go-to-view-" >Write A Review</a>
+                    </span>
+                </div>
+
+                <p class="single-grid-product__price">
+                    <span class="discounted-price">@Model.Product.PriceAfterDiscount</span> <span class="main-price discounted">@Model.Product.UnitPrice</span>
+                </p>
+
+                <p class="single-info">Product Code: <span class="value">@Model.Product.ProductCode</span> </p>
+                <p class="single-info">Reward Points: <span class="value">200</span> </p>
+                @if (Model.Product.IsInStock)
+                {
+                    <p class="single-info">
+                        Availability: <span class="value">In Stock</span>
+                    </p>
+                    <p class="single-info">
+                        Available Stock: <span class="value">@Model.Product.AvailableStock</span>
+                    </p>
+                }
+                else
+                {
+                    <p class="single-info">
+                        Availability: <span class="value text-danger">Not available in Stock</span>
+                    </p>
+                }
+
+
+                <p class="product-description">
+                    @Model.Product.Description
+                </p>
+                @if (Model.Product.EndDate > DateTime.Now)
+                {
+                    <div class="product-countdown" data-countdown=" @Model.Product.EndDate"></div>
+                }
+
+                <div class="product-actions">
+                    <div class="quantity-selection">
+                        <label>Qty</label>
+                        <input type="number" value="1" min="1" id="sale-value" onchange="checkCart(@Model.Product.AvailableStock)">
+                    </div>
+
+                    <div class="product-buttons">
+                        <a class="cart-btn" href="#">
+                            <i class="ion-bag"></i>
+                            ADD TO CART
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="social-share-buttons mt-20">
+                    <h5>share this product</h5>
+                    <ul>
+                        <li>
+                            <a class="twitter" href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="facebook" href="#">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="google-plus" href="#">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="pinterest" href="#">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="single-info mb-0">
+                    Tags: <a href="shop-left-sidebar.html">Dolor</a>
+                    , <a href="shop-left-sidebar.html">Ipsum</a>, <a href="shop-left-sidebar.html">Lorem</a>
+                </p>
+
+
+            </div>
+            <!--=======  End of single product content description  =======-->
         </div>
     </div>
-    <!--====================  End of page content area  ====================-->
+</div>
+<!--=======  End of single product main content area  =======-->
+<!--=======  product description review   =======-->
 
+<div class="product-description-review-area">
+    <div class="row">
+        <div class="col-lg-12">
+            <!--=======  product description review container  =======-->
 
+            <div class="tab-slider-wrapper product-description-review-container  section-space--inner">
+                <nav>
+                    <div class="nav nav-tabs justify-content-center" id="nav-tab"
+                         role="tablist">
+                        <a class="nav-item nav-link active" id="description-tab"
+                           data-toggle="tab" href="#product-description" role="tab"
+                           aria-selected="true">
+                            Description
+                        </a>
+                        <a class="nav-item nav-link" id="review-tab" data-toggle="tab"
+                           href="#review" role="tab" aria-selected="false">
+                            Reviews (@Model.CommentCount)
+                        </a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="product-description"
+                         role="tabpanel" aria-labelledby="description-tab">
+                        <!--=======  product description  =======-->
 
+                        <div class="product-description">
+                            <p>
+                                @Model.Product.Description
+                            </p>
 
-    <div class="search-overlay" id="search-overlay">
-        <a href="javascript:void(0)" class="close-search-overlay" id="close-search-overlay">
-            <i class="ion-ios-close-empty"></i>
-        </a>
+                            <p>
+                                @Model.Product.Description
+                            </p>
+                        </div>
 
-        <!--=======  search form  =======-->
+                        <!--=======  End of product description  =======-->
+                    </div>
+                    <div class="tab-pane fade" id="review" role="tabpanel"
+                         aria-labelledby="review-tab">
+                        <!--=======  review content  =======-->
 
-        <div class="search-form">
-            <form action="#">
-                <input type="search" placeholder="Search entire store here ...">
-                <button type="submit">
-                    <i class="ion-android-search"></i>
-                </button>
-            </form>
+                        <div class="product-rating-wrap">
+                            <div class="pro-avg-rating float-left">
+                                <div class="row col-12 justify-content-end">
+                                    <div id="average-score">
+                                    </div>
+                                    <h4 class="pt-1 px-3"> User Rating </h4>
+                                </div>
+                                <p class="float-left px-5">
+                                    <span class="float-left pr-1">@Model.AverageScore</span>
+                                    based on <span>@Model.CommentCount</span>
+                                    Comments
+                                </p>
+                            </div>
+                            <div class="col-12 mr-4">
+                                <div class="col-12 d-flex mobile-wrapper">
+                                    <div class="col-9 bg-light m-0 p-0 bar-container" id="bar-container">
+                                        <div id="5-star" class="float-left"></div>
+                                    </div>
+                                    <span id="span-star" class="col-1 mr-5 pr-5">(@Model.ScoreList["5-star"])</span>
+                                    <div class="col-2" id="star-wrapper">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex mobile-wrapper">
+                                    <div class="col-9 bg-light m-0 p-0 bar-container" id="bar-container">
+                                        <div id="4-star" class="float-left"></div>
+                                    </div>
+                                    <span id="span-star" class="col-1 mr-5 pr-5">(@Model.ScoreList["4-star"])</span>
+                                    <div class="col-2" id="star-wrapper">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex mobile-wrapper">
+                                    <div class="col-9 bg-light m-0 p-0 bar-container" id="bar-container">
+                                        <div id="3-star" class="float-left"></div>
+                                    </div>
+                                    <span id="span-star" class="col-1 mr-5 pr-5">(@Model.ScoreList["3-star"])</span>
+                                    <div class="col-2" id="star-wrapper">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex mobile-wrapper">
+                                    <div class="col-9 bg-light m-0 p-0 bar-container" id="bar-container">
+                                        <div id="2-star" class="float-left"></div>
+                                    </div>
+                                    <span id="span-star" class="col-1 mr-5 pr-5">(@Model.ScoreList["2-star"])</span>
+                                    <div class="col-2" id="star-wrapper">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex mobile-wrapper">
+                                    <div class="col-9 bg-light m-0 p-0 bar-container" id="bar-container">
+                                        <div id="1-star" class="float-left"></div>
+                                    </div>
+                                    <span id="span-star" class="col-1 mr-5 pr-5">(@Model.ScoreList["1-star"])</span>
+                                    <div class="col-2" id="star-wrapper">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ratings-wrapper pt-5">
+                                @foreach (var item in Model.Comments)
+                                {
+                                    if (item.Accepted)
+                                    {
+                                        <div class="sin-ratings">
+                                            <div class="rating-author">
+                                                <h3>@item.PersonName</h3>
+                                                <span class="float-left">@item.CreationDate</span>
+                                            </div>
+                                            <div class="rating-star float-left">
+                                                <div id="@item.Id">
+                                                </div>
+                                                <span class="float-left">(@item.Rating)</span>
+                                            </div>
+                                            <p class="mr-3">
+                                                @item.Body
+                                            </p>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <div class="rating-form-wrapper fix">
+                                <h3>Add your Comments</h3>
+                                <form method="post">
+                                    <div class="rating-form row">
+                                        <div class="col-12 mb-15">
+                                            <h5>Rating:</h5>
+                                            <div class="rating-star fix">
+                                                <div class="star-rating">
+                                                    <div class="star-input">
+                                                        <input type="radio" name="Rating" id="rating-5" value="5">
+                                                        <label for="rating-5" class="fa fa-star"></label>
+                                                        <input type="radio" name="Rating" id="rating-4" value="4">
+                                                        <label for="rating-4" class="fa fa-star"></label>
+                                                        <input type="radio" name="Rating" id="rating-3" value="3">
+                                                        <label for="rating-3" class="fa fa-star"></label>
+                                                        <input type="radio" name="Rating" id="rating-2" value="2">
+                                                        <label for="rating-2" class="fa fa-star"></label>
+                                                        <input type="radio" name="Rating" id="rating-1" value="1">
+                                                        <label for="rating-1" class="fa fa-star"></label>
+                                                    </div>
+                                                    <span class="rating-reaction"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12 form-group">
+                                            <label for="name">Name:</label>
+                                            <input id="name" placeholder="Name" name="PersonName" type="text">
+                                        </div>
+                                        <div class="col-md-6 col-12 form-group">
+                                            <label for="email">Email:</label>
+                                            <input id="email" name="Email" placeholder="Email"
+                                                   type="text">
+                                        </div>
+                                        <div class="col-12 form-group">
+                                            <label for="your-review">Your Review:</label>
+                                            <textarea name="Body" id="your-review"
+                                                                                  placeholder="Write a review"></textarea>
+                                        </div>
+                                        <input name="ProductId" type="hidden" value="@Model.Product.Id"/>
+                                        <input name="ProductSlug" type="hidden" value="@Model.Product.Slug"/>
+                                        <div class="col-12">
+                                            <input value="add review" type="submit">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!--=======  End of review content  =======-->
+                    </div>
+                </div>
+            </div>
+
+            <!--=======  End of product description review container  =======-->
         </div>
+    </div>
+</div>
 
-        <!--=======  End of search form  =======-->
+<!--=======  End of product description review   =======-->
+
+</div>
+</div>
+<!--=======  End of page wrapper  =======-->
+</div>
+</div>
+</div>
+</div>
+<!--====================  End of page content area  ====================-->
+
+
+<div class="search-overlay" id="search-overlay">
+    <a href="javascript:void(0)" class="close-search-overlay" id="close-search-overlay">
+        <i class="ion-ios-close-empty"></i>
+    </a>
+
+    <!--=======  search form  =======-->
+
+    <div class="search-form">
+        <form action="#">
+            <input type="search" placeholder="Search entire store here ...">
+            <button type="submit">
+                <i class="ion-android-search"></i>
+            </button>
+        </form>
     </div>
 
+    <!--=======  End of search form  =======-->
+</div>
 
-    <!-- scroll to top  -->
-    <div id="scroll-top">
-        <span>Back to top</span><i class="ion-chevron-right"></i><i class="ion-chevron-right"></i>
-    </div>
+
+<!-- scroll to top  -->
+<div id="scroll-top">
+    <span>Back to top</span><i class="ion-chevron-right"></i><i class="ion-chevron-right"></i>
+</div>
 
 
 </div>
 
 @section Scripts{
-    <script>
+    <script type="text/javascript">
 
+        // Catpture starts
+        const btn = document.querySelector(".submit-rating");
+        const thanksmsg = document.querySelector(".thanks-msg");
+        const starRating = document.querySelector(".star-input");
+//        btn.onclick = () => {
+//            starRating.style.display = "none";
+//            thanksmsg.style.display = "table";
+//            return false;
+//        };
+
+        // Comment Stars
+        $(function () {
+
+
+
+            function addScore(score, $domElement) {
+                $("<span class='stars-container'>")
+                    .addClass("stars-" + score.toString())
+                    .text("★★★★★")
+                    .appendTo($domElement);
+            }
+
+            function addBarClass(commentCount, totalComment, $domElement) {
+                var targetClass = commentCount / totalComment * 100;
+                targetClass = Math.ceil(targetClass / 10) * 10;
+                $domElement.addClass("bar-" + targetClass.toString());
+            }
+
+            @foreach (var item in Model.ScoreList)
+            {
+                <text>
+                    addBarClass(@item.Value,@Model.CommentCount ,$("#@item.Key"));
+                </text>
+            }
+
+            @foreach (var item in Model.Comments)
+            {
+                <text>
+                    addScore(@item.Rating * 20, $("#@item.Id"));
+                </text>
+            }
+            addScore(@Model.AverageScore * 20, $("#average-score"));
+            addScore(@Model.AverageScore * 20, $("#product-rating"));
+            $("#average-score").find("span").addClass("h2");
+            $("#product-rating").children('span')[1].classList.add("h5");
+
+        });
+        $(window).on('resize', function() {
+            if ($(window).width() < 500) {
+                var domElement = $('span[id="span-star"]');
+                var _domElement = $('div[id="star-wrapper"]');
+                var __domElement = $('div[id="bar-container"]');
+                domElement.each(function (index, item) {
+                    $(item).removeClass('mr-5');
+                    $(item).removeClass('pr-5');
+                })
+                _domElement.each(function(index, item) {
+                    $(item).addClass('col-5');
+                    $(item).removeClass('col-2');
+                })
+                __domElement.each(function (index, item) {
+                    $(item).addClass('col-6');
+                    $(item).removeClass('col-9');
+                })
+            }
+            if ($(window).width() > 500) {
+                var domElement = $('span[id="span-star"]');
+                var _domElement = $('div[id="star-wrapper"]');
+                var __domElement = $('div[id="bar-container"]');
+                domElement.each(function (index, item) {
+                    $(item).addClass('mr-5');
+                    $(item).addClass('pr-5');
+                })
+                _domElement.each(function (index, item) {
+                    $(item).removeClass('col-5');
+                    $(item).addClass('col-2');
+                })
+                __domElement.each(function (index, item) {
+                    $(item).removeClass('col-6');
+                    $(item).addClass('col-9');
+                })
+            }
+        });
+
+        $('#go-to-view').on('click', function(e){
+            e.preventDefault();
+            var reviewSection = document.getElementsByClassName('product-rating-wrap')[0];
+            $('#description-tab').removeClass('active');
+            $('#product-description').removeClass('active').removeClass('show');
+            $('#review-tab').addClass('active');
+            $('#review').addClass('active').addClass('show');
+            reviewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        $('#go-to-view-').on('click', function (e) {
+            e.preventDefault();
+            var reviewSection = document.getElementsByClassName('rating-form')[0];
+            $('#description-tab').removeClass('active');
+            $('#product-description').removeClass('active').removeClass('show');
+            $('#review-tab').addClass('active');
+            $('#review').addClass('active').addClass('show');
+            reviewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
     </script>
 }
-

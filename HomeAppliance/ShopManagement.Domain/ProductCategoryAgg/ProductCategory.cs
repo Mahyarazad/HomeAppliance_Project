@@ -5,7 +5,7 @@ using SM.Domain.ProductAgg;
 
 namespace ShopManagement.Domain
 {
-    public class ProductCategory : BaseEntity
+    public class ProductCategory : BaseEntity<int>
     {
         protected ProductCategory()
         {

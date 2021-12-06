@@ -70,14 +70,15 @@ namespace ServiceHost
                         Console.WriteLine($"Unable to parse");
                     }
                 }
-                else
-                {
-                    Directory.CreateDirectory(path);
-                    var filePath = $"{path}{fileName}{fileExtension}";
-                    WriteFile(file, $"{path}{fileName}{fileExtension}");
-                    outputFileName = fileName;
 
-                }
+            }
+            else
+            {
+                Directory.CreateDirectory(path);
+                var filePath = $"{path}{fileName}{fileExtension}";
+                WriteFile(file, $"{path}{fileName}{fileExtension}");
+                outputFileName = fileName;
+
             }
 
             return $"{outputFileName}{fileExtension}";
