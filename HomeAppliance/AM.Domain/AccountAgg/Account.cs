@@ -6,7 +6,7 @@ namespace AM.Domain
     public class Account : BaseEntity<long>
     {
         public Account(string fullName, string userId, string email, string phoneNumber
-            , string password, string profilePicture, long roleId)
+            , string password, string profilePicture, int roleId)
         {
             FullName = fullName;
             UserId = userId;
@@ -23,10 +23,11 @@ namespace AM.Domain
         public string PhoneNumber { get; private set; }
         public string Password { get; private set; }
         public string ProfilePicture { get; private set; }
-        public long RoleId { get; private set; }
+        public int RoleId { get; private set; }
+        public Role Role { get; private set; }
 
         public void Edit(string fullName, string userId, string email, string phoneNumber
-            , string profilePicture, long roleId)
+            , string profilePicture, int roleId)
         {
             FullName = fullName;
             UserId = userId;

@@ -19,6 +19,8 @@ namespace AM.Infrastructure.Mapping
             builder.Property(x => x.RoleId).IsRequired().HasPrecision(2, 0);
             builder.Property(x => x.FullName).IsRequired().HasMaxLength(100);
             builder.Property(x => x.UserId).IsRequired().HasMaxLength(50);
+
+            builder.HasOne(x => x.Role).WithMany(x => x.Accounts).HasForeignKey(x => x.RoleId);
         }
     }
 }

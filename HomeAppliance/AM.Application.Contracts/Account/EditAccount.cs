@@ -1,4 +1,4 @@
-﻿namespace AM.Application.Contracts
+﻿namespace AM.Application.Contracts.Account
 {
     public class EditAccount : CreateAccount
     {

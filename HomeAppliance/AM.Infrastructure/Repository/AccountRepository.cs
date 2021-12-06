@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using _0_Framework.Application;
 using _0_Framework.Infrastructure;
-using AM.Application.Contracts;
+using AM.Application.Contracts.Account;
 using AM.Domain;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,17 +19,19 @@ namespace AM.Infrastructure
 
         public List<AccountViewModel> Search(AccountSearchModel searchModel)
         {
-            var query = _amContext.Accounts.Select(x => new AccountViewModel
-            {
-                Id = x.Id,
-                Email = x.Email,
-                FullName = x.FullName,
-                PhoneNumber = x.PhoneNumber,
-                ProfilePicture = x.ProfilePicture,
-                Role = x.RoleId,
-                UserId = x.UserId,
-                CreationTime = TruncateDateTime.TruncateToDefault(x.CreationTime).ToString()
-            });
+            var query = _amContext.Accounts
+                .Include(x => x.Role)
+                .Select(x => new AccountViewModel
+                {
+                    Id = x.Id,
+                    Email = x.Email,
+                    FullName = x.FullName,
+                    PhoneNumber = x.PhoneNumber,
+                    ProfilePicture = x.ProfilePicture,
+                    Role = x.Role.Name,
+                    UserId = x.UserId,
+                    CreationTime = TruncateDateTime.TruncateToDefault(x.CreationTime).ToString()
+                });
             if (!string.IsNullOrEmpty(searchModel.Email))
                 query = query.Where(x => x.Email.Contains(searchModel.Email));
             if (!string.IsNullOrEmpty(searchModel.FullName))

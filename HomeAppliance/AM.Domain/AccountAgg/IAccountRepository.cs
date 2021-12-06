@@ -1,5 +1,5 @@
 ﻿using _0_Framework;
-using AM.Application.Contracts;
+using AM.Application.Contracts.Account;
 using System.Collections.Generic;
 
 namespace AM.Domain

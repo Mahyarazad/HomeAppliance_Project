@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using _0_Framework;
 using _0_Framework.Application;
-using AM.Application.Contracts;
+using AM.Application.Contracts.Account;
 using AM.Domain;
-using AM.Infrastructure;
 
 namespace AM.Application
 {
@@ -47,7 +44,7 @@ namespace AM.Application
                     command.PhoneNumber,
                     password,
                     profilePicture,
-                    1);
+                    command.RoleId);
                 _accountRepository.Create(account);
                 _accountRepository.SaveChanges();
                 return result.Succeeded();

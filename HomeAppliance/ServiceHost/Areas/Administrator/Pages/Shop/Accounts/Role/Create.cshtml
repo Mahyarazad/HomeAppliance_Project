@@ -1,0 +1,36 @@
+﻿@model AM.Application.Contracts.Role.CreateRole
+@{
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">
+        <i class="fa fa-times-circle"></i>
+    </button>
+    <h4> Create a Account </h4>
+</div>
+
+<form asp-page-handler="Create" asp-page="./Index"
+      data-callback=""
+      method="post"
+      data-action="Refresh"
+      data-ajax="true"
+      >
+    <div class="row">
+        <div clas="form-group col-md-12">
+            <div class="col-md-6">
+                <label asp-for="Name"> Name </label>
+                <input asp-for="Name" type="text" class="form-control"
+                       />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal"> Close </button>
+        <button id="submitModal" type="submit" class="btn btn-inverse waves-effect waves-light">
+            <i class="fa fa-save"></i>
+            Create
+        </button>
+    </div>
+</form>

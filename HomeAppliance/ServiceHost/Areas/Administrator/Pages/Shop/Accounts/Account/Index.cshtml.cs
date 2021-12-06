@@ -1,14 +1,11 @@
 using System.Collections.Generic;
-using System.Linq;
-using AM.Application.Contracts;
-using IM.Application.Contracts;
+using AM.Application.Contracts.Account;
+using AM.Application.Contracts.Role;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using SM.Application.Contracts;
-using SM.Application.Contracts.Product;
 
-namespace ServiceHost.Areas.Administrator.Pages.Shop.Account
+namespace ServiceHost.Areas.Administrator.Pages.Shop.Accounts.Account
 {
     public class IndexModel : PageModel
     {
@@ -18,23 +15,29 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.Account
         public List<AccountViewModel> Accounts { get; set; }
         public SelectList RoleList { get; set; }
         private readonly IAccountApplication _accountApplication;
-        public IndexModel(IAccountApplication accountApplication)
+        private readonly IRoleApplication _roleApplication;
+        public IndexModel(IAccountApplication accountApplication,
+            IRoleApplication roleApplication)
         {
             _accountApplication = accountApplication;
+            _roleApplication = roleApplication;
         }
 
         public void OnGet(AccountSearchModel searchModel)
         {
-            // RoleList = new SelectList(.GetList(), "Id", "Name");
+            RoleList = new SelectList(_roleApplication.GetAll(), "Id", "Name");
             @ViewData["title"] = "Manage Accounts";
             Accounts = _accountApplication.Search(searchModel);
         }
 
         public IActionResult OnGetCreate()
         {
-
+            var command = new CreateAccount
+            {
+                RoleList = _roleApplication.GetAll()
+            };
             @ViewData["title"] = "Create a new Account";
-            return Partial("./Create");
+            return Partial("./Create", command);
         }
 
         public JsonResult OnPostCreate(CreateAccount command)
@@ -48,6 +51,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.Account
         {
             @ViewData["title"] = "Account Management";
             var account = _accountApplication.GetDetail(id);
+            account.RoleList = _roleApplication.GetAll();
             return Partial("./Edit", account);
         }
 

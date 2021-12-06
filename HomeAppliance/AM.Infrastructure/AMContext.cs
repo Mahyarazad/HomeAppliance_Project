@@ -13,6 +13,7 @@ namespace AM.Infrastructure
         }
 
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Role> Roles { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var assembly = typeof(AccountMapping).Assembly;
