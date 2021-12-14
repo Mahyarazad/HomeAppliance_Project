@@ -9,10 +9,10 @@
     <div class="col-sm-12">
         <h1 class="page-title text-dark"> @ViewData["title"] </h1>
         <p class="pull-right">
-            <a id="showModal" href="#showmodal=@Url.Page("./Index", "Create")"
+            <a asp-page="Create"
                class="btn btn-success wave-effect wave-light">
                 <i class="fa fa-plus-circle"></i>
-                Create a new Role
+                Register a new Role
             </a>
         </p>
     </div>
@@ -43,10 +43,10 @@
                             <td> @item.Name</td>
 
                             <td class="col-md-4">
-                                <a id="showModal"
-                                   href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})"
+                                <a asp-page="Edit" asp-route-id="@item.Id"
                                    class="btn btn-warning waves-effect waves-light col-md-4">
-                                    <i class="fa fa-edit"></i> Modify
+                                <i class="fa fa-edit"></i> Modify
+                                </a>
                             </td>
                         </tr>
                     }

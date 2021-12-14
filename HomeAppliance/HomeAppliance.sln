@@ -49,13 +49,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Account.Management", "Accou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.Domain", "AM.Domain\AM.Domain.csproj", "{E2DE4196-7DBB-4A7A-B662-9D99B9EEC5C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.Application.Contracts", "AM.Application.Contracts\AM.Application.Contracts.csproj", "{B72C2A68-A4FE-4FD7-8154-D6581F07F1C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.Application.Contracts", "AM.Application.Contracts\AM.Application.Contracts.csproj", "{B72C2A68-A4FE-4FD7-8154-D6581F07F1C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.Infrastructure", "AM.Infrastructure\AM.Infrastructure.csproj", "{656DCD8E-E35B-4A83-AD42-A77D86CF00C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.Infrastructure", "AM.Infrastructure\AM.Infrastructure.csproj", "{656DCD8E-E35B-4A83-AD42-A77D86CF00C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.Application", "AM.Application\AM.Application.csproj", "{FA04D21B-1CCE-4691-84A7-ED8695852932}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.Application", "AM.Application\AM.Application.csproj", "{FA04D21B-1CCE-4691-84A7-ED8695852932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMConfiguration", "AMConfiguration\AMConfiguration.csproj", "{5E0333B4-8505-48E9-9150-93A32B27FE92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMConfiguration", "AMConfiguration\AMConfiguration.csproj", "{5E0333B4-8505-48E9-9150-93A32B27FE92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

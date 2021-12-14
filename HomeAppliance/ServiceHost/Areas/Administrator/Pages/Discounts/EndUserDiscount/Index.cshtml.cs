@@ -38,7 +38,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Discounts.EndUser
             var command = new DefineEndUserDiscount();
             command.Products = _productApplication.GetList();
             @ViewData["title"] = "Define a new discount";
-            return Partial("./Create", command);
+            return Partial("./Register", command);
         }
 
         public JsonResult OnPostCreate(DefineEndUserDiscount command)

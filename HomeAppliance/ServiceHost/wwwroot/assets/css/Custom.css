@@ -196,3 +196,7 @@
 .product-details-small-image-slider-wrapper .slick-prev {
     left: 0;
 }
+
+.ltr {
+    direction: ltr !important;
+}

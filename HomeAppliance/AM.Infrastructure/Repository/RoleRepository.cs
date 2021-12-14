@@ -4,6 +4,7 @@ using _0_Framework.Application;
 using _0_Framework.Infrastructure;
 using AM.Application.Contracts.Role;
 using AM.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace AM.Infrastructure
 {
@@ -32,8 +33,14 @@ namespace AM.Infrastructure
             return _amContext.Roles.Select(x => new EditRole
             {
                 Id = x.Id,
-                Name = x.Name
-            }).FirstOrDefault(x => x.Id == Id);
+                Name = x.Name,
+                MappedPermissions = MapPermissions(x.Permissions)
+            }).AsNoTracking().FirstOrDefault(x => x.Id == Id);
+        }
+
+        private static List<PermissionDto> MapPermissions(List<Permission> permissions)
+        {
+            return permissions.Select(x => new PermissionDto(x.Code, x.Name)).ToList();
         }
     }
 }

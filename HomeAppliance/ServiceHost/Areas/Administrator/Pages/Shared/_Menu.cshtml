@@ -1,14 +1,17 @@
-﻿
-
+﻿@inject _0_Framework.Application.IAutenticateHelper authHelper;
+@{
+    var currentUser = authHelper.CurrentAccountRole();
+}
 <div class="left side-menu">
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
             <div class="pull-left">
-                <img src="~/AdminTheme/assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+                <img src="~/Images/ProfilePicture/@currentUser.ProfilePicture" alt="" class="thumb-md img-circle">
             </div>
             <div class="user-info">
-                <div class="dropdown">
-                    <a asp-page="Administrator" asp-page-handler="/Index" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">John Doe <span class="caret"></span></a>
+                <div class="dropdown" id="admin-dropdwon">
+                    <a id="admin-menu"
+                       class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> @currentUser.Fullname <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a asp-area="Administrator" asp-page="/Shop/ProductCategories/Index">
@@ -17,13 +20,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="~/AdminTheme/assetsjavascript:void(0)"><i class="md md-settings"></i> Settings</a>
+                            <a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a>
                         </li>
                         <li>
-                            <a href="~/AdminTheme/assetsjavascript:void(0)"><i class="md md-lock"></i> Lock screen</a>
+                            <a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a>
                         </li>
                         <li>
-                            <a href="~/AdminTheme/assetsjavascript:void(0)"><i class="md md-settings-power"></i> Logout</a>
+                            <a asp-page="/Authenticate" asp-page-handler="Logout">
+                                <i class="md md-settings-power"></i> Logout
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -39,38 +44,37 @@
                         <i class="md md-home"></i><span> Dashboard </span>
                     </a>
                 </li>
-
-                <li class="has_sub">
-                    <a class="waves-effect">
-                        <i class="md md-mail"></i><span> Store </span>
-                        <span class="pull-right">
-                            <i class="md md-add"></i>
-                        </span>
-                    </a>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a asp-area="Administrator" asp-page="/Shop/ProductCategories/Index">Product Category</a>
-                        </li>
-                        <li>
-                            <a asp-area="Administrator" asp-page="/Shop/Product/Index">Product</a>
-                        </li>
-                        <li>
-                            <a asp-area="Administrator" asp-page="/Shop/ProductPicture/Index">Product Pictures</a>
-                        </li>
-                        <li>
-                            <a asp-area="Administrator" asp-page="/Shop/Slider/Index">Slider</a>
-                        </li>
-                        <li>
-                            <a asp-area="Administrator" asp-page="/Shop/Comment/Index">Comments</a>
-                        </li>
-                        <li>
-                            <a asp-area="Administrator" asp-page="/Shop/Accounts/Account/Index">Accounts</a>
-                        </li>
-                        <li>
-                            <a asp-area="Administrator" asp-page="/Shop/Accounts/Role/Index">Roles</a>
-                        </li>
-                    </ul>
-                </li>
+                @if (authHelper.CurrentAccountRole().RoleId == "2")
+                {
+                    <li class="has_sub">
+                        <a class="waves-effect">
+                            <i class="md md-mail"></i><span> Store </span>
+                            <span class="pull-right">
+                                <i class="md md-add"></i>
+                            </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a asp-area="Administrator" asp-page="/Shop/ProductCategories/Index">Product Category</a>
+                            </li>
+                            <li>
+                                <a asp-area="Administrator" asp-page="/Shop/Product/Index">Product</a>
+                            </li>
+                            <li>
+                                <a asp-area="Administrator" asp-page="/Shop/ProductPicture/Index">Product Pictures</a>
+                            </li>
+                            <li>
+                                <a asp-area="Administrator" asp-page="/Shop/Slider/Index">Slider</a>
+                            </li>
+                            <li>
+                                <a asp-area="Administrator" asp-page="/Shop/Accounts/Account/Index">Accounts</a>
+                            </li>
+                            <li>
+                                <a asp-area="Administrator" asp-page="/Shop/Accounts/Role/Index">Roles</a>
+                            </li>
+                        </ul>
+                    </li>
+                }
                 <li class="has_sub">
                     <a class="waves-effect">
                         <i class="md md-mail"></i><span> Discount </span>
@@ -101,9 +105,25 @@
                         </li>
                     </ul>
                 </li>
+                <li class="has_sub">
+                    <a class="waves-effect">
+                        <i class="md md-mail"></i><span> Comment </span>
+                        <span class="pull-right">
+                            <i class="md md-add"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a asp-area="Administrator" asp-page="/Shop/Comment/Index">Comments</a>
+                        </li>
+                        <li>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
     </div>
 </div>
+

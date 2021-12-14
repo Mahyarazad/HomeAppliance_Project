@@ -102,6 +102,36 @@ namespace AM.Infrastructure.Migrations
 
             modelBuilder.Entity("AM.Domain.Role", b =>
                 {
+                    b.OwnsMany("AM.Domain.Permission", "Permissions", b1 =>
+                        {
+                            b1.Property<long>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("bigint")
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<int>("Code")
+                                .HasColumnType("int");
+
+                            b1.Property<int>("RoleId")
+                                .HasColumnType("int");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("RoleId");
+
+                            b1.ToTable("RolePermissions");
+
+                            b1.WithOwner("Role")
+                                .HasForeignKey("RoleId");
+
+                            b1.Navigation("Role");
+                        });
+
+                    b.Navigation("Permissions");
+                });
+
+            modelBuilder.Entity("AM.Domain.Role", b =>
+                {
                     b.Navigation("Accounts");
                 });
 #pragma warning restore 612, 618

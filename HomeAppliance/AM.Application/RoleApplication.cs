@@ -21,7 +21,7 @@ namespace AM.Application
             var result = new OperationResult();
             if (_roleRepository.Exist(x => x.Name == command.Name))
                 return result.Failed(ApplicationMessage.RecordExists);
-            var role = new Role(command.Name);
+            var role = new Role(command.Name, new List<Permission>());
             _roleRepository.Create(role);
             _roleRepository.SaveChanges();
             return result.Succeeded();
@@ -32,9 +32,11 @@ namespace AM.Application
         {
             var result = new OperationResult();
             var role = _roleRepository.Get(command.Id);
-            if (_roleRepository.Exist(x => x.Id != command.Id) && command.Name == role.Name)
+            if (_roleRepository.Exist(x => x.Id != command.Id && x.Name == command.Name))
                 return result.Failed(ApplicationMessage.RecordExists);
-            role.Edit(command.Name);
+            var permissionList = new List<Permission>();
+            command.Permissions.ForEach(code => permissionList.Add(new Permission(code)));
+            role.Edit(command.Name, permissionList);
             _roleRepository.SaveChanges();
             return result.Succeeded();
         }

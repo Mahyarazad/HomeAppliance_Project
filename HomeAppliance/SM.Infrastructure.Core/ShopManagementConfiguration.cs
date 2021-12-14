@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using _0_Framework.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Query.Contracts;
 using Query.Contracts.Product;
@@ -41,6 +42,8 @@ namespace SM.Infrastructure.Core
             services.AddTransient<ISliderQuery, SliderQuery>();
             services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
             services.AddTransient<IProductQuery, ProductQuery>();
+
+            services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
 
 
             services.AddDbContext<SMContext>(x => x.UseSqlServer(connectionString));

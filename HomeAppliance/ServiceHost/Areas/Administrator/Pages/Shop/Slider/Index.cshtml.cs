@@ -32,7 +32,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.Slider
         {
             var command = new CreateSlider();
             @ViewData["title"] = "Add a new slider";
-            return Partial("./Create", command);
+            return Partial("./Register", command);
         }
 
         public JsonResult OnPostCreate(CreateSlider command)

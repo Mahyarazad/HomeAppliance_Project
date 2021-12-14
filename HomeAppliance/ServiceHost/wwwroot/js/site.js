@@ -74,6 +74,7 @@ $(window).on('hashchange',
         var url = window.location.hash;
         if (url === "##") {
             return
+
         } else {
             url = url.split("showmodal=")[1];
             getHtml(url);

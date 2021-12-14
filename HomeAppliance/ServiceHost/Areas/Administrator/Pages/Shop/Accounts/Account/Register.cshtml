@@ -1,5 +1,5 @@
 ﻿@using Microsoft.EntityFrameworkCore
-@model AM.Application.Contracts.Account.CreateAccount
+@model AM.Application.Contracts.Account.RegisterAccount
 @{
 }
 
@@ -7,10 +7,10 @@
     <button type="button" class="close" data-dismiss="modal">
         <i class="fa fa-times-circle"></i>
     </button>
-    <h4> Create a Account </h4>
+    <h4> Register a Account </h4>
 </div>
 
-<form asp-page-handler="Create" asp-page="./Index"
+<form asp-page-handler="Register" asp-page="./Index"
       data-callback=""
       method="post"
       data-action="Refresh"
@@ -50,7 +50,7 @@
 
     <div class="row">
         <div clas="form-group col-md-12">
-            <div class="col-md-2 from-group">
+            <div class="col-md-8 from-group">
                 <label asp-for="RoleId"> Role </label>
                 <select class="form-control" asp-for="RoleId" asp-items='new SelectList(Model.RoleList,"Id","Name")'>
                     <option value="0"></option>
@@ -80,7 +80,7 @@
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal"> Close </button>
         <button id="submitModal" type="submit" class="btn btn-inverse waves-effect waves-light">
             <i class="fa fa-save"></i>
-            Create
+            Register
         </button>
     </div>
 </form>

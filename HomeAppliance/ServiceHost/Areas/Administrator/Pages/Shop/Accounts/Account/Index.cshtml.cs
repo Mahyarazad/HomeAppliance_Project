@@ -30,19 +30,19 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.Accounts.Account
             Accounts = _accountApplication.Search(searchModel);
         }
 
-        public IActionResult OnGetCreate()
+        public IActionResult OnGetRegister()
         {
-            var command = new CreateAccount
+            var command = new RegisterAccount
             {
                 RoleList = _roleApplication.GetAll()
             };
-            @ViewData["title"] = "Create a new Account";
-            return Partial("./Create", command);
+            @ViewData["title"] = "Register a new Account";
+            return Partial("./Register", command);
         }
 
-        public JsonResult OnPostCreate(CreateAccount command)
+        public JsonResult OnPostRegister(RegisterAccount command)
         {
-            var result = _accountApplication.Create(command);
+            var result = _accountApplication.Register(command);
             return new JsonResult(result);
 
         }

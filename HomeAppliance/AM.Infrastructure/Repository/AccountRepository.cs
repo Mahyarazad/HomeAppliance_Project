@@ -59,6 +59,21 @@ namespace AM.Infrastructure
             }).FirstOrDefault(x => x.Id == Id);
         }
 
+        public EditAccount GetDetailByUser(string username)
+        {
+            return _amContext.Accounts.Select(x => new EditAccount
+            {
+                Id = x.Id,
+                Email = x.Email,
+                FullName = x.FullName,
+                PhoneNumber = x.PhoneNumber,
+                RoleId = x.RoleId,
+                UserId = x.UserId,
+                Password = x.Password,
+                PictureString = x.ProfilePicture
+            }).FirstOrDefault(x => x.UserId == username);
+        }
+
         public ChangePassword getDetailforChangePassword(long Id)
         {
             return _amContext.Accounts.Select(x => new ChangePassword

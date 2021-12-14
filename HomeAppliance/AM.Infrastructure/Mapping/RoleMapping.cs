@@ -1,10 +1,11 @@
-﻿using AM.Domain;
+﻿using System.Security.Cryptography.X509Certificates;
+using AM.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AM.Infrastructure.Mapping
 {
-    public class RoleMapping: IEntityTypeConfiguration<Role>
+    public class RoleMapping : IEntityTypeConfiguration<Role>
     {
         public void Configure(EntityTypeBuilder<Role> builder)
         {
@@ -12,7 +13,14 @@ namespace AM.Infrastructure.Mapping
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
-            
+
+            builder.OwnsMany(x => x.Permissions, NavigationBuilder =>
+            {
+                NavigationBuilder.HasKey(x => x.Id);
+                NavigationBuilder.Ignore(x => x.Name);
+                NavigationBuilder.ToTable("RolePermissions");
+                NavigationBuilder.WithOwner(x => x.Role);
+            });
         }
     }
 }
