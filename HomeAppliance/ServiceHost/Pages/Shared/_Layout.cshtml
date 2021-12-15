@@ -15,10 +15,12 @@
     <!-- Custom CSS -->
     <link href="~/assets/css/Custom.css" rel="stylesheet">
     <link href="~/css/Stars.css" rel="stylesheet">
+    <!-- Sweet Alert-->
+    <link href="~/AdminTheme/assets/sweet-alert/sweet-alert.min.css" rel="stylesheet">
 </head>
 
 <body>
-<partial name="_Header"/>
+    <partial name="_Header" />
 
     @RenderBody()
     <!--====================  footer area ====================-->
@@ -113,9 +115,18 @@
 
     <!-- Active JS -->
     <script src="~/assets/js/active.js"></script>
-    <script src="~/AdminTheme/assets/js/bootstrap.min.js"></script>
     <script src="~/AdminTheme/assets/js/jquery.min.js"></script>
+    <script src="~/js/carhartl-jquery-cookie-v1.4.1-0-g7f88a4e/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <script src="~/AdminTheme/assets/js/bootstrap.min.js"></script>
+    <!--Sweet alert-->
+    <script src="~/js/sweetalert2.all.min.js"></script>
     <script src="~/js/site.js" /></script>
+    <script src="~/assets/js/cartHandler.js"></script>
+    <script>
+        $(document).ready(function() {
+            updateMiniCart();
+        });
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 

@@ -72,15 +72,10 @@ namespace ServiceHost
                 }
 
             }
-            else
-            {
-                Directory.CreateDirectory(path);
-                var filePath = $"{path}{fileName}{fileExtension}";
-                WriteFile(file, $"{path}{fileName}{fileExtension}");
-                outputFileName = fileName;
-
-            }
-
+            Directory.CreateDirectory(path);
+            var filePath = $"{path}{fileName}{fileExtension}";
+            WriteFile(file, $"{path}{fileName}{fileExtension}");
+            outputFileName = fileName;
             return $"{outputFileName}{fileExtension}";
         }
     }

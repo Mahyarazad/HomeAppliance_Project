@@ -167,7 +167,7 @@
                     </div>
 
                     <div class="product-buttons">
-                        <a class="cart-btn" href="#">
+                        <a class="cart-btn" onclick="addToCart('@Model.Product.Id','@Model.Product.ProductName','@Model.Product.UnitPrice','@Model.Product.Picture', '@Model.Product.ProductCategory')">
                             <i class="ion-bag"></i>
                             ADD TO CART
                         </a>
@@ -460,6 +460,7 @@
 </div>
 
 @section Scripts{
+
     <script type="text/javascript">
 
         // Catpture starts

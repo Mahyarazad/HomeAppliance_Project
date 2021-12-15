@@ -2,7 +2,7 @@
 @{
     var currentUser = authHelper.CurrentAccountRole();
 }
-<div class="left side-menu">
+<div class="left side-menu" id="side-menu">
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
             <div class="pull-left">
@@ -20,10 +20,10 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a>
+                            <a><i class="md md-settings"></i> Settings</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a>
+                            <a><i class="md md-lock"></i> Lock screen</a>
                         </li>
                         <li>
                             <a asp-page="/Authenticate" asp-page-handler="Logout">
@@ -48,7 +48,7 @@
                 {
                     <li class="has_sub">
                         <a class="waves-effect">
-                            <i class="md md-mail"></i><span> Store </span>
+                            <i class="md md-store"></i><span> Store </span>
                             <span class="pull-right">
                                 <i class="md md-add"></i>
                             </span>
@@ -66,6 +66,16 @@
                             <li>
                                 <a asp-area="Administrator" asp-page="/Shop/Slider/Index">Slider</a>
                             </li>
+                        </ul>
+                    </li>
+                    <li class="has_sub">
+                        <a class="waves-effect">
+                            <i class="md md-people"></i><span> Accounts </span>
+                            <span class="pull-right">
+                                <i class="md md-add"></i>
+                            </span>
+                        </a>
+                        <ul class="list-unstyled">
                             <li>
                                 <a asp-area="Administrator" asp-page="/Shop/Accounts/Account/Index">Accounts</a>
                             </li>
@@ -77,7 +87,7 @@
                 }
                 <li class="has_sub">
                     <a class="waves-effect">
-                        <i class="md md-mail"></i><span> Discount </span>
+                        <i class="md md-attach-money"></i><span> Discount </span>
                         <span class="pull-right">
                             <i class="md md-add"></i>
                         </span>
@@ -92,7 +102,7 @@
                 </li>
                 <li class="has_sub">
                     <a class="waves-effect">
-                        <i class="md md-mail"></i><span> Invenotry </span>
+                        <i class="md md-local-shipping"></i><span> Invenotry </span>
                         <span class="pull-right">
                             <i class="md md-add"></i>
                         </span>
@@ -107,7 +117,7 @@
                 </li>
                 <li class="has_sub">
                     <a class="waves-effect">
-                        <i class="md md-mail"></i><span> Comment </span>
+                        <i class="md md-comment"></i><span> Comment </span>
                         <span class="pull-right">
                             <i class="md md-add"></i>
                         </span>
@@ -126,4 +136,3 @@
         <div class="clearfix"></div>
     </div>
 </div>
-
