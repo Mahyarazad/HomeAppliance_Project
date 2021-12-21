@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using _0_Framework;
-using DM.Application.Contracts;
+using DM.Application.Contracts.EndUser;
 
-namespace DM.Domian
+namespace DM.Domian.EndUserAgg
 {
     public interface IEndUserDiscountRepository : IRepository<int, EndUserDiscount>
     {

@@ -52,5 +52,6 @@ namespace _0_Framework.Application
             byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(txt);
             return System.Text.Encoding.ASCII.GetString(bytes);
         }
+
     }
 }

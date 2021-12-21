@@ -14,5 +14,6 @@ namespace IM.Application.Contracts
         List<InventoryViewModel> Search(InventorySearchModel search);
         List<InventoryViewModel> GetList();
         List<InventoryOperationLog> GetOperationLogs(int Id);
+
     }
 }

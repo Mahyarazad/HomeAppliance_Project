@@ -1,10 +1,8 @@
 using System.Collections.Generic;
-using DM.Application.Contracts;
-using DM.Domian;
+using DM.Application.Contracts.EndUser;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using SM.Application.Contracts;
 using SM.Application.Contracts.Product;
 
 namespace ServiceHost.Areas.Administrator.Pages.Discounts.EndUser
@@ -38,7 +36,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Discounts.EndUser
             var command = new DefineEndUserDiscount();
             command.Products = _productApplication.GetList();
             @ViewData["title"] = "Define a new discount";
-            return Partial("./Register", command);
+            return Partial("./Create", command);
         }
 
         public JsonResult OnPostCreate(DefineEndUserDiscount command)

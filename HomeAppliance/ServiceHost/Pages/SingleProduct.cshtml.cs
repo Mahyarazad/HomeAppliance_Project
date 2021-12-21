@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
 using Query.Contracts.Product;
 using SM.Application.Contracts.Comment;
 
@@ -26,9 +22,9 @@ namespace ServiceHost.Pages
             _commentApplication = commentApplication;
         }
 
-        public void OnGet(string Id)
+        public void OnGet(string id)
         {
-            Product = _productQuery.GetSingleProduct(Id);
+            Product = _productQuery.GetSingleProduct(id);
             Comments = _commentApplication.GetAll(Product.Id);
             CommentCount = Comments.Where(x => x.Accepted).Count();
             if (CommentCount != 0)

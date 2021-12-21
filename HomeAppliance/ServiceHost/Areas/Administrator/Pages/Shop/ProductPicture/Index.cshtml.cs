@@ -36,7 +36,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.ProductPicture
             var command = new CreateProductPicture();
             command.Products = _productApplication.GetList();
             @ViewData["title"] = "Add a new Picture";
-            return Partial("./Register", command);
+            return Partial("./Create", command);
         }
 
         public JsonResult OnPostCreate(CreateProductPicture command)

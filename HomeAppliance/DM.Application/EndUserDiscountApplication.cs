@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using _0_Framework;
 using _0_Framework.Application;
-using DM.Application.Contracts;
+using DM.Application.Contracts.EndUser;
 using DM.Domian;
+using DM.Domian.EndUserAgg;
 
 namespace DM.Application
 {

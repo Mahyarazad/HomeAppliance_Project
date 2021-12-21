@@ -53,7 +53,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.Products
 
             command.Categories = _productCategoryApplication.GetList();
             @ViewData["title"] = "Register a Product Category";
-            return Partial("./Register", command);
+            return Partial("./Create", command);
         }
         [RequirePermission(ShopPermissions.CreateProduct)]
         public JsonResult OnPostCreate(CreateProduct command)

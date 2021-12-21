@@ -1,4 +1,4 @@
-﻿@model DM.Application.Contracts.DefineEndUserDiscount
+﻿@model DM.Application.Contracts.EndUser.DefineEndUserDiscount
 @{
 
 }
@@ -6,10 +6,10 @@
     <button type="button" class="close" data-dismiss="modal">
         <i class="fa fa-times-circle"></i>
     </button>
-    <h4> Register a product </h4>
+    <h4> Define a new discount </h4>
 </div>
 
-<form asp-page-handler="Register" asp-page="./Index" data-callback=""
+<form asp-page-handler="Create" asp-page="./Index" data-callback=""
       method="post" data-action="Refresh" data-ajax="true">
     <div class="row">
         <div clas="form-group col-md-12">

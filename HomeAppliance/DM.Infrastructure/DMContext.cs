@@ -13,6 +13,7 @@ namespace DM.Infrastructure
         }
 
         public DbSet<EndUserDiscount> EndUserDiscounts { get; set; }
+        public DbSet<ColleagueDiscount> ColleagueDiscounts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var assembly = typeof(EndUserDiscountMapping).Assembly;

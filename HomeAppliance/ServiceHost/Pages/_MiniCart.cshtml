@@ -12,25 +12,25 @@
             <tbody>
                 <tr>
                     <td class="text-right">Sub-Total :</td>
-                    <td class="text-left">$220.00</td>
+                    <td class="text-left" id="total-amount"></td>
                 </tr>
-                <tr>
-                    <td class="text-right">Eco Tax (-2.00) :</td>
-                    <td class="text-left">$6.00</td>
-                </tr>
+                @* <tr> *@
+                @*     <td class="text-right">Eco Tax (-2.00) :</td> *@
+                @*     <td class="text-left">$6.00</td> *@
+                @* </tr> *@
                 <tr>
                     <td class="text-right">VAT (20%) :</td>
-                    <td class="text-left">$44.00</td>
+                    <td class="text-left" id="tax"></td>
                 </tr>
                 <tr>
                     <td class="text-right">Total :</td>
-                    <td class="text-left">$270.00</td>
+                    <td class="text-left" id="total-amount-plus-tax">$</td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div class="cart-buttons">
-        <a href="cart.html">VIEW CART</a>
+        <a asp-page="./Cart">VIEW CART</a>
         <a href="checkout.html">CHECKOUT</a>
     </div>
 </div>

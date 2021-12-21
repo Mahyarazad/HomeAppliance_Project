@@ -2,7 +2,9 @@
 using System.Linq;
 using _0_Framework.Application;
 using _0_Framework;
-using SM.Application.Contracts;
+using IM.Application.Contracts;
+using IM.Domain;
+using SM.Application.Contracts.Order;
 using SM.Application.Contracts.Product;
 using SM.Domain.ProductAgg;
 
@@ -12,10 +14,14 @@ namespace SM.Application
     {
         private readonly IProductRepository _productRepository;
         private readonly IFileUploader _fileUploader;
-        public ProductApplication(IProductRepository productRepository, IFileUploader fileUploader)
+        private readonly IInventoryRepository _inventoryRepository;
+        public ProductApplication(IProductRepository productRepository,
+            IInventoryRepository inventoryRepository
+            , IFileUploader fileUploader)
         {
             _productRepository = productRepository;
             _fileUploader = fileUploader;
+            _inventoryRepository = inventoryRepository;
         }
 
         public OperationResult Create(CreateProduct command)
@@ -93,6 +99,20 @@ namespace SM.Application
                 Id = x.Id,
             });
             return query.ToList();
+        }
+
+        public List<CartItem> CheckInventory(List<CartItem> command)
+        {
+            var searchModel = new InventorySearchModel();
+            if (searchModel != null)
+            {
+                foreach (var item in command)
+                {
+                    searchModel.ProductId = item.Id;
+                    item.IsInStock = _inventoryRepository.Search(searchModel)[0].CurrentCount >= item.Count;
+                }
+            }
+            return command;
         }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Domain;
 using SM.Domain.CommentAgg;
+using SM.Domain.OrderAgg;
 using SM.Domain.ProductAgg;
 using SM.Domain.ProductPictureAgg;
 using SM.Domain.SliderAgg;
@@ -17,6 +18,7 @@ namespace SM.Infrastructure
         public DbSet<ProductPicture> ProductPicture { get; set; }
         public DbSet<Slider> Slider { get; set; }
         public DbSet<Comment> Comment { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public SMContext(DbContextOptions<SMContext> options) : base(options)
         {
         }

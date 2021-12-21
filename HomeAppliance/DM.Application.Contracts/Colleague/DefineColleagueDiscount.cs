@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using _0_Framework;
 using SM.Application.Contracts.Product;
 
-namespace DM.Application.Contracts
+namespace DM.Application.Contracts.Colleague
 {
-    public class DefineEndUserDiscount
+    public class DefineColleagueDiscount
     {
         [Range(1, 10000000000, ErrorMessage = "Please select a product")]
         public int ProductId { get; set; }

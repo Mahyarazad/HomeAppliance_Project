@@ -12,15 +12,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Moment.js" Version="2.29.1" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AMConfiguration\AMConfiguration.csproj" />
     <ProjectReference Include="..\DM.Infrastructure.Core\DM.Infrastructure.Core.csproj" />
     <ProjectReference Include="..\IM.Infrustructure.Core\IM.Infrustructure.Core.csproj" />
+    <ProjectReference Include="..\IM.Presentation.API\IM.Presentation.API.csproj" />
     <ProjectReference Include="..\Query\Query.csproj" />
     <ProjectReference Include="..\SM.Application.Contracts\SM.Application.Contracts.csproj" />
     <ProjectReference Include="..\SM.Infrastructure.Core\SM.Infrastructure.Core.csproj" />
+    <ProjectReference Include="..\SM.Presentation.API\SM.Presentation.API.csproj" />
   </ItemGroup>
 
 </Project>

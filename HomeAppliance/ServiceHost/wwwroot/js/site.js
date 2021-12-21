@@ -199,7 +199,7 @@ function get(url, refereshDiv) {
     $.get(url,
         searchModel,
         function (result) {
-            $("#" + refereshDiv).html(result);
+                $("#" + refereshDiv).html(result);
         });
 }
 

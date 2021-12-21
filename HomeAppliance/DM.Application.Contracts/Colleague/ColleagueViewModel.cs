@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using SM.Application.Contracts.Product;
 
-namespace DM.Application.Contracts
+namespace DM.Application.Contracts.Colleague
 {
-    public class EndUserViewModel
+    public class ColleagueViewModel
     {
         public int Id { get; set; }
         public int ProductId { get; set; }

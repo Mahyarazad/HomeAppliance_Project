@@ -1,0 +1,119 @@
+﻿@page
+@model ServiceHost.Pages.CheckoutModel
+@{
+}
+
+
+<body>
+    <div class="breadcrumb-area section-space--half">
+        <div class="container wide">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-wrapper breadcrumb-bg">
+                        <div class="breadcrumb-content">
+                            <h2 class="breadcrumb-content__title">Checkout</h2>
+                            <ul class="breadcrumb-content__page-map">
+                                <li>
+                                    <a asp-page="/Index">Home</a>
+                                </li>
+                                <li class="active">Checkout</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--=======  page wrapper  =======-->
+                    <div class="page-wrapper">
+                        <div class="page-content-wrapper">
+                            <form action="#">
+                                <div class="cart-table table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="pro-thumbnail"> Pictire</th>
+                                                <th class="pro-thumbnail">Product</th>
+                                                <th class="pro-title">Price</th>
+                                                <th class="pro-price">Quantity</th>
+                                                <th class="pro-subtotal">Total Discount</th>
+                                                <th class="pro-quantity">Total Amount</th>
+                                                <th class="pro-remove">Total Amount after Discount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.CheckoutCart.CartItems)
+                                            {
+                                                <tr>
+                                                    <td class="pro-thumbnail">
+                                                        <a asp-page="./SingleProduct" asp-route-id="@Model.Slugs[@Model.CartList.IndexOf(item)]">
+                                                            <img src="/Images/@item.CategoryPicture/@item.Picture.Substring(0, @item.Picture.Length - 4)/@item.Picture" class="img-fluid" alt="Product">
+                                                        </a>
+                                                    </td>
+                                                    <td class="pro-title">
+                                                        <a asp-page="./SingleProduct" asp-route-id="@Model.Slugs[@Model.CartList.IndexOf(item)]">@item.Name</a>
+                                                    </td>
+                                                    <td class="pro-price">
+                                                        <span>@item.Price $</span>
+                                                    </td>
+                                                    <td class="pro-subtotal">
+                                                        <span>@item.Count #</span>
+                                                    </td>
+                                                    <td class="pro-price">
+                                                        <span>@item.TotalDiscount $</span>
+                                                    </td>
+                                                    <td class="pro-subtotal">
+                                                        <span>@item.TotalCart $</span>
+                                                    </td>
+                                                    <td class="pro-subtotal">
+                                                        <span>@item.TotalCartAfterDiscount $</span>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+
+                            <div class="row">
+                                <div class="col-lg-6 col-12 d-flex">
+                                    <div class="cart-summary">
+                                        <div class="cart-summary-wrap">
+                                            <h4>خلاصه وضعیت فاکتور</h4>
+                                            <p>مبلغ نهایی <span>@Model.CheckoutCart.TotalPrice $</span></p>
+                                            <p>مبلغ تخفیف <span>@Model.CheckoutCart.TotalDiscount $</span></p>
+                                            <h2>مبلغ قابل پرداخت <span>$@Model.CheckoutCart.TotalPriceAfterDiscount $</span></h2>
+                                        </div>
+                                        <div class="cart-summary-button">
+                                            <button class="checkout-btn">پرداخت</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- scroll to top  -->
+    <div id="scroll-top">
+        <span>Back to top</span><i class="ion-chevron-right"></i><i class="ion-chevron-right"></i>
+    </div>
+    <!-- end of scroll to top -->
+    <!-- Vendor JS -->
+    <script src="~/assets/js/vendors.js"></script>
+
+    <!-- Active JS -->
+    <script src="~/assets/js/active.js"></script>
+
+</body>

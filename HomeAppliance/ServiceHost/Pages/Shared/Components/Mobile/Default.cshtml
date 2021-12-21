@@ -17,9 +17,9 @@
                     <ul class="icon-list justify-content-end">
                         <li>
                             <div class="header-cart-icon">
-                                <a href="cart.html">
+                                <a asp-page="/Cart">
                                     <i class="ion-bag"></i>
-                                    <span class="counter">3</span>
+                                    <span class="counter" id="mobile-cart"></span>
                                 </a>
                             </div>
                         </li>
@@ -62,7 +62,7 @@
                             <li>
                                 <a href="index.html">Home 01</a>
                             </li>
-                            </ul>
+                        </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Pages</a>
@@ -71,7 +71,7 @@
                                 <a href="#">Page List One</a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="cart.html">Cart</a>
+                                        <a asp-page="/Cart">Cart</a>
                                     </li>
                                     <li>
                                         <a href="checkout.html">Checkout</a>
@@ -222,3 +222,4 @@
     </div>
 
 </div>
+

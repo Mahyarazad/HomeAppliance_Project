@@ -3,6 +3,7 @@ using _0_Framework.Application;
 using AMConfiguration;
 using DM.Infrastructure.Core;
 using IM.Infrustructure.Core;
+using IM.Presentation.API;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +12,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Query.Contracts;
+using Query.Query;
 using SM.Infrastructure.Core;
+using SM.Presentation.API;
 
 namespace ServiceHost
 {
@@ -35,6 +39,7 @@ namespace ServiceHost
             services.AddTransient<IFileUploader, FileUploader>();
             services.AddTransient<IAutenticateHelper, AuthenticateHelper>();
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
+            services.AddTransient<ICalculateCart, CalculateCartQuery>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, c =>
@@ -55,15 +60,18 @@ namespace ServiceHost
 
 
             services.AddRazorPages().AddRazorPagesOptions(options =>
-            {
-                options.Conventions.AuthorizeAreaFolder("Administrator", "/", "AdminArea");
-                options.Conventions.AuthorizeAreaFolder("Administrator", "/Inventory", "Inventory");
-            });
+                {
+                    options.Conventions.AuthorizeAreaFolder("Administrator", "/", "AdminArea");
+                    options.Conventions.AuthorizeAreaFolder("Administrator", "/Inventory", "Inventory");
+                })
+                .AddApplicationPart(typeof(ProductController).Assembly)
+                .AddApplicationPart(typeof(InventoryController).Assembly);
+
 
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.Strict;
+                options.MinimumSameSitePolicy = SameSiteMode.Lax;
             });
 
             services.Configure<CookieTempDataProviderOptions>(options =>

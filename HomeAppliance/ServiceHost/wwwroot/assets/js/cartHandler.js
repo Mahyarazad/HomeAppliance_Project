@@ -11,26 +11,6 @@ const notifyStyleClass = {
     },
 }
 
-$(".header-cart-icon").on('mouseover', function (e) {
-    e.preventDefault;
-    $("#mini-cart").addClass('active');
-});
-
-$(".header-cart-icon").on('mouseleave', function (e) {
-
-    var offsetLeft = $(".header-cart-icon").offset().left;
-    var offsetTop = $(".header-cart-icon").offset().top;
-    var elementWidth = $(".header-cart-icon").outerWidth();
-
-    if (e.clientX > offsetLeft + elementWidth || e.clientX < offsetLeft || e.clientY < offsetTop) {
-        $("#mini-cart").removeClass('active');
-    }
-});
-
-$("#mini-cart").on('mouseleave', function (e) {
-    e.preventDefault;
-    $("#mini-cart").removeClass('active');
-});
 
 
 function successMessage() {
@@ -91,6 +71,9 @@ function addToCart(id, name, price, picture, categoryPicture) {
 
     }
 }
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 function updateMiniCart() {
     var cartObject;
@@ -100,6 +83,8 @@ function updateMiniCart() {
     if (cart !== undefined) {
         cartObject = JSON.parse(cart);
         $("span[id='header-counter']").text(Object.keys(cartObject).length);
+        $("span[id='mobile-cart']").text(Object.keys(cartObject).length);
+        var totalAmount = 0;
         cartObject.forEach(item => {
             singleCartDom = `<div class="single-cart-item" id="single-cart">
                                         <a href="javascript:void(0)" class="remove-icon" onclick="removeFromCart('${item.id}')">
@@ -119,7 +104,18 @@ function updateMiniCart() {
                                         </div>
                                     </div>`;
             wrapper.append(singleCartDom);
+            totalAmount += item.count * parseInt(item.price);
         });
+        totalAmount = totalAmount.toFixed(2);
+        var tax = (totalAmount * 0.2).toFixed(2);
+        var totalAmountWithTax = (totalAmount * 1.2).toFixed(2)
+        $("td[id='total-amount']").text(`${numberWithCommas(totalAmount)} $`);
+        $("td[id='total-amount-plus-tax']").text(`${numberWithCommas(totalAmountWithTax)} $`);
+        $("td[id='tax']").text(`${numberWithCommas(tax)} $`);
+
+        $("span[id='total-amount']").text(`${numberWithCommas(totalAmount)} $`);
+        $("span[id='total-amount-with-tax']").text(`${numberWithCommas(totalAmountWithTax)} $`);
+        $("span[id='tax']").text(`${numberWithCommas(tax)} $`);
     }
 }
 
@@ -181,12 +177,115 @@ $("#header-settings-trigger").on('mouseleave', function (e) {
     var offsetLeft = $("#header-settings-trigger").offset().left;
     var offsetTop = $("#header-settings-trigger").offset().top;
     var elementWidth = $("#header-settings-trigger").outerWidth();
-
-    if (e.clientX > offsetLeft + elementWidth || e.clientX < offsetLeft || e.clientY < offsetTop) {
+    if (e.clientX > offsetLeft + elementWidth || e.clientX < offsetLeft || e.pageY < offsetTop) {
         $(".settings-menu-wrapper").removeClass('active');
     }
 });
 
 $("#settings-menu-wrapper").on('mouseleave', function () {
+    console.log('=======');
     $(".settings-menu-wrapper").removeClass("active");
 });
+
+
+$(".header-cart-icon").on('mouseover', function (e) {
+    e.preventDefault;
+    $("#mini-cart").addClass('active');
+});
+
+$(".header-cart-icon").on('mouseleave', function (e) {
+
+    var offsetLeft = $(".header-cart-icon").offset().left;
+    var offsetTop = $(".header-cart-icon").offset().top;
+    var elementWidth = $(".header-cart-icon").outerWidth();
+
+    if (e.clientX > offsetLeft + elementWidth || e.clientX < offsetLeft || e.pageY < offsetTop) {
+        $("#mini-cart").removeClass('active');
+    }
+});
+
+$("#mini-cart").on('mouseleave', function (e) {
+    e.preventDefault;
+    $("#mini-cart").removeClass('active');
+});
+
+
+$(document).ready(() => {
+    const cookie = $.cookie("cart-items");
+    const cookieObject = JSON.parse(cookie);
+    cookieObject.forEach(item => {
+        var settings = {
+            "url": "https://localhost:5000/api/inventory",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+                "ProductId": item.id,
+                "Count": item.count
+            }),
+        };
+
+        $.ajax(settings).done(function (response) {
+            var wrapper = $('#inventory-warning');
+            var target = $(`div[id='${item.id}']`);
+            console.log(response);
+            if (response.isInStock == false) {
+                if (target.length == 0) {
+                    wrapper.append(`<div class="alert alert-warning ltr d-flex" id="${item.id}">
+                            <i class="fa fa-warning pr-1"></i>
+                            <p class="pull-left"><b>${response.productName
+                        }</b> stock is less than your ordered quantity, please modify your cart.</p>
+                        </div>`);
+                }
+
+            } else {
+                target.remove();
+            }
+        });
+    });
+})
+
+
+function updateCart(id, count) {
+    const cookie = $.cookie("cart-items");
+    const cookieObject = JSON.parse(cookie);
+    const target = cookieObject.findIndex(x => x.id === id);
+    cookieObject[target].count = count;
+    const priceToShow = (count * parseInt(cookieObject[target].price)).toFixed(2);
+    $("span[id='item-total-amount']").text(`${priceToShow} $`);
+    $.cookie("cart-items", JSON.stringify(cookieObject), { expires: 1, path: '/', secure: false });
+    updateMiniCart();
+
+    var settings = {
+        "url": "https://localhost:5000/api/inventory",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "ProductId": id,
+            "Count": count
+        }),
+    };
+
+    $.ajax(settings).done(function (response) {
+        var wrapper = $('#inventory-warning');
+        var target = $(`div[id='${id}']`);
+        console.log(response);
+        if (response.isInStock == false) {
+            if (target.length == 0) {
+                wrapper.append(`<div class="alert alert-warning ltr d-flex" id="${id}">
+                            <i class="fa fa-warning pr-1"></i>
+                            <p class="pull-left"><b>${response.productName
+                    }</b> stock is less than your ordered quantity, please modify your cart.</p>
+                        </div>`);
+            }
+
+        } else {
+            target.remove();
+        }
+    });
+}

@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\IM.Application\IM.Application.csproj" />
     <ProjectReference Include="..\IM.Infrastructure\IM.Infrastructure.csproj" />
+    <ProjectReference Include="..\Query\Query.csproj" />
   </ItemGroup>
 
   <ItemGroup>

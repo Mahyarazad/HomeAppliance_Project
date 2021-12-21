@@ -7,6 +7,8 @@ using IM.Infrastructure;
 using IM.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Query.Contracts.Inventory;
+using Query.Query;
 
 namespace IM.Infrustructure.Core
 {
@@ -18,6 +20,7 @@ namespace IM.Infrustructure.Core
             services.AddTransient<IInventoryApplication, InventoryApplication>();
 
             services.AddTransient<IPermissionExposer, InventoryPermissionExposer>();
+            services.AddTransient<IInventoryQuery, InventoryQuery>();
 
             services.AddDbContext<IMContext>(x => x.UseSqlServer(connectionString));
         }

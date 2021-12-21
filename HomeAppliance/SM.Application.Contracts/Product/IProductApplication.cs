@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Application;
+using SM.Application.Contracts.Order;
 
 namespace SM.Application.Contracts.Product
 {
@@ -11,6 +12,7 @@ namespace SM.Application.Contracts.Product
         List<ProductViewModel> Search(ProductSearchModel searchModel);
         EditProduct GetDetails(int Id);
         List<ProductViewModel> GetList();
+        List<CartItem> CheckInventory(List<CartItem> command);
 
     }
 }

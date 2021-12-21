@@ -1,0 +1,62 @@
+﻿@model DM.Application.Contracts.Colleague.DefineColleagueDiscount
+@{
+
+}
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">
+        <i class="fa fa-times-circle"></i>
+    </button>
+    <h4> Define a Colleague Discount </h4>
+</div>
+
+<form asp-page-handler="Create" asp-page="./Index" data-callback=""
+      method="post" data-action="Refresh" data-ajax="true">
+    <div class="row">
+        <div clas="form-group col-md-12">
+            <div class="col-md-6 from-group">
+                <label asp-for="ProductId"> Select Product </label>
+                <select class="form-control" asp-for="ProductId" asp-items='new SelectList(Model.Products, "Id", "Name")'>
+                    <option value=""></option>
+                </select>
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="DiscountRate"> Discount Rate </label>
+                <input asp-for="DiscountRate" type="number" class="form-control" />
+                <span asp-validation-for="DiscountRate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div clas="form-group col-md-12">
+            <div class="col-md-12 from-group">
+                <label asp-for="Occasion"> </label>
+                <input asp-for="Occasion" type="text" class="form-control" placeholder="What is the occasion" />
+            </div>
+        </div>
+    </div>
+    <div class="row m-t-15">
+        <div clas="form-group col-md-12">
+            <div class='form-group col-md-6' id='datetimepicker1'>
+                <label asp-for="StartTime"> Start Time </label>
+                <input type='text' class="form-control" id="datePicker-start" asp-for="StartTime" value="" placeholder="Start Date" autocomplete="off"/>
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class='form-group col-md-6' id='datetimepicker1'>
+                <label asp-for="EndTime"> End Time </label>
+                <input type='text' class="form-control" id="datePicker-end" asp-for="EndTime" value="" placeholder="End Date" autocomplete="off"/>
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal"> Close </button>
+        <button id="submitModal" type="submit" class="btn btn-inverse waves-effect waves-light">
+            <i class="fa fa-save"></i>
+            Register
+        </button>
+    </div>
+</form>
+

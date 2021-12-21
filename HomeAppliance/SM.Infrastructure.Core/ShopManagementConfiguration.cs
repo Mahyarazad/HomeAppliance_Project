@@ -9,10 +9,12 @@ using ShopManagement.Domain;
 using SM.Application;
 using SM.Application.Contracts;
 using SM.Application.Contracts.Comment;
+using SM.Application.Contracts.Order;
 using SM.Application.Contracts.Product;
 using SM.Application.Contracts.ProductPicture;
 using SM.Application.Contracts.Slider;
 using SM.Domain.CommentAgg;
+using SM.Domain.OrderAgg;
 using SM.Domain.ProductAgg;
 using SM.Domain.ProductPictureAgg;
 using SM.Domain.SliderAgg;
@@ -38,6 +40,9 @@ namespace SM.Infrastructure.Core
 
             services.AddTransient<ICommentRepository, CommentRepository>();
             services.AddTransient<ICommentApplication, CommentApplication>();
+
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IOrderApplication, OrderApplication>();
 
             services.AddTransient<ISliderQuery, SliderQuery>();
             services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using _0_Framework.Application;
 using DM.Application.Contracts;
+using DM.Application.Contracts.EndUser;
 using IM.Application.Contracts;
 using IM.Infrustructure.Core;
 using Microsoft.AspNetCore.Mvc;
@@ -41,7 +42,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Inventory
             command.ProductList = _productApplication.GetList();
             @ViewData["title"] = "Register a new Inventory";
 
-            return Partial("./Register", command);
+            return Partial("./Create", command);
         }
         [RequirePermission(InventoryPermissions.Create)]
         public JsonResult OnPostCreate(CreateInventory command)

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Application;
 
-namespace DM.Application.Contracts
+namespace DM.Application.Contracts.EndUser
 {
     public interface IEndUserDiscountApplication
     {

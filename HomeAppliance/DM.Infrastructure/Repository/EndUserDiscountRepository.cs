@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using _0_Framework.Infrastructure;
-using DM.Application.Contracts;
-using DM.Domian;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
+using DM.Domian.EndUserAgg;
 using SM.Infrastructure;
+using DM.Application.Contracts.EndUser;
+using DM.Domian;
+using Microsoft.AspNetCore.Http.Internal;
 
 namespace DM.Infrastructure.Repository
 {
@@ -49,6 +47,7 @@ namespace DM.Infrastructure.Repository
             {
                 Id = x.Id,
                 ProductId = x.ProductId,
+                ProductName = null,
                 EndTime = x.EndTime,
                 Occasion = x.Occasion,
                 StartTime = x.StartTime,
@@ -75,9 +74,8 @@ namespace DM.Infrastructure.Repository
             }
             var DmList = query.ToList();
 
-            DmList
-                .ForEach(item => item.ProductName = products
-                   .FirstOrDefault(x => x.Id == item.ProductId)?.Name);
+            DmList.ForEach(item => item.ProductName = products.FirstOrDefault(x => x.Id == item.ProductId)?.Name);
+
             DmList.ForEach(item =>
             {
                 item.EndTimeString = item.EndTime.ToString("MM-dd-yyyy");

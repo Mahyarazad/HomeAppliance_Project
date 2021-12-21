@@ -29,7 +29,7 @@ namespace ServiceHost.Areas.Administrator.Pages.Shop.ProductCategories
         public IActionResult OnGetCreate()
         {
             @ViewData["title"] = "Register a Product Category";
-            return Partial("./Register", new CreateProductCategory());
+            return Partial("./Create", new CreateProductCategory());
         }
         [RequirePermission(ShopPermissions.CreateProductCategory)]
         public JsonResult OnPostCreate(CreateProductCategory command)
